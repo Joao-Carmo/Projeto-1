@@ -1,4 +1,9 @@
 
+@font-face {
+    font-family: 'FonteSite';
+    src: url("../Fonts/MouseMemoirs-Regular.ttf");
+}
+
 *{   /*Configuração global das css*/
     height: 100%;
 }
@@ -10,3 +15,4 @@ body{
 
     
 }
+
