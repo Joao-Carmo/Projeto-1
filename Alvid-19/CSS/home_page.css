@@ -4,5 +4,7 @@
 }
 
 body{
-    background-image: linear-gradient(to top,white,#00C2E3);
+    background-image: linear-gradient(to top,white,#00C2E3 70%);
+    
+    background-attachment: scroll;
 }
