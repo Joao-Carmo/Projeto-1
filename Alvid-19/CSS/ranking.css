@@ -1,3 +1,83 @@
 #menu{
     background-color: #00C2E3;
 }
+
+#menuLinks {
+    font-family: 'FonteSite';
+    src: url("../Fonts/MouseMemoirs-Regular.ttf");
+    font-size: 20px;
+    color: white;
+}
+
+/* Icon Alvid */
+#iconAlvid {
+    display: flex;
+    position: relative;
+    bottom: 20px;
+    left: 5px;
+}
+
+/* Icon Perfil */
+#iconPerfil {
+    display: flex;
+    position: relative;
+    top: 6px;
+    right: 6px;
+}
+
+/* Icon Ranking */
+#iconRanking {
+    display: flex;
+    position: relative;
+    top: 8px;
+}
+#iconTextRanking {
+    display: flex;
+    position: relative;
+    top: 13px;
+    right: 5px;
+}
+
+/* Icon Favoritos */
+#iconFavoritos {
+    display: flex;
+    position: relative;
+    top: 5px;
+}
+#iconTextFavoritos {
+    display: flex;
+    position: relative;
+    top: 13px;
+    right: 8px;
+}
+
+/* Icon Quizzes */
+#iconTextQuizzes {
+    display: flex;
+    position: relative;
+    bottom: 2px;
+    left: 3px;
+}
+
+/* Icon Jogos */
+#iconJogos {
+    display: flex;
+    position: relative;
+    top: 5px;
+}
+#iconTextJogos {
+    display: flex;
+    position: relative;
+    top: 4px;
+    left: 8px;
+}
+
+
+
+a:link , a:visited {
+    text-decoration: none;
+}
+
+/* a:hover , a:active {
+    size: 50px;
+} */
