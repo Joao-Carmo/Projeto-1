@@ -16,6 +16,75 @@
     <title>Homepage</title> 
 </head>
 <body>
-    
+
+  <div class="container-fluid" id="container">
+    <!-- linha do menu -->
+    <div class="row" id="menu">
+        <div class="col-4">
+            <a href="home_page.html">
+                <img src="../Images/logo_alvid.png" width="300px" alt="Ícone logo" id="iconAlvid">
+            </a>
+        </div>
+        <div class="col-8">
+            <a href="home_page.html" class="my-4 mr-3 ml-5 float-right" id="menuLinks">
+                <img src="../Images/perfil.png" width="80px" alt="Ícone perfil" id="iconPerfil">
+            </a>
+            <a href="home_page.html" class="my-4 mr-5 ml-4 float-right" id="menuLinks">
+                <img src="../Images/favoritos.png" width="52px" alt="Ícone favoritos" id="iconFavoritos">
+                <p id="iconTextFavoritos">Favoritos</p>
+            </a>
+            <a href="home_page.html" class="my-4 mx-4 float-right" id="menuLinks">
+                <img src="../Images/ranking.png" width="50px" alt="Ícone ranking" id="iconRanking">
+                <p id="iconTextRanking">Ranking</p>
+            </a>
+            <a href="home_page.html" class="my-4 mx-4 float-right" id="menuLinks">
+                <img src="../Images/quizz.png" width="70px" alt="Ícone quizzes" id="iconQuizzes">
+                <p id="iconTextQuizzes">Quizzes</p>
+            </a>
+            <a href="home_page.html" class="my-4 mx-4 float-right" id="menuLinks">
+                <img src="../Images/jogos.png" width="60px" alt="Ícone jogos" id="iconJogos">
+                <p id="iconTextJogos">Jogos</p>
+            </a>
+        </div>    
+    </div>
+    <!-- Carrossel -->
+    <div id="slider">
+        <input type="radio" name="slider" id="slide1" checked>
+        <input type="radio" name="slider" id="slide2">
+        <input type="radio" name="slider" id="slide3">
+        <div id="overflow">
+            <div class="inner">
+              <div class="slide slide_1">
+                <div class="slide-content">
+                  <h2>Slide 1</h2>
+                  <p>Content for Slide 1</p>
+                </div>
+              </div>
+              <div class="slide slide_2">
+                <div class="slide-content">
+                  <h2>Slide 2</h2>
+                  <p>Content for Slide 2</p>
+                </div>
+              </div>
+              <div class="slide slide_3">
+                <div class="slide-content">
+                  <h2>Slide 3</h2>
+                  <p>Content for Slide 3</p>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div id="controls">
+      <label for="slide1"></label>
+      <label for="slide2"></label>
+      <label for="slide3"></label>
+    </div>
+    <div id="bullets">
+      <label for="slide1"></label>
+      <label for="slide2"></label>
+      <label for="slide3"></label>
+    </div>
+</div>
 </body>
 </html>
