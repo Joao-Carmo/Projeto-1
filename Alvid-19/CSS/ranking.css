@@ -8,7 +8,10 @@ body {
     background-attachment: scroll;
 }
 
-#menuLinks {
+    /* ---MENU--- */
+#menu {
+    height: 165px;
+} #menuLinks,p {
     font-family: 'FonteSite';
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
     font-size: 20px;
@@ -23,7 +26,7 @@ body {
     left: 5px;
 }
 
-/* Ícone Perfil */
+    /* Ícone+animação+sombra Perfil */
 #iconPerfil {
     display: flex;
     position: relative;
@@ -45,7 +48,7 @@ body {
     width: 92px;
 }
 
-/* Ícone+texto "Ranking" */
+/* Ícone+texto+animação+sombra "Ranking" */
 #iconRanking {
     display: flex;
     position: relative;
@@ -73,7 +76,7 @@ body {
     font-size: 30px;
 }
 
-/* Ícone+texto "Favoritos" */
+/* Ícone+texto+animação+sombra "Favoritos" */
 #iconFavoritos {
     display: flex;
     position: relative;
@@ -101,7 +104,7 @@ body {
     font-size: 30px;
 }
 
-/* Ícone+texto "Quizzes" */
+/* Ícone+texto+animação+sombra "Quizzes" */
 #iconQuizzes {
     display: flex;
     position: relative;
@@ -129,7 +132,7 @@ body {
     right: 45px;
 }
 
-/* Ícone+texto "Jogos" */
+/* Ícone+texto+animação+sombra "Jogos" */
 #iconJogos {
     display: flex;
     position: relative;
@@ -156,8 +159,29 @@ body {
     right: 70px;
     font-size: 30px;
 }
+    /* ---FIM DO MENU--- */
 
 
+    /* Parte título ranking + parabenizar o utilizador */
+#pRanking {
+    display: flex;
+    position: relative;
+    font-size: 70px;
+    right: 40px;
+}
+#iconBodyRanking {
+    display: flex;
+    position: relative;
+    left: 820px;
+}
+#pRankingCongratulator {
+    display: flex;
+    position: relative;
+}
+
+#teste {
+    background-color: olive;
+}
 
 a:link , a:visited {
     text-decoration: none;
