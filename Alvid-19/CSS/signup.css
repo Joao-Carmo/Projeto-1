@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'FonteSite';
+    src: url("../Fonts/MouseMemoirs-Regular.ttf");
+}
+
+body {
+    background-image: linear-gradient(to top,#00C2E3,#00C2E3 70%);
+    background-attachment: scroll;
+}
+
+#menuLinks {
+    font-family: 'FonteSite';
+    src: url("../Fonts/MouseMemoirs-Regular.ttf");
+    font-size: 20px;
+    color: white;
+}
+
+/* Logo Alvid */
+#iconAlvid {
+    display: flex;
+    position: relative;
+    bottom: 20px;
+    left: 5px;
+}
+
+/* Ícone Perfil */
+#iconPerfil {
+    display: flex;
+    position: relative;
+    top: 6px;
+    right: 6px;
+}
+
+/* Ícone+texto "Ranking" */
+#iconRanking {
+    display: flex;
+    position: relative;
+    top: 8px;
+    right: 20px;
+} #iconTextRanking {
+    display: flex;
+    position: relative;
+    top: 12px;
+    right: 28px;
+    font-size: 30px;
+}
+
+/* Ícone+texto "Favoritos" */
+#iconFavoritos {
+    display: flex;
+    position: relative;
+    top: 9px;
+    right: 7px;
+} #iconTextFavoritos {
+    display: flex;
+    position: relative;
+    top: 9px;
+    right: 19px;
+    font-size: 30px;
+}
+
+/* Ícone+texto "Quizzes" */
+#iconQuizzes {
+    display: flex;
+    position: relative;
+    top: 5px;
+    right: 49px;
+} #iconTextQuizzes {
+    display: flex;
+    position: relative;
+    bottom: 7px;
+    font-size: 30px;
+    right: 45px;
+}
+
+/* Ícone+texto "Jogos" */
+#iconJogos {
+    display: flex;
+    position: relative;
+    top: 10px;
+    right: 75px;
+} #iconTextJogos {
+    display: flex;
+    position: relative;
+    top: 4px;
+    right: 70px;
+    font-size: 30px;
+}
+
+
+
+a:link , a:visited {
+    text-decoration: none;
+}
+
+/* a:hover , a:active {
+    size: 50px;
+} */
