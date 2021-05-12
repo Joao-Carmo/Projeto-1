@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'FonteSite';
+    src: url("../Fonts/MouseMemoirs-Regular.ttf");
+}
 #menu{
     background-color: #00C2E3;
 }
