@@ -1,6 +1,9 @@
-/*#menu{
-    background-color: #00C2E3;
-}*/ body {
+@font-face {
+    font-family: 'FonteSite';
+    src: url("../Fonts/MouseMemoirs-Regular.ttf");
+}
+
+body {
     background-image: linear-gradient(to top,#00C2E3,#00C2E3 70%);
     background-attachment: scroll;
 }
