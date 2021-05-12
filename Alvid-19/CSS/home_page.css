@@ -1,18 +1,193 @@
-
 @font-face {
     font-family: 'FonteSite';
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
 }
 
-*{   /*Configuração global das css*/
+/* body {
+    background-image: linear-gradient(to top,#ffffff,#00C2E3 70%);
+    background-attachment: scroll;
+} */
+
+#menuLinks {
+    font-family: 'FonteSite';
+    src: url("../Fonts/MouseMemoirs-Regular.ttf");
+    font-size: 20px;
+    color: white;
+}
+
+/* Logo Alvid */
+#iconAlvid {
+    display: flex;
+    position: relative;
+    bottom: 20px;
+    left: 5px;
+}
+
+/* Ícone Perfil */
+#iconPerfil {
+    display: flex;
+    position: relative;
+    top: 6px;
+    right: 6px;
+}
+
+/* Ícone+texto "Ranking" */
+#iconRanking {
+    display: flex;
+    position: relative;
+    top: 8px;
+    right: 20px;
+} #iconTextRanking {
+    display: flex;
+    position: relative;
+    top: 12px;
+    right: 28px;
+    font-size: 30px;
+}
+
+/* Ícone+texto "Favoritos" */
+#iconFavoritos {
+    display: flex;
+    position: relative;
+    top: 9px;
+    right: 7px;
+} #iconTextFavoritos {
+    display: flex;
+    position: relative;
+    top: 9px;
+    right: 19px;
+    font-size: 30px;
+}
+
+/* Ícone+texto "Quizzes" */
+#iconQuizzes {
+    display: flex;
+    position: relative;
+    top: 5px;
+    right: 49px;
+} #iconTextQuizzes {
+    display: flex;
+    position: relative;
+    bottom: 7px;
+    font-size: 30px;
+    right: 45px;
+}
+
+/* Ícone+texto "Jogos" */
+#iconJogos {
+    display: flex;
+    position: relative;
+    top: 10px;
+    right: 75px;
+} #iconTextJogos {
+    display: flex;
+    position: relative;
+    top: 4px;
+    right: 70px;
+    font-size: 30px;
+}
+
+
+
+a:link , a:visited {
+    text-decoration: none;
+}
+
+/* a:hover , a:active {
+    size: 50px;
+} */
+
+#container{
+    background-image: linear-gradient(to top,#ffffff,#00C2E3 40%);
+    background-attachment: scroll;
     height: 100%;
 }
 
-body{
-    background-image: linear-gradient(to top,white,#00C2E3 70%);
-    
-    background-attachment: scroll;
-
-    
+/* Carrossel */
+#slider{
+    margin: 0 auto;
+    width: 800px;
+    max-width: 100%;
+    text-align: center;
 }
 
+#slider input[type=radio]{
+    display: none;
+}
+
+#slider label{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#slider{
+    padding: 10px;
+    border: 3px solid #ccc;
+    background: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+#overflow{
+    width: 100%;
+    overflow: hidden;
+}
+#slide1:checked ~ #slides .inner{
+    margin-left: 0;
+}
+#slide2:checked ~ #slides .inner{
+    margin-left: -100%;
+}
+#slide3:checked ~ #slides .inner{
+    margin-left: -200%;
+}
+#slider .inner{
+    transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    width: 400%;
+    line-height: 0;
+    height: 200px;
+}
+#slider .slide{
+    width: 25%;
+    float: left;
+    display: block;
+    height: 100%;
+    color: #fff;
+}
+
+#slider .slide_1{
+    background: #38E169 ;
+}
+#slider .slide_2{
+    background: #38E169 ;
+}
+#slider .slide_3{
+    background: #38E169 ;
+}
+
+.slide-content{
+    padding: 10px;
+}
+#controls{
+    margin: -130px 0 0 0;
+    width: 100%;
+    height: 50px;
+    z-index: 3;
+    position: relative;
+}
+
+#controls label{
+    transition: opacity 0.2s ease-out;
+    display: none;
+    width: 50px;
+    height: 50px;
+    opacity: .4;
+}
+#controls label:hover{
+    opacity: 1;
+}
+#slide1:checked ~ #controls label:nth-child(2),
+#slide1:checked ~ #controls label:nth-child(3),
+#slide1:checked ~ #controls label:nth-child(4){
+background: ;
+}
