@@ -9,9 +9,7 @@ body {
 }
 
     /* ---MENU--- */
-#menu {
-    height: 165px;
-} #menuLinks,p {
+#menuLinks,p {
     font-family: 'FonteSite';
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
     font-size: 20px;
@@ -53,10 +51,7 @@ body {
     display: flex;
     position: relative;
     top: 8px;
-    right: 20px;
-    transition-property: width;
-    transition-duration: 0.25s;
-    transition-timing-function: ease;
+    right: 24px;
 } #iconRankingShadow {
     filter: brightness(0) blur(2px);
     opacity: .2;
@@ -64,10 +59,8 @@ body {
     z-index: -1;
     display: flex;
     position: relative;
-    right: 24px;
-    bottom: 100px;
-} #iconRanking:hover {
-    width: 62px;
+    right: 30px;
+    bottom: 110px;
 } #iconTextRanking {
     display: flex;
     position: relative;
@@ -172,7 +165,6 @@ body {
 #iconBodyRanking {
     display: flex;
     position: relative;
-    left: 820px;
 }
 #pRankingCongratulator {
     display: flex;
