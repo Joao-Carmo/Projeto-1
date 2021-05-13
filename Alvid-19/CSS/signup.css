@@ -29,6 +29,20 @@ body {
     position: relative;
     top: 6px;
     right: 6px;
+    transition-property: width;
+    transition-duration: 0.25s;
+    transition-timing-function: ease;
+} #iconPerfilShadow {
+    filter: brightness(0) blur(2px);
+    opacity: .2;
+    transform: translateY(5px) translateX(5px);
+    z-index: -1;
+    display: flex;
+    position: relative;
+    right: 11px;
+    bottom: 71px;
+} #iconPerfil:hover {
+    width: 92px;
 }
 
 /* Ícone+texto "Ranking" */
@@ -37,6 +51,20 @@ body {
     position: relative;
     top: 8px;
     right: 20px;
+    transition-property: width;
+    transition-duration: 0.25s;
+    transition-timing-function: ease;
+} #iconRankingShadow {
+    filter: brightness(0) blur(2px);
+    opacity: .2;
+    transform: translateY(5px) translateX(5px);
+    z-index: -1;
+    display: flex;
+    position: relative;
+    right: 24px;
+    bottom: 100px;
+} #iconRanking:hover {
+    width: 62px;
 } #iconTextRanking {
     display: flex;
     position: relative;
@@ -51,6 +79,20 @@ body {
     position: relative;
     top: 9px;
     right: 7px;
+    transition-property: width;
+    transition-duration: 0.25s;
+    transition-timing-function: ease;
+} #iconFavoritosShadow {
+    filter: brightness(0) blur(2px);
+    opacity: .2;
+    transform: translateY(5px) translateX(5px);
+    z-index: -1;
+    display: flex;
+    position: relative;
+    right: 11px;
+    bottom: 101px;
+} #iconFavoritos:hover {
+    width: 61px;
 } #iconTextFavoritos {
     display: flex;
     position: relative;
@@ -65,6 +107,20 @@ body {
     position: relative;
     top: 5px;
     right: 49px;
+    transition-property: width;
+    transition-duration: 0.25s;
+    transition-timing-function: ease;
+} #iconQuizzesShadow {
+    filter: brightness(0) blur(2px);
+    opacity: .2;
+    transform: translateY(5px) translateX(5px);
+    z-index: -1;
+    display: flex;
+    position: relative;
+    right: 54px;
+    bottom: 124px;
+} #iconQuizzes:hover {
+    width: 81px;
 } #iconTextQuizzes {
     display: flex;
     position: relative;
@@ -79,6 +135,21 @@ body {
     position: relative;
     top: 10px;
     right: 75px;
+    transition-property: width;
+    transition-duration: 0.25s;
+    transition-timing-function: ease;
+} #iconJogosShadow {
+    display: flex;
+    filter: brightness(0) blur(2px);
+    opacity: .2;
+    transform: translateY(5px) translateX(5px);
+    z-index: -1;
+    display: flex;
+    position: relative;
+    right: 80px;
+    bottom: 108px;
+} #iconJogos:hover {
+    width: 73px;
 } #iconTextJogos {
     display: flex;
     position: relative;
