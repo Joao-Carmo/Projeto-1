@@ -173,7 +173,7 @@ a:link , a:visited {
 }
 
 h1{
-    text-shadow: 5px 5px 10px #888;
+    text-shadow: 5px 5px 10px rgb(75, 74, 74);
 }
 
 #quizz{
@@ -196,3 +196,11 @@ h1{
     text-shadow: none;
 }
 
+#btnLer{
+    font-family: 'FonteSite';
+    src: url("../Fonts/MouseMemoirs-Regular.ttf");
+    font-size: 30px;
+    color: white;
+    width: 120px;
+    
+}
