@@ -89,12 +89,3 @@ body {
 a:link , a:visited {
     text-decoration: none;
 }
-    /* ---FIM DO MENU--- */
-
-
-    /* Parte título ranking + parabenizar o utilizador */
-#pRanking {
-    display: flex;
-    position: relative;
-    font-size: 70px;
-}

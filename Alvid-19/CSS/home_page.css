@@ -8,155 +8,77 @@
     background-attachment: scroll;
 } */
 
-#menuLinks,h1,p {
-    font-family: 'FonteSite';
-    src: url("../Fonts/MouseMemoirs-Regular.ttf");
-    font-size: 20px;
-    color: white;
+
+#header {
+    width: 100%;
+    background-color: transparent;
 }
 
-/* Logo Alvid */
-#iconAlvid {
-    display: flex;
-    position: relative;
-    bottom: 20px;
-    left: 5px;
+#header .navbar-collapse {
+    width: auto;
 }
 
-/* Ícone Perfil */
+    /* logo+animação+sombra logo */
+#logoAlvid {
+    transition: width 0.25s ease 0s;
+} #logoAlvid:hover {
+    width: 272px;
+}
+
+    /* Ícone+animação+sombra Perfil */
 #iconPerfil {
-    display: flex;
-    position: relative;
-    top: 6px;
-    right: 6px;
     transition-property: width;
     transition-duration: 0.25s;
     transition-timing-function: ease;
-} #iconPerfilShadow {
-    filter: brightness(0) blur(2px);
-    opacity: .2;
-    transform: translateY(5px) translateX(5px);
-    z-index: -1;
-    display: flex;
-    position: relative;
-    right: 11px;
-    bottom: 71px;
 } #iconPerfil:hover {
     width: 92px;
 }
 
-/* Ícone+texto "Ranking" */
+/* Ícone+texto+animação+sombra "Ranking" */
 #iconRanking {
-    display: flex;
-    position: relative;
-    top: 8px;
-    right: 20px;
     transition-property: width;
     transition-duration: 0.25s;
     transition-timing-function: ease;
-} #iconRankingShadow {
-    filter: brightness(0) blur(2px);
-    opacity: .2;
-    transform: translateY(5px) translateX(5px);
-    z-index: -1;
-    display: flex;
-    position: relative;
-    right: 24px;
-    bottom: 100px;
 } #iconRanking:hover {
-    width: 62px;
-} #iconTextRanking {
-    display: flex;
-    position: relative;
-    top: 12px;
-    right: 28px;
-    font-size: 30px;
+    width: 56px;
 }
 
-/* Ícone+texto "Favoritos" */
+/* Ícone+texto+animação+sombra "Favoritos" */
 #iconFavoritos {
-    display: flex;
-    position: relative;
-    top: 9px;
-    right: 7px;
     transition-property: width;
     transition-duration: 0.25s;
     transition-timing-function: ease;
-} #iconFavoritosShadow {
-    filter: brightness(0) blur(2px);
-    opacity: .2;
-    transform: translateY(5px) translateX(5px);
-    z-index: -1;
-    display: flex;
-    position: relative;
-    right: 11px;
-    bottom: 101px;
 } #iconFavoritos:hover {
-    width: 61px;
-} #iconTextFavoritos {
-    display: flex;
-    position: relative;
-    top: 9px;
-    right: 19px;
-    font-size: 30px;
+    width: 66px;
 }
 
-/* Ícone+texto "Quizzes" */
+/* Ícone+texto+animação+sombra "Quizzes" */
 #iconQuizzes {
-    display: flex;
-    position: relative;
-    top: 5px;
-    right: 49px;
     transition-property: width;
     transition-duration: 0.25s;
     transition-timing-function: ease;
-} #iconQuizzesShadow {
-    filter: brightness(0) blur(2px);
-    opacity: .2;
-    transform: translateY(5px) translateX(5px);
-    z-index: -1;
-    display: flex;
-    position: relative;
-    right: 54px;
-    bottom: 124px;
 } #iconQuizzes:hover {
     width: 81px;
-} #iconTextQuizzes {
-    display: flex;
-    position: relative;
-    bottom: 7px;
-    font-size: 30px;
-    right: 45px;
 }
 
-/* Ícone+texto "Jogos" */
+/* Ícone+texto+animação+sombra "Jogos" */
 #iconJogos {
-    display: flex;
-    position: relative;
-    top: 10px;
-    right: 75px;
     transition-property: width;
     transition-duration: 0.25s;
     transition-timing-function: ease;
-} #iconJogosShadow {
-    display: flex;
-    filter: brightness(0) blur(2px);
-    opacity: .2;
-    transform: translateY(5px) translateX(5px);
-    z-index: -1;
-    display: flex;
-    position: relative;
 } #iconJogos:hover {
-    width: 73px;
-} #iconTextJogos {
-    display: flex;
-    position: relative;
-    top: 4px;
-    right: 70px;
-    font-size: 30px;
+    width: 71px;
 }
+    /* ---FIM DO MENU--- */
 
 
+
+#menuLinks,h1,p {
+    font-family: 'FonteSite';
+    src: url("../Fonts/MouseMemoirs-Regular.ttf");
+    font-size: 25px;
+    color: white;
+}
 
 a:link , a:visited {
     text-decoration: none;
@@ -173,7 +95,7 @@ a:link , a:visited {
 }
 
 h1{
-    text-shadow: 5px 5px 10px rgb(75, 74, 74);
+    text-shadow: 0px 5px 5px rgb(88, 88, 88);
 }
 
 #quizz{

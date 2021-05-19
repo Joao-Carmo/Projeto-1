@@ -10,8 +10,8 @@
     <link rel="shortcut icon" href="Images/alvid_icone.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 
     <title>Homepage</title> 
 </head>
@@ -19,45 +19,57 @@
 
   <div class="container-fluid" id="container" style="padding: 0px;">
     <!-- linha do menu -->
-    <div class="row" id="menu" style="height: 165px;">
-        <div class="col-4">
-            <a href="index.html">
-                <img src="Images/logo_alvid.png" width="300px" alt="Ícone logo" id="iconAlvid">
-            </a>
-        </div>
-        <div class="col-8">
-            <a href="HTML/signup.html" class="my-4 mr-3 ml-5 float-right" id="menuLinks">
-              <img src="Images/perfil.png" width="80px" alt="Ícone perfil" id="iconPerfil">
-              <!--Sombra--><img src="Images/perfil.png" width="80px" alt="Ícone perfil" id="iconPerfilShadow">
-            </a>
-            <a href="home_page.html" class="my-4 mr-5 ml-4 float-right" id="menuLinks">
-              <img src="Images/favoritos.png" width="52px" alt="Ícone favoritos" id="iconFavoritos">
-              <p id="iconTextFavoritos">Favoritos</p>
-              <!--Sombra--><img src="Images/favoritos.png" width="52px" alt="Ícone favoritos" id="iconFavoritosShadow">
-            </a>
-            <a href="HTML/ranking.html" class="my-4 mx-4 float-right" id="menuLinks">
-              <img src="Images/ranking.png" width="50px" alt="Ícone ranking" id="iconRanking">
-              <p id="iconTextRanking">Ranking</p>
-              <!--Sombra--><img src="Images/ranking.png" width="52px" alt="Ícone favoritos" id="iconRankingShadow">
-            </a>
-            <a href="HTML/ranking.html" class="my-4 mx-4 float-right" id="menuLinks">
-                <img src="Images/quizz.png" width="70px" alt="Ícone quizzes" id="iconQuizzes">
-                <p id="iconTextQuizzes">Quizzes</p>
-                <!--Sombra--><img src="Images/quizz.png" width="52px" alt="Ícone favoritos" id="iconQuizzesShadow">
-            </a>
-            <a href="HTML/ranking.html" class="my-4 mx-4 float-right" id="menuLinks">
-                <img src="Images/jogos.png" width="60px" alt="Ícone jogos" id="iconJogos">
-                <p id="iconTextJogos">Jogos</p>
-                <!--Sombra--><img src="Images/jogos.png" width="52px" alt="Ícone favoritos" id="iconJogosShadow">
-            </a>
-        </div>    
+    <div id="header">
+      <nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="height: 135px;">
+          <a class="navbar-brand" href="../index.html">
+              <img class="ml-4" src="../Images/logo_alvid.png" width="250px" id="logoAlvid" alt="LOGO Alvid-19">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#widget-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: 0px;">
+              <img src="../Images/popup_menu_mobile.png" width="78px" alt="Menu Hamburger Mobile" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+          </button>
+      
+          <div class="collapse navbar-collapse" id="widget-menu">
+              <ul class="navbar-nav mr-auto mt-5" style="height: 135px;">
+                  <li class="nav-item active mx-4 mt-1"> <!-- Jogos -->
+                      <a class="nav-link" href="index.html">
+                          <img src="../Images/jogos.png" width="60px" alt="Ícone Jogos" id="iconJogos" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                          <!-- <span class="sr-only">(current)</span> -->
+                          <p class="text-center mt-2" id="#pMenu">Jogos</p>
+                      </a>
+                  </li>
+                  <li class="nav-item mx-4"> <!-- Quizzes -->
+                      <a class="nav-link" href="index.html">
+                          <img src="../Images/quizz.png" width="70px" alt="Ícone Quizzes" id="iconQuizzes" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                          <p class="text-center mt-2" id="#pMenu">Quizzes</p>
+                      </a>
+                  </li>
+                  <li class="nav-item mx-4 my-1"> <!-- Ranking -->
+                      <a class="nav-link" href="HTML/ranking.html">
+                          <img src="../Images/ranking.png" width="45px" alt="Ícone Ranking" id="iconRanking" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                          <p class="text-center mt-2" id="#pMenu">Ranking</p>
+                      </a>
+                  </li>
+                  <li class="nav-item mx-4 my-1"> <!-- Favoritos -->
+                      <a class="nav-link" href="index.html">
+                          <img src="../Images/favoritos.png" width="55px" alt="Ícone Favoritos" id="iconFavoritos" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                          <p class="text-center mt-2" id="#pMenu">Favoritos</p>
+                      </a>
+                  </li>
+                  <li class="nav-item ml-5 mr-5"> <!-- Perfil -->
+                      <a class="nav-link" href="HTML/signup.html">
+                          <img src="../Images/perfil.png" width="84px" alt="Ícone Perfil" id="iconPerfil" id="iconPerfil" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </nav>
     </div>
-    
+
     <!-- Fundo Vídeo -->
 
-      <div class="my-5">
-        <img src="Images/fundoVirus.png" class="img-fluid " alt="Responsive image">
-      </div>
+    <div class="row my-5">
+      <img src="Images/fundoVirus.png" alt="Responsive image">
+    </div>
       
     <!-- Jogos -->
 
@@ -70,6 +82,31 @@
         </div>
       </div>
     </section>
+
+    <!-- Carrossel Jogos -->
+    <div id="carouselGames" class="carousel slide row" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active row">
+          <div class="col-4" style="display: flex; position: relative; left: 34%;">
+            <img src="Images/fundoVirus.png" alt="Responsive image" class="img-fluid">
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="col-4" style="display: flex; position: relative; left: 34%;">
+            <img src="Images/fundoVirus.png" alt="Responsive image" class="img-fluid">
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="col-4" style="display: flex; position: relative; left: 34%;">
+            <img src="Images/fundoVirus.png" alt="Responsive image" class="img-fluid">
+          </div>
+        </div>
+      </div><!-- Botões carrossel -->
+      <a class="carousel-control-next" href="#carouselGames" role="button" data-slide="next" style="background-image: url('Images/seta_carrossel.png'); background-size: contain; background-repeat: no-repeat;transform: scaleX(-1); opacity: 100%;">
+      </a>
+      <a class="carousel-control-prev" href="#carouselGames" role="button" data-slide="prev" style="background-image: url('Images/seta_carrossel.png'); background-size: contain; background-repeat: no-repeat; opacity: 100%">
+      </a>
+    </div>
 
     <!-- Quizz -->
     <section class="balao">
