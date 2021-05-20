@@ -12,145 +12,69 @@ body {
 #menuLinks,p {
     font-family: 'FonteSite';
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
-    font-size: 20px;
+    font-size: 25px;
     color: white;
 }
 
-/* Logo Alvid */
-#iconAlvid {
-    display: flex;
-    position: relative;
-    bottom: 20px;
-    left: 5px;
+#header {
+    width: 100%;
+    background-color: transparent;
+}
+
+#header .navbar-collapse {
+    width: auto;
+}
+
+    /* logo+animação+sombra logo */
+#logoAlvid {
+    transition: width 0.25s ease 0s;
+} #logoAlvid:hover {
+    width: 272px;
 }
 
     /* Ícone+animação+sombra Perfil */
 #iconPerfil {
-    display: flex;
-    position: relative;
-    top: 6px;
-    right: 6px;
     transition-property: width;
     transition-duration: 0.25s;
     transition-timing-function: ease;
-} #iconPerfilShadow {
-    filter: brightness(0) blur(2px);
-    opacity: .2;
-    transform: translateY(5px) translateX(5px);
-    z-index: -1;
-    display: flex;
-    position: relative;
-    right: 11px;
-    bottom: 71px;
 } #iconPerfil:hover {
     width: 92px;
 }
 
 /* Ícone+texto+animação+sombra "Ranking" */
 #iconRanking {
-    display: flex;
-    position: relative;
-    top: 8px;
-    right: 24px;
-} #iconRankingShadow {
-    filter: brightness(0) blur(2px);
-    opacity: .2;
-    transform: translateY(5px) translateX(5px);
-    z-index: -1;
-    display: flex;
-    position: relative;
-    right: 30px;
-    bottom: 110px;
-} #iconTextRanking {
-    display: flex;
-    position: relative;
-    top: 12px;
-    right: 28px;
-    font-size: 30px;
+    transition-property: width;
+    transition-duration: 0.25s;
+    transition-timing-function: ease;
+} #iconRanking:hover {
+    width: 56px;
 }
 
 /* Ícone+texto+animação+sombra "Favoritos" */
 #iconFavoritos {
-    display: flex;
-    position: relative;
-    top: 9px;
-    right: 7px;
     transition-property: width;
     transition-duration: 0.25s;
     transition-timing-function: ease;
-} #iconFavoritosShadow {
-    filter: brightness(0) blur(2px);
-    opacity: .2;
-    transform: translateY(5px) translateX(5px);
-    z-index: -1;
-    display: flex;
-    position: relative;
-    right: 11px;
-    bottom: 101px;
 } #iconFavoritos:hover {
-    width: 61px;
-} #iconTextFavoritos {
-    display: flex;
-    position: relative;
-    top: 9px;
-    right: 19px;
-    font-size: 30px;
+    width: 66px;
 }
 
 /* Ícone+texto+animação+sombra "Quizzes" */
 #iconQuizzes {
-    display: flex;
-    position: relative;
-    top: 5px;
-    right: 49px;
     transition-property: width;
     transition-duration: 0.25s;
     transition-timing-function: ease;
-} #iconQuizzesShadow {
-    filter: brightness(0) blur(2px);
-    opacity: .2;
-    transform: translateY(5px) translateX(5px);
-    z-index: -1;
-    display: flex;
-    position: relative;
-    right: 54px;
-    bottom: 124px;
 } #iconQuizzes:hover {
     width: 81px;
-} #iconTextQuizzes {
-    display: flex;
-    position: relative;
-    bottom: 7px;
-    font-size: 30px;
-    right: 45px;
 }
 
 /* Ícone+texto+animação+sombra "Jogos" */
 #iconJogos {
-    display: flex;
-    position: relative;
-    top: 10px;
-    right: 75px;
     transition-property: width;
     transition-duration: 0.25s;
     transition-timing-function: ease;
-} #iconJogosShadow {
-    filter: brightness(0) blur(2px);
-    opacity: .2;
-    transform: translateY(5px) translateX(5px);
-    z-index: -1;
-    display: flex;
-    position: relative;
-    right: 80px;
-    bottom: 108px;
 } #iconJogos:hover {
-    width: 73px;
-} #iconTextJogos {
-    display: flex;
-    position: relative;
-    top: 4px;
-    right: 70px;
-    font-size: 30px;
+    width: 71px;
 }
     /* ---FIM DO MENU--- */
 
@@ -160,21 +84,17 @@ body {
     display: flex;
     position: relative;
     font-size: 70px;
-    right: 40px;
-}
-#iconBodyRanking {
-    display: flex;
-    position: relative;
-}
-#pRankingCongratulator {
-    display: flex;
-    position: relative;
-}
-
-#teste {
-    background-color: olive;
 }
 
 a:link , a:visited {
     text-decoration: none;
+}
+    /* ---FIM DO MENU--- */
+
+
+    /* Parte título ranking + parabenizar o utilizador */
+#pRanking {
+    display: flex;
+    position: relative;
+    font-size: 70px;
 }
