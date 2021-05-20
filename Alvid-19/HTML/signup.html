@@ -26,42 +26,52 @@
 <body>
     <div class="container-fluid">
         <!-- linha do menu -->
-        <div class="row" id="menu" style="height: 165px;">
-            <div class="col-4">
-                <a href="../index.html">
-                    <img src="../Images/logo_alvid.png" width="300px" alt="Ícone logo" id="iconAlvid">
+        <div id="header">
+            <nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="height: 135px;">
+                <a class="navbar-brand" href="../index.html">
+                    <img class="ml-4" src="../Images/logo_alvid.png" width="250px" id="logoAlvid" alt="LOGO Alvid-19">
                 </a>
-            </div>
-            <div class="col-8">
-                <a href="signup.html" class="my-4 mr-3 ml-5 float-right" id="menuLinks">
-                    <img src="../Images/perfil.png" width="80px" alt="Ícone perfil" id="iconPerfil">
-                    <!--Sombra--><img src="../Images/perfil.png" width="80px" alt="Ícone favoritos"
-                        id="iconPerfilShadow">
-                </a>
-                <a href="signup.html" class="my-4 mr-5 ml-4 float-right" id="menuLinks">
-                    <img src="../Images/favoritos.png" width="52px" alt="Ícone favoritos" id="iconFavoritos">
-                    <p id="iconTextFavoritos">Favoritos</p>
-                    <!--Sombra--><img src="../Images/favoritos.png" width="52px" alt="Ícone favoritos"
-                        id="iconFavoritosShadow">
-                </a>
-                <a href="ranking.html" class="my-4 mx-4 float-right" id="menuLinks">
-                    <img src="../Images/ranking.png" width="50px" alt="Ícone ranking" id="iconRanking">
-                    <p id="iconTextRanking">Ranking</p>
-                    <!--Sombra--><img src="../Images/ranking.png" width="52px" alt="Ícone favoritos"
-                        id="iconRankingShadow">
-                </a>
-                <a href="signup.html" class="my-4 mx-4 float-right" id="menuLinks">
-                    <img src="../Images/quizz.png" width="70px" alt="Ícone quizzes" id="iconQuizzes">
-                    <p id="iconTextQuizzes">Quizzes</p>
-                    <!--Sombra--><img src="../Images/quizz.png" width="70px" alt="Ícone quizzes" id="iconQuizzesShadow">
-                </a>
-                <a href="signup.html" class="my-4 mx-4 float-right" id="menuLinks">
-                    <img src="../Images/jogos.png" width="60px" alt="Ícone jogos" id="iconJogos">
-                    <p id="iconTextJogos">Jogos</p>
-                    <!--Sombra--><img src="../Images/jogos.png" width="60px" alt="Ícone jogos" id="iconJogosShadow">
-                </a>
-            </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#widget-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: 0px;">
+                    <img src="../Images/popup_menu_mobile.png" width="78px" alt="Menu Hamburger Mobile" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                </button>
+            
+                <div class="collapse navbar-collapse" id="widget-menu">
+                    <ul class="navbar-nav mr-auto mt-5" style="height: 135px;">
+                        <li class="nav-item active mx-4 mt-1"> <!-- Jogos -->
+                            <a class="nav-link" href="index.html">
+                                <img src="../Images/jogos.png" width="60px" alt="Ícone Jogos" id="iconJogos" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                                <!-- <span class="sr-only">(current)</span> -->
+                                <p class="text-center mt-2" id="#pMenu">Jogos</p>
+                            </a>
+                        </li>
+                        <li class="nav-item mx-4"> <!-- Quizzes -->
+                            <a class="nav-link" href="index.html">
+                                <img src="../Images/quizz.png" width="70px" alt="Ícone Quizzes" id="iconQuizzes" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                                <p class="text-center mt-2" id="#pMenu">Quizzes</p>
+                            </a>
+                        </li>
+                        <li class="nav-item mx-4 my-1"> <!-- Ranking -->
+                            <a class="nav-link" href="HTML/ranking.html">
+                                <img src="../Images/ranking.png" width="45px" alt="Ícone Ranking" id="iconRanking" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                                <p class="text-center mt-2" id="#pMenu">Ranking</p>
+                            </a>
+                        </li>
+                        <li class="nav-item mx-4 my-1"> <!-- Favoritos -->
+                            <a class="nav-link" href="index.html">
+                                <img src="../Images/favoritos.png" width="55px" alt="Ícone Favoritos" id="iconFavoritos" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                                <p class="text-center mt-2" id="#pMenu">Favoritos</p>
+                            </a>
+                        </li>
+                        <li class="nav-item ml-5 mr-5"> <!-- Perfil -->
+                            <a class="nav-link" href="HTML/signup.html">
+                                <img src="../Images/perfil.png" width="84px" alt="Ícone Perfil" id="iconPerfil" id="iconPerfil" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </div>
+
         <!-- formulário -->
 
         <div class="row">
