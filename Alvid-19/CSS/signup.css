@@ -158,8 +158,96 @@ body {
     font-size: 30px;
 }
 
+.form {
+    position: absolute;
+    border-radius: 62px;
+    border: 3px solid white;
+    padding: 20px; 
+    width: 400px;
+    height: 420px;
+    overflow: hidden;
+}
+form {
+    top: 140px;
+    margin-left: 38px;
+    width: 300px;
+    position: absolute;
+    transition: transform 0.5s;
+}
 
+#login {
+    left: 15px;
+}
+#register {
+    top: 88px;
+    left: 400px;
+}
 
+#button {
+    position: absolute;
+    width: 80px;
+    height: 35px;
+    border-radius: 15px;
+    background-color: white;
+    top: 26px;
+    right: 214px;
+    z-index: -1;
+    opacity: 95%;
+    transition: transform 0.5s;
+}
+
+#userName, #userEmail, #userPw {
+    border: 0px;
+    padding: 10px 48px;
+    border-radius: 13px;
+    margin-bottom: 18px;
+    filter: drop-shadow(3px 6px 3px #0a9cb6);
+    
+} ::placeholder {
+    color: #006FDB;
+    opacity: 55%;
+    font-family: 'FonteSite';
+    font-size: 25px;
+
+} #date {
+    border: 0px;
+    padding: 4px 48px;
+    border-radius: 13px;
+    filter: drop-shadow(3px 6px 3px #0a9cb6);
+    font-family: 'FonteSite';
+    font-size: 25px;
+    color: #74b0eb;
+} 
+
+input:focus { 
+    outline: none!important;
+
+}
+
+#btnLogin {
+    background-color: #F5E400;
+    margin-top: 10px;
+    color: #00C3EB;
+    border-radius: 15px;
+}
+
+#btnRegister {
+    background-color: #F5E400;
+    margin-top: 25px;
+    color: #00C3EB;
+    border-radius: 15px;
+}  
+
+button {
+    outline: none;
+    background-color: transparent;
+    color: #006FDB;
+    border: 0;
+    font-family: 'FonteSite'!important;
+    font-size: 28px!important;
+} button:focus {
+    outline: none!important;
+}
 a:link , a:visited {
     text-decoration: none;
 }
@@ -167,3 +255,4 @@ a:link , a:visited {
 /* a:hover , a:active {
     size: 50px;
 } */
+
