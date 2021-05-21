@@ -17,7 +17,7 @@
 </head>
 <body>
 
-  <div class="container-fluid" id="container" style="padding: 0px;">
+  <div id="container">
     <!-- linha do menu -->
     <div id="header">
       <nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="height: 135px;">
@@ -66,7 +66,7 @@
     </div>
 
     <!-- Carrossel COVID avisos -->
-    <div id="carouselCovid" class="carousel slide row my-5" data-ride="carousel">
+    <div id="carouselCovid" class="carousel slide row my-5" data-interval="false">
       <div class="carousel-inner">
         <div class="carousel-item active row">
           <div class="col-4" style="display: flex; position: relative; left: 34%;">
@@ -112,40 +112,48 @@
     </section>
 
     <!-- Carrossel Jogos -->
-    <div id="carouselGames" class="carousel slide row my-5" data-ride="carousel">
+    <div id="carouselGames" class="carousel slide row my-5" data-interval="false">
       <div class="carousel-inner">
         <div class="carousel-item active row">
           <div class="col-4" style="display: flex; position: relative; left: 34%;">
-            <img src="Images/Verdade ou mentira.png" alt="Responsive image" class="img-fluid" style="
-            border-top-left-radius: 15% 20%;
-            border-top-right-radius: 15% 20%;
-            border-bottom-right-radius: 15% 20%;
-            border-bottom-left-radius: 15% 20%;">
+            <img src="Images/Verdade ou mentira.png" alt="Responsive image" class="img-fluid" style="filter: drop-shadow(0px 9px 3px #0a9cb6);
+                                                                                                    border-top-left-radius: 15% 20%;
+                                                                                                    border-top-right-radius: 15% 20%;
+                                                                                                    border-bottom-right-radius: 15% 20%;
+                                                                                                    border-bottom-left-radius: 15% 20%;">
           </div>
         </div>
         <div class="carousel-item">
           <div class="col-4" style="display: flex; position: relative; left: 34%;">
-            <img src="Images/Jogo da Memoria.png" alt="Responsive image" class="img-fluid" style="
-            border-top-left-radius: 15% 20%;
-            border-top-right-radius: 15% 20%;
-            border-bottom-right-radius: 15% 20%;
-            border-bottom-left-radius: 15% 20%;">
+            <img src="Images/Jogo da Memoria.png" alt="Responsive image" class="img-fluid" style="filter: drop-shadow(0px 9px 3px #0a9cb6);
+                                                                                                  border-top-left-radius: 15% 20%;
+                                                                                                  border-top-right-radius: 15% 20%;
+                                                                                                  border-bottom-right-radius: 15% 20%;
+                                                                                                  border-bottom-left-radius: 15% 20%;">
           </div>
         </div>
         <div class="carousel-item">
           <div class="col-4" style="display: flex; position: relative; left: 34%;">
-            <img src="Images/Jogo da f rca.png" alt="Responsive image" class="img-fluid" style="
-            border-top-left-radius: 15% 20%;
-            border-top-right-radius: 15% 20%;
-            border-bottom-right-radius: 15% 20%;
-            border-bottom-left-radius: 15% 20%;">
+            <img src="Images/Jogo da f rca.png" alt="Responsive image" class="img-fluid" style="filter: drop-shadow(0px 9px 3px #0a9cb6);
+                                                                                                border-top-left-radius: 15% 20%;
+                                                                                                border-top-right-radius: 15% 20%;
+                                                                                                border-bottom-right-radius: 15% 20%;
+                                                                                                border-bottom-left-radius: 15% 20%;">
           </div>
         </div>
       </div><!-- Botões carrossel -->
-      <a class="carousel-control-next" href="#carouselGames" role="button" data-slide="next" style="background-image: url('Images/seta_carrossel.png'); background-size: contain; background-repeat: no-repeat;transform: scaleX(-1); opacity: 100%;">
+      <a class="carousel-control-next" href="#carouselGames" role="button" data-slide="next" style="opacity: 100%;">
+        <div>
+          <img src="Images/seta_carrossel.png" alt="Seta do carrossel" id="carouselGamesLeft" style="width: 40%; height: 60%; float: right; transform: scaleX(-1); filter: drop-shadow(0px 9px 3px #0a9cb6);">
+        </div>
       </a>
-      <a class="carousel-control-prev" href="#carouselGames" role="button" data-slide="prev" style="background-image: url('Images/seta_carrossel.png'); background-size: contain; background-repeat: no-repeat; opacity: 100%">
+      <a class="carousel-control-prev" href="#carouselGames" role="button" data-slide="prev" style="opacity: 100%;">
+        <div>
+          <img src="Images/seta_carrossel.png" alt="Seta do carrossel" id="carouselGamesLeft" style="width: 40%; height: 60%; float: left; filter: drop-shadow(0px 9px 3px #0a9cb6);">
+        </div>
       </a>
+      <!-- <a class="carousel-control-prev" href="#carouselGames" role="button" data-slide="prev" style="filter: drop-shadow(2px 9px 5px #0a9cb6); background-image: url('Images/seta_carrossel.png'); background-size: contain; background-repeat: no-repeat; opacity: 100%; height: 50%; width: 50%;">
+      </a> -->
     </div>
 
     <!-- Quizz -->
@@ -157,7 +165,6 @@
       <div class="col-sm-12 text-center my-1" id="quizz">
         <h1 style="font-size: 80px;" class="mb-5">Quizzes</h1>
       </div>
-
     </section>
 
     <div style="background-color: #F5E400;">
