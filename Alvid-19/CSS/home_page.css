@@ -95,9 +95,9 @@ a:link , a:visited {
 }
 
 h1{
-    text-shadow: 0px 5px 5px rgb(88, 88, 88);
+    text-shadow: 0px 5px 5px #585858;
 }
-
+/* Espaço Quizz */
 #quizz{
     position: absolute;
     height: 200px;
@@ -112,6 +112,7 @@ h1{
     position: relative;
 }
 
+/* Espaço de comentário */
 #comentarios{
     color: #006FDB;
     text-decoration: underline;
@@ -123,6 +124,63 @@ h1{
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
     font-size: 30px;
     color: white;
-    width: 120px;
-    
+    width: 120px;  
+}
+
+/* Block scroll horizontal */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Movimento zoom nas img dos quizzes */
+.hero img{
+    max-width: 100%;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+} 
+.hero{
+    overflow: hidden;
+}
+
+.hero:hover img{
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+         /* Forca */
+.forca img{
+    max-width: 100%;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+} 
+.forca{
+    overflow: hidden;
+}
+
+.forca:hover img{
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+        /* Verdade ou mentira */
+
+.vouf img{
+    max-width: 100%;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+} 
+.vouf{
+    overflow: hidden;
+}
+
+.vouf:hover img{
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
 }

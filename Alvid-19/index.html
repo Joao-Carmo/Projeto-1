@@ -17,14 +17,14 @@
 </head>
 <body>
 
-  <div class="container-fluid" id="container" style="padding: 0px;">
+  <div id="container">
     <!-- linha do menu -->
     <div id="header">
       <nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="height: 135px;">
           <a class="navbar-brand" href="../index.html">
               <img class="ml-4" src="Images/logo_alvid.png" width="250px" id="logoAlvid" alt="LOGO Alvid-19">
           </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#widget-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: 0px;">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#widget-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: 0px;">988888
               <img src="Images/popup_menu_mobile.png" width="78px" alt="Menu Hamburger Mobile" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
           </button>
       
@@ -66,41 +66,42 @@
     </div>
 
     <!-- Carrossel COVID avisos -->
-    <div id="carouselCovid" class="carousel slide row my-5" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active row">
-          <div class="col-4" style="display: flex; position: relative; left: 34%;">
+    <div id="carouselCovid" class="carousel slide my-5" data-interval="false">
+      <div class="carousel-inner" style="display:flex; position: relative; left: 17.5%; background-image: url('Images/Verdade ou mentira.png'); background-size: contain; background-repeat: no-repeat;">
+        <div class="carousel-item active">
+          <div class="col-4">
             <img src="Images/fundoVirus.png" alt="Responsive image" class="img-fluid">
           </div>
         </div>
         <div class="carousel-item">
-          <div class="col-4" style="display: flex; position: relative; left: 34%;">
+          <div class="col-4">
             <img src="Images/fundoVirus.png" alt="Responsive image" class="img-fluid">
           </div>
         </div>
         <div class="carousel-item">
-          <div class="col-4" style="display: flex; position: relative; left: 34%;">
+          <div class="col-4">
             <img src="Images/fundoVirus.png" alt="Responsive image" class="img-fluid">
           </div>
         </div>
       </div><!-- Botões carrossel -->
-      <a class="carousel-control-next mr-5" href="#carouselCovid" role="button" data-slide="next" style="opacity: 100%;">
-        <div class="rounded-pill" style="background-color: #38E169; height: 55%; width: 50%;">
-          <img src="Images/próximo-branco.png" class="align-items-center" style="width: 25%; height: 40%;">
+      <a class="carousel-control-next" href="#carouselCovid" role="button" data-slide="next" style="opacity: 100%;">
+        <div>
+          <img src="Images/próximo_verde_carrossel.png" alt="Seta do carrossel" id="carouselGamesLeft" style="width: 40%; height: 60%; float: left; filter: drop-shadow(0px 9px 3px #0a9cb6);">
         </div>
       </a>
-      <a class="carousel-control-prev" href="#carouselCovid" role="button" data-slide="prev" style="background-image: url('Images/seta_carrossel.png'); background-size: contain; background-repeat: no-repeat; opacity: 100%">
+      <a class="carousel-control-prev" href="#carouselCovid" role="button" data-slide="prev" style="opacity: 100;">
+        <div>
+          <img src="Images/próximo_verde_carrossel.png" alt="Seta do carrossel" id="carouselGamesLeft" style="width: 40%; height: 60%; float: right; transform: scaleX(-1); filter: drop-shadow(0px 9px 3px #0a9cb6);">
+        </div>
       </a>
     </div>
 
     <!-- Fundo Vídeo -->
-
     <div class="row my-5">
       <img src="Images/fundoVirus.png" alt="Responsive image">
     </div>
       
     <!-- Jogos -->
-
     <section>
       <div class="container">
         <div class="row">
@@ -112,39 +113,37 @@
     </section>
 
     <!-- Carrossel Jogos -->
-    <div id="carouselGames" class="carousel slide row my-5" data-ride="carousel">
+    
+    <div id="carouselGames" class="carousel slide row my-5" data-interval="false">
       <div class="carousel-inner">
         <div class="carousel-item active row">
           <div class="col-4" style="display: flex; position: relative; left: 34%;">
-            <img src="Images/Verdade ou mentira.png" alt="Responsive image" class="img-fluid" style="
-            border-top-left-radius: 15% 20%;
-            border-top-right-radius: 15% 20%;
-            border-bottom-right-radius: 15% 20%;
-            border-bottom-left-radius: 15% 20%;">
+            <img src="Images/flow free .png" alt="Responsive image" class="img-fluid" style="filter: drop-shadow(0px 9px 3px #0a9cb6);
+                                                                                                    border-top-left-radius: 15% 20%;
+                                                                                                    border-top-right-radius: 15% 20%;
+                                                                                                    border-bottom-right-radius: 15% 20%;
+                                                                                                    border-bottom-left-radius: 15% 20%;">
           </div>
         </div>
         <div class="carousel-item">
           <div class="col-4" style="display: flex; position: relative; left: 34%;">
-            <img src="Images/Jogo da Memoria.png" alt="Responsive image" class="img-fluid" style="
-            border-top-left-radius: 15% 20%;
-            border-top-right-radius: 15% 20%;
-            border-bottom-right-radius: 15% 20%;
-            border-bottom-left-radius: 15% 20%;">
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="col-4" style="display: flex; position: relative; left: 34%;">
-            <img src="Images/Jogo da f rca.png" alt="Responsive image" class="img-fluid" style="
-            border-top-left-radius: 15% 20%;
-            border-top-right-radius: 15% 20%;
-            border-bottom-right-radius: 15% 20%;
-            border-bottom-left-radius: 15% 20%;">
+            <img src="Images/Jogo da Memoria.png" alt="Responsive image" class="img-fluid" style="filter: drop-shadow(0px 9px 3px #0a9cb6);
+                                                                                                  border-top-left-radius: 15% 20%;
+                                                                                                  border-top-right-radius: 15% 20%;
+                                                                                                  border-bottom-right-radius: 15% 20%;
+                                                                                                  border-bottom-left-radius: 15% 20%;">
           </div>
         </div>
       </div><!-- Botões carrossel -->
-      <a class="carousel-control-next" href="#carouselGames" role="button" data-slide="next" style="background-image: url('Images/seta_carrossel.png'); background-size: contain; background-repeat: no-repeat;transform: scaleX(-1); opacity: 100%;">
+      <a class="carousel-control-next" href="#carouselGames" role="button" data-slide="next" style="opacity: 100%;">
+        <div>
+          <img src="Images/seta_carrossel.png" alt="Seta do carrossel" id="carouselGamesLeft" style="width: 40%; height: 60%; float: right; transform: scaleX(-1); filter: drop-shadow(0px 9px 3px #0a9cb6);">
+        </div>
       </a>
-      <a class="carousel-control-prev" href="#carouselGames" role="button" data-slide="prev" style="background-image: url('Images/seta_carrossel.png'); background-size: contain; background-repeat: no-repeat; opacity: 100%">
+      <a class="carousel-control-prev" href="#carouselGames" role="button" data-slide="prev" style="opacity: 100%;">
+        <div>
+          <img src="Images/seta_carrossel.png" alt="Seta do carrossel" id="carouselGamesLeft" style="width: 40%; height: 60%; float: left; filter: drop-shadow(0px 9px 3px #0a9cb6);">
+        </div>
       </a>
     </div>
 
@@ -153,20 +152,50 @@
       <div class="mt-5">
         <img src="Images/balãoAmarelo.png" class="img-fluid " alt="Responsive image" style="width: 100%;">
       </div>
-      
       <div class="col-sm-12 text-center my-1" id="quizz">
         <h1 style="font-size: 80px;" class="mb-5">Quizzes</h1>
       </div>
-
     </section>
 
     <div style="background-color: #F5E400;">
+      <div class="row">
+
+        <!-- Como ser Herói -->
+      <div class="col-4">
+        <div class="hero">
+        <img src="Images/Como ser Herói!.png" id="hero" class=" mt-5 col-sm-7 ml-4 mb-5" alt="Responsive image" style="width: 90%;  border-top-left-radius: 15% 20%;
+        border-top-right-radius: 15% 20%;
+        border-bottom-right-radius: 15% 20%;
+        border-bottom-left-radius: 15% 20%;">
+      </div>
+      </div>
+
+      <!-- Forca -->
       
+      <div class="col-4">
+        <div class="forca">
+        <img src="Images/Jogo da f rca.png" class=" mt-5 col-sm-7 ml-4 mb-5" alt="Responsive image" style="width: 90%; border-top-left-radius: 15% 20%;
+        border-top-right-radius: 15% 20%;
+        border-bottom-right-radius: 15% 20%;
+        border-bottom-left-radius: 15% 20%;">
+      </div>
+    </div>
+
+      <!-- Verdade ou Mentira -->
       
+      <div class="col-4">
+        <div class="vouf">
+        <img src="Images/Verdade ou mentira.png" class=" mt-5 col-sm-7 ml-4 mb-5" alt="Responsive image" style="width: 90%; border-top-left-radius: 15% 20%;
+        border-top-right-radius: 15% 20%;
+        border-bottom-right-radius: 15% 20%;
+        border-bottom-left-radius: 15% 20%;">
+      </div>
+    </div>
+
+    </div>
     </div>
   
       <!-- Comentários -->
-
       <section class="container">
         <div class="row">
           <div class="col-sm-12  my-4">
@@ -181,8 +210,24 @@
           </div>
       </div>
       </section>
-    
-    
+
+      <!-- Rodapé -->
+      <section class="greenbols">
+        <div class="mt-5">
+          <img src="Images/bolasVerdes.png" class="img-fluid " alt="Responsive image" style="width: 100%;">
+        </div>
+        
+      </section>
+  
+      <div class="row justify-content-around" style="background-color: #38E169;">
+      <div class="row justify-content-around ml-5">
+        <p class=" mt-3 col-sm-7 ml-5">No Alvid-19 encontras jogos grátis e o teu personagem favorito. Diverte-te e aprende a vencer o Covid-19 nos quizzes e jogos online. Também podes acompanhar e comparar o teu ranking com os teus colegas.
+        </p>
+          <p class="col-3 ml-5">
+            <img src="Images/alvidRodape.png" class="img-fluid " alt="Responsive image" width="110px" style="filter: drop-shadow(7px 6px 5px #23793b)">
+          </p>
+        </div> 
+      </div>
 </div>
 </body>
 </html>
