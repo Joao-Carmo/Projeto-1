@@ -126,3 +126,8 @@ h1{
     width: 120px;
     
 }
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
