@@ -8,6 +8,10 @@ body {
     background-attachment: scroll;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 #menuLinks,p {
     font-family: 'FonteSite';
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
