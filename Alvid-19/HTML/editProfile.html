@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login + register page</title>
+    <title>Edit Profile Page</title>
 
     <!-- css -->
-    <link rel="stylesheet" href="../CSS/signup.css">
+    <link rel="stylesheet" href="../CSS/editProfile.css">
 
     <!-- Icone Alvid -->
     <link rel="shortcut icon" href="../Images/alvid_icone.ico" type="image/x-icon">
@@ -78,58 +78,23 @@
             <div class="col mt-5 text-center">
                 <img src="../Images/Alvid-19.png" width="250px" alt="Alvid" id="Alvid">
             </div>
-            <div class="col mt-4 ml-5">
+            <div class="col mt-5 ml-5">
                 <div class="form">
-                    <div class="switch-buttons text-center">
-                        <div id="button"></div>
-                        <button type="button" class="button-switch_login mx-3" id="loginForm">Login</button>
-                        <button type="button" class="button-switch_register mx-3" id="registerForm">Registar</button>
-
-                    </div>
-                    <form class="form-part" id="login">
+                        <div class="image" style="background-image: url('../Images/perfil.png'); background-size: contain; opacity: 100%;">
+                            <a href="">
+                                <img src="../Images/camera.png.png" id="camera" width="36%">
+                            </a>
+                            
+                        </div>
+                    <form class="form-part">
                         <input type="text" id="userName" placeholder="Nome de utilizador" required>
                         <input type="password" id="userPw" placeholder="Palavra-passe" required>
-                        <button id="btnLogin" type="submit">Fazer login</button>
-                    </form>
-                    <form class="form-part" id="register">
-                        <input type="text" id="userName" placeholder="Nome de utilizador" required>
-                        <input type="email" id="userEmail" placeholder="E-mail" required>
-                        <input type="password" id="userPw" placeholder="Palavra-passe" required>
-                        <input type="date" id="date" required>
-                        <button id="btnRegister" type="submit">Criar conta</button>
-
-
+                        <button id="btnEditProfile" type="submit">Atualizar perfil</button>
                     </form>
                 </div>
-
-
             </div>
-
         </div>
     </div>
-
-    <script>
-        const button = document.querySelector('#button');
-        const switchLogin = document.querySelector('#loginForm');
-        const switchRegister = document.querySelector('#registerForm');
-        const loginForm = document.querySelector('#login');
-        const registerForm = document.querySelector('#register');
-        const form = document.querySelector('.form');
-
-        switchRegister.addEventListener('click', () => {
-            loginForm.style.transform = "translateX(-375px)"
-            registerForm.style.transform = "translateX(-380px)"
-            button.style.transform = "translateX(102px)"
-            form.style.height = "420px"
-        })
-
-        switchLogin.addEventListener('click', () => {
-            loginForm.style.transform = "translateX(0px)"
-            registerForm.style.transform = "translateX(0px)"
-            button.style.transform = "translateX(0px)"
-            form.style.height = "320px"
-        })
-    </script>
 </body>
 
 </html>

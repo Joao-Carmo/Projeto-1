@@ -78,29 +78,32 @@ body {
 
 .form {
     position: absolute;
-    margin-top: 16px;
     border-radius: 62px;
     border: 3px solid white;
     padding: 20px; 
     width: 400px;
-    height: 320px;
-    overflow: hidden;
-    transition: 0.5s;
+    height: 350px;
 }
 form {
-    top: 110px;
+    top: 140px;
+    left: 20px;
     margin-left: 38px;
     width: 300px;
     position: absolute;
-    transition: transform 0.5s;
 }
 
-#login {
-    left: 20px;
+.image {
+    width: 92px;
+    height: 92px;
+    margin: auto;
+    border: hidden;
+    border-radius: 25px;
 }
-#register {
-    top: 88px;
-    left: 400px;
+
+#camera {
+    float: right;
+    position: relative;
+    margin-top: 65px;
 }
 
 #button {
@@ -113,11 +116,10 @@ form {
     right: 214px;
     z-index: -1;
     opacity: 95%;
-    filter: drop-shadow(0px 5px 3px #0a9cb6);
     transition: transform 0.5s;
 }
 
-#userName, #userEmail, #userPw {
+#userName, #userPw {
     border: 0px;
     padding: 10px 48px;
     border-radius: 13px;
@@ -129,37 +131,19 @@ form {
     opacity: 55%;
     font-family: 'FonteSite';
     font-size: 25px;
-
-} #date {
-    border: 0px;
-    padding: 4px 48px;
-    border-radius: 13px;
-    filter: drop-shadow(3px 6px 3px #0a9cb6);
-    font-family: 'FonteSite';
-    font-size: 25px;
-    color: #74b0eb;
-} 
-
+}
 input:focus { 
     outline: none!important;
 
 }
 
-#btnLogin {
+#btnEditProfile {
     background-color: #ffde08;
     margin-top: 10px;
     color: white;
     border-radius: 15px;
     filter: drop-shadow(3px 6px 3px #0a9cb6);
 }
-
-#btnRegister {
-    background-color: #ffde08;
-    margin-top: 25px;
-    color: white;
-    border-radius: 15px;
-    filter: drop-shadow(3px 6px 3px #0a9cb6);
-}  
 
 button {
     outline: none;
@@ -178,4 +162,3 @@ a:link , a:visited {
 /* a:hover , a:active {
     size: 50px;
 } */
-
