@@ -184,3 +184,28 @@ html, body {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
+
+/* Botão de ajuda */
+.help {
+    position: fixed;
+    z-index: 3;
+  }
+  
+  .helpButton {
+    padding: 2em 2em;
+    border: 0;
+    border-radius: 90%;
+    cursor: pointer;
+    z-index: 20;
+    bottom: 2.3rem;
+    right: 2.3rem;
+    outline: none;
+    background: transparent;
+    position: fixed;
+  }
+  
+  .button-image {
+    bottom: 2rem;
+    right: 2rem;
+    position: fixed;
+  }
