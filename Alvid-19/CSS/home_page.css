@@ -198,83 +198,27 @@ html, body {
     transform: scale(1.1);
 }
 
-/* Carrossel COVID */
-    /* Botões: */
-#carouselCovidRight {
-    width: 40%;
-    height: 60%;
-    float: left;
-    filter: drop-shadow(0px 9px 3px #0a9cb6);
-    max-width: 100%;
-    -moz-transition: all 0.1s;
-    -webkit-transition: all 0.1s;
-    transition: all 0.3s;
-} #carouselCovidRight:active {
-    -moz-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    transform: scale(0.6);
-} #carouselCovidLeft {
-    width: 40%;
-    height: 60%;
-    float: right;
-    filter: drop-shadow(0px 9px 3px #0a9cb6);
-    max-width: 100%;
-    -moz-transition: all 0.1s;
-    -webkit-transition: all 0.1s;
-    transition: all 0.3s;
-} #carouselCovidLeft:active {
-    -moz-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    transform: scale(0.6);
-}   /* Jogos */
-#gameCarousel {
-    width: 90%; 
-    border-top-left-radius: 15% 20%;
-    border-top-right-radius: 15% 20%;
-    border-bottom-right-radius: 15% 20%;
-    border-bottom-left-radius: 15% 20%;
-} /* Conteúdo de fundo */
-#carouselCovidContentBackground {
-    width: 55%;
-    height: 50vh;
-    background-color: #38E169; 
-    border-top-left-radius: 10% 20%;
-    border-top-right-radius: 10% 20%;
-    border-bottom-right-radius: 10% 20%;
-    border-bottom-left-radius: 10% 20%;
-} #carouselCovidContentImage { 
-    border-top-left-radius: 5% 10%;
-    border-top-right-radius: 5% 10%;
-    border-bottom-right-radius: 5% 10%;
-    border-bottom-left-radius: 5% 10%;
-} #carouselCovidContentParagraph {
-    text-align: center;
-}
-
-/* Carrossel JOGOS */
-    /* Botões: */
-#carouselGamesRight {
-    width: 30%;
-    height: 50%;
-    float: right;
-    transform: scaleX(-1);
-    filter: drop-shadow(0px 9px 3px #0a9cb6);
-} #carouselGamesLeft {
-    width: 30%;
-    height: 50%;
-    float: left;
-    filter: drop-shadow(0px 9px 3px #0a9cb6);
-}   /* Quizzes */
-#quizCarrossel {
-    width: 90%; 
-    border-top-left-radius: 15% 20%;
-    border-top-right-radius: 15% 20%;
-    border-bottom-right-radius: 15% 20%;
-    border-bottom-left-radius: 15% 20%;
-}
-
-/* Títulos */
-#titleSection {
-    font-size: 65px;
-    text-shadow: 0px 5px 5px #585858;
-}
+/* Botão de ajuda */
+.help {
+    position: fixed;
+    z-index: 3;
+  }
+  
+  .helpButton {
+    padding: 2em 2em;
+    border: 0;
+    border-radius: 90%;
+    cursor: pointer;
+    z-index: 20;
+    bottom: 2.3rem;
+    right: 2.3rem;
+    outline: none;
+    background: transparent;
+    position: fixed;
+  }
+  
+  .button-image {
+    bottom: 2rem;
+    right: 2rem;
+    position: fixed;
+  }
