@@ -75,15 +75,15 @@
         <!-- formulário -->
 
         <div class="row">
-            <div class="col mt-5 text-center">
-                <img src="../Images/Alvid-19.png" width="250px" alt="Alvid" id="Alvid">
+            <div class="col-xl my-5 d-flex justify-content-center">
+                <img src="../Images/Alvid-19.png" width="249px" alt="Alvid" id="Alvid">
             </div>
-            <div class="col mt-4 ml-5">
+            <div class="col-xl my-4 d-flex justify-content-center">
                 <div class="form">
                     <div class="switch-buttons text-center">
                         <div id="button"></div>
-                        <button type="button" class="button-switch_login mx-3" id="loginForm">Login</button>
-                        <button type="button" class="button-switch_register mx-3" id="registerForm">Registar</button>
+                        <button type="button" class="button-switch_login" id="btnLoginSwitch">Login</button>
+                        <button type="button" class="button-switch_register" id="btnRegSwitch">Registar</button>
 
                     </div>
                     <form class="form-part" id="login">
@@ -110,8 +110,8 @@
 
     <script>
         const button = document.querySelector('#button');
-        const switchLogin = document.querySelector('#loginForm');
-        const switchRegister = document.querySelector('#registerForm');
+        const switchLogin = document.querySelector('#btnLoginSwitch');
+        const switchRegister = document.querySelector('#btnRegSwitch');
         const loginForm = document.querySelector('#login');
         const registerForm = document.querySelector('#register');
         const form = document.querySelector('.form');

@@ -12,6 +12,7 @@ html, body {
     max-width: 100%;
     overflow-x: hidden;
 }
+
 #menuLinks,p {
     font-family: 'FonteSite';
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
@@ -80,6 +81,21 @@ html, body {
     width: 71px;
 }
 
+@media (max-width: 700px) {
+    .form {
+        transform: scaleX(0.9) scaleY(0.9);
+    }
+}
+@media (max-width: 400px) {
+    .form {
+        transform: scaleX(0.8) scaleY(0.8);
+    }
+}
+@media (max-width: 300px) {
+    .form {
+        transform: scaleX(0.65) scaleY(0.65);
+    }
+}
 .form {
     position: absolute;
     margin-top: 16px;
@@ -90,6 +106,7 @@ html, body {
     height: 320px;
     overflow: hidden;
     transition: 0.5s;
+    
 }
 form {
     top: 110px;
@@ -106,7 +123,14 @@ form {
     top: 88px;
     left: 400px;
 }
-
+#btnLoginSwitch {
+    position: absolute;
+    left: 28.5%;
+}
+#btnRegSwitch {
+    position: absolute;
+    right: 28.5%;
+}
 #button {
     position: absolute;
     width: 80px;
