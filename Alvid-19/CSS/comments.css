@@ -87,7 +87,7 @@
 
 
 
-#menuLinks,h1,p {
+#menuLinks,h1,p,h5 {
     font-family: 'FonteSite';
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
     font-size: 25px;
@@ -133,7 +133,45 @@ body {
     background-attachment: scroll;
 }
 
+
+
+/* Título comentário */
 #titleSection {
     font-size: 65px;
     text-shadow: 0px 5px 5px #585858;
+}
+
+/* Block scroll horizontal */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.card{
+    /* border-top-left-radius: 10% 20%;
+    border-top-right-radius: 10% 20%;
+    border-bottom-right-radius: 10% 20%;
+    border-bottom-left-radius: 10% 20%; */
+    filter: drop-shadow(4px 4px 3px #147272);
+    
+
+}
+
+.card-title{
+    color: #006FDB;
+    font-size: 160%;
+}
+
+.card-text{
+    font-size: 130%;
+}
+
+#comentar{
+    font-size:250%;
+}
+
+.page-item{
+    font-family: 'FonteSite';
+    font-size: larger;
+    
 }
