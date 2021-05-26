@@ -3,6 +3,12 @@
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
 }
 
+/* body {
+    background-image: linear-gradient(to top,#ffffff,#00C2E3 70%);
+    background-attachment: scroll;
+} */
+
+
 #header {
     width: 100%;
     background-color: transparent;
@@ -86,92 +92,30 @@
     /* ---FIM DO MENU--- */
 
 
-
-#menuLinks,h1,p,h5 {
+#menuLinks,h1,p {
     font-family: 'FonteSite';
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
     font-size: 25px;
     color: white;
 }
-
+    
 a:link , a:visited {
     text-decoration: none;
 }
-
+    
 #container{
-    background-image: linear-gradient(to top,#00C2E3,#00C2E3 40%);
+    background-image: linear-gradient(to top,#ffffff,#00C2E3 40%);
     background-attachment: scroll;
     height: 100%;
 }
 
-/* Botão de ajuda */
-.help {
-    position: fixed;
-    z-index: 3;
-}
-
-.helpButton {
-    padding: 2em 2em;
-    border: 0;
-    border-radius: 90%;
-    cursor: pointer;
-    z-index: 20;
-    bottom: 2.3rem;
-    right: 2.3rem;
-    outline: none;
-    background: transparent;
-    position: fixed;
-  }
-
-.button-image {
-    bottom: 2rem;
-    right: 2rem;
-    position: fixed;
-}
-body {
-    background-image: linear-gradient(to top,#00C2E3,#00C2E3 70%);
-    background-attachment: scroll;
-}
-
-
-
-/* Título comentário */
-#titleSection {
-    font-size: 65px;
-    text-shadow: 0px 5px 5px #585858;
+#title {
+    margin-top: 50px;
+    font-size: 45px;
 }
 
 /* Block scroll horizontal */
 html, body {
     max-width: 100%;
     overflow-x: hidden;
-}
-
-.card{
-    /* border-top-left-radius: 10% 20%;
-    border-top-right-radius: 10% 20%;
-    border-bottom-right-radius: 10% 20%;
-    border-bottom-left-radius: 10% 20%; */
-    filter: drop-shadow(4px 4px 3px #147272);
-    
-
-}
-
-.card-title{
-    color: #006FDB;
-    font-size: 160%;
-}
-
-.card-text{
-    font-size: 130%;
-}
-
-#comentar{
-    font-size:250%;
-}
-
-.page-item{
-    font-family: 'FonteSite';
-    font-size: larger;
-    
 }

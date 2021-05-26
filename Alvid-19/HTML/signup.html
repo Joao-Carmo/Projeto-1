@@ -80,18 +80,18 @@
             </div>
             <div class="col-xl my-4 d-flex justify-content-center">
                 <div class="form">
-                    <div class="switch-buttons text-center">
+                    <div class="switch-buttons text-center"> <!-- botões de mudança de formulário (login/registar) -->
                         <div id="button"></div>
                         <button type="button" class="button-switch_login" id="btnLoginSwitch">Login</button>
                         <button type="button" class="button-switch_register" id="btnRegSwitch">Registar</button>
 
                     </div>
-                    <form class="form-part" id="login">
+                    <form class="form-part" id="login"> <!-- formulário login -->
                         <input type="text" id="userName" placeholder="Nome de utilizador" required>
                         <input type="password" id="userPw" placeholder="Palavra-passe" required>
                         <button id="btnLogin" type="submit">Fazer login</button>
                     </form>
-                    <form class="form-part" id="register">
+                    <form class="form-part" id="register"> <!-- formulário registar -->
                         <input type="text" id="userName" placeholder="Nome de utilizador" required>
                         <input type="email" id="userEmail" placeholder="E-mail" required>
                         <input type="password" id="userPw" placeholder="Palavra-passe" required>
@@ -116,6 +116,7 @@
         const registerForm = document.querySelector('#register');
         const form = document.querySelector('.form');
 
+        //funções que transformam os fomulários quando os botões switch login e register são clicados
         switchRegister.addEventListener('click', () => {
             loginForm.style.transform = "translateX(-375px)"
             registerForm.style.transform = "translateX(-380px)"

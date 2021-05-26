@@ -102,6 +102,7 @@ html, body {
 }
     /* ---FIM DO MENU--- */
 
+
 @media (max-width: 700px) {
     .form {
         transform: scaleX(0.9) scaleY(0.9);
@@ -117,6 +118,8 @@ html, body {
         transform: scaleX(0.65) scaleY(0.65);
     }
 }
+
+/* border branca dos formulários */
 .form {
     position: absolute;
     margin-top: 16px;
@@ -200,6 +203,9 @@ input:focus {
     color: white;
     border-radius: 15px;
     filter: drop-shadow(3px 6px 3px #0a9cb6);
+} #btnLogin:hover {
+    transform: scale(0.95, 0.95);
+    transition: 0.3s;
 }
 
 #btnRegister {
@@ -208,7 +214,10 @@ input:focus {
     color: white;
     border-radius: 15px;
     filter: drop-shadow(3px 6px 3px #0a9cb6);
-}  
+}  #btnRegister:hover {
+    transform: scale(0.95, 0.95);
+    transition: 0.3s;
+}
 
 button {
     outline: none;

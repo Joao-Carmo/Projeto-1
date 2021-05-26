@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+
     <link rel="stylesheet" href="../CSS/comments.css">
 
-    <link rel="shortcut icon" href="Images/alvid_icone.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../Images/alvid_icone.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -63,7 +65,7 @@
         </nav>
       </div>
     </div>
-
+    <div class="container">
     <!-- Comentários -->
     <section>
         <div class="container">
@@ -80,5 +82,58 @@
         <button id="helpButton" class="helpButton"></button>
         <img src="../Images/helpButton.png" class="button-image " alt="Responsive image" width="110px" style="filter: drop-shadow(1px 5px 4px #47584c)">
     </div>
+
+    <!-- Caixa de comentários -->
+    <div class="row">
+        <div class="col-md-3 ml-5 mt-3 mb-5" id="cards" >
+            <div class="card " style="width: 18rem; background-color: #fafafaea; border-radius: 60px;">
+                <div class="card-body">
+
+                    <div class="text-center mb-3">
+                       <img src="../Images/viviana.png" class=" rounded" width="100px" alt="Ícone Perfil" id="" id="iconPerfil" style="filter: drop-shadow(2px 2px 3px #606464);">
+                    </div>
+                    
+                  <p class="card-title text-center" >Viviana Henriques</p>
+                  
+                  <p class="card-text" style="color: #5e5e5e;">Alvid é o meu melhor amigo de todos os tempos!</p>
+                    <hr>
+                  <h6 class="card-subtitle mb-2 text-mutedv text-center" style="color: #6064649c;">26/05/2021</h6>
+                  
+                </div>
+              </div>
+        </div>
+    </div>
+    
+    <!-- Botões numéricos dos comentários -->
+    <div class="row">
+            <nav aria-label="navigation">
+                <ul class="pagination justify-content-center">
+                <li class="page-item disabled"><a class="page-link" href="#">Anterior</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Próxima</a></li>
+                </ul>
+            </nav>  
+    </div> 
+    <!-- Submeter um comentário-->
+    <section>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 my-2 mt-5">
+              <p id="comentar">Também podes adicionar o teu comentário aqui! </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="container">
+        <div class="row">
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Comente aqui" id="floatingTextarea2" style="height: 100px"></textarea>
+                <label for="floatingTextarea2">Comments</label>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
