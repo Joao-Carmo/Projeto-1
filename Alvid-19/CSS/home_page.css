@@ -119,6 +119,13 @@ a:link , a:visited {
     left: 50%;
     margin-left: -200px;
     margin-top: -100px
+}   /* Quizzes */
+#quizCarrossel {
+    width: 90%; 
+    border-top-left-radius: 15% 20%;
+    border-top-right-radius: 15% 20%;
+    border-bottom-right-radius: 15% 20%;
+    border-bottom-left-radius: 15% 20%;
 }
 
 .balao{
@@ -226,13 +233,6 @@ html, body {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(0.6);
-}   /* Jogos */
-#gameCarousel {
-    width: 90%; 
-    border-top-left-radius: 15% 20%;
-    border-top-right-radius: 15% 20%;
-    border-bottom-right-radius: 15% 20%;
-    border-bottom-left-radius: 15% 20%;
 } /* Conteúdo de fundo */
 #carouselCovidContentBackground {
     width: 55%;
@@ -253,6 +253,9 @@ html, body {
 
 /* Carrossel JOGOS */
     /* Botões: */
+#carouselGamesContent {
+    height: 55vh;
+}
 #carouselGamesRight {
     width: 30%;
     height: 50%;
@@ -264,9 +267,26 @@ html, body {
     height: 50%;
     float: left;
     filter: drop-shadow(0px 9px 3px #0a9cb6);
-}   /* Quizzes */
-#quizCarrossel {
-    width: 90%; 
+} #carouselGamesIndicators {
+    background-color: transparent;
+    border: solid;
+    border-width: 2px;
+    border-color: #ffffff;
+    width: 5%;
+    height: 1.4vh;
+    opacity: 50%;
+    border-top-left-radius: 10% 40%;
+    border-top-right-radius: 10% 40%;
+    border-bottom-right-radius: 10% 40%;
+    border-bottom-left-radius: 10% 40%;
+    transition: opacity 0.3s ease-in-out 0.3s;
+} #carouselGamesIndicators:hover {
+    opacity: 100%;
+} #carouselGamesIndicators:active {
+    background-color: #ffffff;
+}   /* Jogos */
+#gameCarousel {
+    width: 100%; 
     border-top-left-radius: 15% 20%;
     border-top-right-radius: 15% 20%;
     border-bottom-right-radius: 15% 20%;
@@ -275,7 +295,7 @@ html, body {
 
 /* Títulos */
 #titleSection {
-    font-size: 65px;
+    font-size: 75px;
     text-shadow: 0px 5px 5px #585858;
 }
 
