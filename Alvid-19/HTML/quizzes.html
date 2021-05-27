@@ -1,30 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Profile Page</title>
 
-    <!-- css -->
-    <link rel="stylesheet" href="../CSS/editProfile.css">
+    <link rel="stylesheet" href="../CSS/quizzes.css">
 
-    <!-- Icone Alvid -->
-    <link rel="shortcut icon" href="../Images/alvid_icone.ico" type="image/x-icon">
+   
 
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
-        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
-        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous">
-    </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+
+    <title>Quizzes</title> 
 </head>
-
 <body>
-    <div class="container-fluid">
+
+    <div id="container">
         <!-- linha do menu -->
         <div id="header">
             <nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="height: 135px;">
@@ -40,7 +33,6 @@
                         <li class="nav-item active mx-4 mt-1"> <!-- Jogos -->
                             <a class="nav-link" href="index.html">
                                 <img src="../Images/jogos.png" width="60px" alt="Ícone Jogos" id="iconJogos" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
-                                <!-- <span class="sr-only">(current)</span> -->
                                 <p class="text-center mt-2" id="#pMenu">Jogos</p>
                             </a>
                         </li>
@@ -63,7 +55,7 @@
                             </a>
                         </li>
                         <li class="nav-item ml-5 mr-5"> <!-- Perfil -->
-                            <a class="nav-link" href="editProfile.html">
+                            <a class="nav-link" href="userAuthentication.html">
                                 <img src="../Images/perfil.png" width="84px" alt="Ícone Perfil" id="iconPerfil" id="iconPerfil" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
                             </a>
                         </li>
@@ -71,33 +63,14 @@
                 </div>
             </nav>
         </div>
-
-        
-        <!-- formulário -->
-
-        <div class="row">
-            <div class="col mt-5 text-center">
-                <img src="../Images/Alvid-19.png" width="250px" alt="Alvid" id="Alvid">
-            </div>
-            <div class="col mt-5 ml-5">
-                <div class="form">
-                        <div class="image" style="background-image: url('../Images/perfil.png'); background-size: contain; opacity: 100%;">
-                            <a href="">
-                                <img src="../Images/camera.png.png" id="camera" width="36%">
-                            </a>
-                            
-                        </div>
-                    <form class="form-part">
-                        <input type="text" id="userName" placeholder="Nome de utilizador" required>
-                        <input type="password" id="userPw" placeholder="Palavra-passe" required>
-                        <button id="btnEditProfile" type="submit">Atualizar perfil</button>
-                    </form>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center my-2">
+                    <p id="title">Quizzes</p>
                 </div>
             </div>
-            
         </div>
+            
+            
 
     </div>
-</body>
-
-</html>

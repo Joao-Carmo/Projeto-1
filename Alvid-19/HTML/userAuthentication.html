@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login + register page</title>
+    <title>Inicia sessão!</title>
 
     <!-- css -->
-    <link rel="stylesheet" href="../CSS/signup.css">
+    <link rel="stylesheet" href="../CSS/userAuthentication.css">
 
     <!-- Icone Alvid -->
     <link rel="shortcut icon" href="../Images/alvid_icone.ico" type="image/x-icon">
@@ -63,7 +63,7 @@
                             </a>
                         </li>
                         <li class="nav-item ml-5 mr-5"> <!-- Perfil -->
-                            <a class="nav-link" href="signup.html">
+                            <a class="nav-link" href="userAuthentication.html">
                                 <img src="../Images/perfil.png" width="84px" alt="Ícone Perfil" id="iconPerfil" id="iconPerfil" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
                             </a>
                         </li>
@@ -80,18 +80,18 @@
             </div>
             <div class="col-xl my-4 d-flex justify-content-center">
                 <div class="form">
-                    <div class="switch-buttons text-center">
+                    <div class="switch-buttons text-center"> <!-- botões de mudança de formulário (login/registar) -->
                         <div id="button"></div>
                         <button type="button" class="button-switch_login" id="btnLoginSwitch">Login</button>
                         <button type="button" class="button-switch_register" id="btnRegSwitch">Registar</button>
 
                     </div>
-                    <form class="form-part" id="login">
+                    <form class="form-part" id="login"> <!-- formulário login -->
                         <input type="text" id="userName" placeholder="Nome de utilizador" required>
                         <input type="password" id="userPw" placeholder="Palavra-passe" required>
                         <button id="btnLogin" type="submit">Fazer login</button>
                     </form>
-                    <form class="form-part" id="register">
+                    <form class="form-part" id="register"> <!-- formulário registar -->
                         <input type="text" id="userName" placeholder="Nome de utilizador" required>
                         <input type="email" id="userEmail" placeholder="E-mail" required>
                         <input type="password" id="userPw" placeholder="Palavra-passe" required>
@@ -116,6 +116,7 @@
         const registerForm = document.querySelector('#register');
         const form = document.querySelector('.form');
 
+        //funções que transformam os fomulários quando os botões switch login e register são clicados
         switchRegister.addEventListener('click', () => {
             loginForm.style.transform = "translateX(-375px)"
             registerForm.style.transform = "translateX(-380px)"
