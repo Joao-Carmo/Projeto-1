@@ -218,3 +218,9 @@ html, body {
 .efeito-1:hover:before{
     width: 100%;
 }
+
+#backgroundCommentCard {
+    width: 18rem;
+    background-color: #fafafaea;
+    border-radius: 60px;
+}
