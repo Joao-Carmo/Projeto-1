@@ -95,20 +95,15 @@
                         <input type="text" id="userName" placeholder="Nome de utilizador" required>
                         <input type="email" id="userEmail" placeholder="E-mail" required>
                         <input type="password" id="userPw" placeholder="Palavra-passe" required>
-                        <input type="date" id="date" required>
+                        <input type="date" id="date" min='1900-01-01' max='2020-12-31' required>
                         <button id="btnRegister" type="submit">Criar conta</button>
-
-
                     </form>
                 </div>
-
-
             </div>
-
         </div>
     </div>
+    <!-- <script> 
 
-    <script>
         const button = document.querySelector('#button');
         const switchLogin = document.querySelector('#btnLoginSwitch');
         const switchRegister = document.querySelector('#btnRegSwitch');
@@ -130,7 +125,9 @@
             button.style.transform = "translateX(0px)"
             form.style.height = "320px"
         })
-    </script>
+    </script> -->
+
+    <script src="../JS/views/userAuthenticationView.js"></script>
 </body>
 
 </html>
