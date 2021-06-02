@@ -19,10 +19,6 @@ export default class userView {
         this.registerDate = document.querySelector('#date');
         this.bindRegisterForm();
 
-        // Gestão dos botões de submissão
-        this.loginButton = document.querySelector('#btnLogin');
-        this.registerButton = document.querySelector('#btnRegister');
-
     }
 
      /**
@@ -32,7 +28,7 @@ export default class userView {
         this.formRegister.addEventListener('submit', event => {
             event.preventDefault();
             try {
-                this.userController.register(this.registerUsername.value, this.registerPassword.value, this.registerEmail, this.registerDate);
+                this.userController.register(this.registerUsername.value, this.registerPassword.value, this.registerEmail.value, this.registerDate.value);
                 this.displayMessage('register', 'User registered with success!', 'success');
                 // Espera 1 seg. antes de fazer refresh à pagina
                 // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
