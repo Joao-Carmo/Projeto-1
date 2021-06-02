@@ -84,10 +84,10 @@ export default class userView {
             button.style.transform = "translateX(0px)"
             form.style.height = "320px"
         */
-            const button = document.querySelector('#button');
-            const loginForm = document.querySelector('#login');
-            const registerForm = document.querySelector('#register');
-            const form = document.querySelector('.form');
+            this.button = document.querySelector('#button');
+            this.loginForm = document.querySelector('#login');
+            this.registerForm = document.querySelector('#register');
+            this.form = document.querySelector('.form');
     
             //funções que transformam os fomulários quando os botões switch login e register são clicados
             this.switchRegister.addEventListener('click', () => {
