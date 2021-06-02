@@ -84,25 +84,27 @@ export default class userView {
             button.style.transform = "translateX(0px)"
             form.style.height = "320px"
         */
-            const button = document.querySelector('#button');
-            const loginForm = document.querySelector('#login');
-            const registerForm = document.querySelector('#register');
-            const form = document.querySelector('.form');
+            // const button = document.querySelector('#button');
+            // const loginForm = document.querySelector('#login');
+            // const registerForm = document.querySelector('#register');
+            // const form = document.querySelector('.form');
+            // const switchLogin = document.querySelector('#btnLoginSwitch');
+            // const switchRegister = document.querySelector('#btnRegSwitch');
     
-            //funções que transformam os fomulários quando os botões switch login e register são clicados
-            this.switchRegister.addEventListener('click', () => {
-                loginForm.style.transform = "translateX(-375px)"
-                registerForm.style.transform = "translateX(-380px)"
-                button.style.transform = "translateX(102px)"
-                form.style.height = "420px"
-            })
+            // //funções que transformam os fomulários quando os botões switch login e register são clicados
+            // switchRegister.addEventListener('click', () => {
+            //     loginForm.style.transform = "translateX(-375px)"
+            //     registerForm.style.transform = "translateX(-380px)"
+            //     button.style.transform = "translateX(102px)"
+            //     form.style.height = "420px"
+            // })
     
-            this.switchLogin.addEventListener('click', () => {
-                loginForm.style.transform = "translateX(0px)"
-                registerForm.style.transform = "translateX(0px)"
-                button.style.transform = "translateX(0px)"
-                form.style.height = "320px"
-            })
+            // switchLogin.addEventListener('click', () => {
+            //     loginForm.style.transform = "translateX(0px)"
+            //     registerForm.style.transform = "translateX(0px)"
+            //     button.style.transform = "translateX(0px)"
+            //     form.style.height = "320px"
+            // })
     }
     
 
