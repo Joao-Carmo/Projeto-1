@@ -10,7 +10,7 @@ export default class userController {
             const id = +(users.length + 1)
             const type = 'user'
             const points = 0
-            this.users.push(new userModel(id,type,username, password,email,date,points));
+            this.users.push(new userModel(id,type,username,password,email,date,points));
             localStorage.setItem('users', JSON.stringify(this.users))
         } else {
             throw Error(`User with username "${username}" already exists!`);

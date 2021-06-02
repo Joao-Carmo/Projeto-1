@@ -2,7 +2,7 @@ import userController from "../controllers/userController.js"
 
 export default class userView {
     constructor() {
-        this.userController = new.userController();
+        this.userController = new userController();
 
 
         //gestão do formulário de login
@@ -29,12 +29,14 @@ export default class userView {
             event.preventDefault();
             try {
                 this.userController.register(this.registerUsername.value, this.registerPassword.value, this.registerEmail.value, this.registerDate.value);
-                this.displayMessage('register', 'User registered with success!', 'success');
+                console.log('sucesso');
+                // this.displayMessage('register', 'User registered with success!', 'success');
                 // Espera 1 seg. antes de fazer refresh à pagina
                 // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
                 setTimeout(() => { location.reload() }, 1000);
             } catch (err) {
-                this.displayMessage('register', err, 'danger');
+                // this.displayMessage('register', err, 'danger');
+                console.log('erro');
             }
         })
     }
@@ -47,12 +49,14 @@ export default class userView {
             event.preventDefault();
             try {
                 this.userController.login(this.loginUsername.value, this.loginPassword.value);
-                this.displayMessage('login', 'User logged in with success!', 'success');
+                console.log('sucesso');
+                // this.displayMessage('login', 'User logged in with success!', 'success');
                 // Espera 1 seg. antes de fazer refresh à pagina
                 // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
-                setTimeout(() => { location.reload() }, 1000);
+                setTimeout(() => { location.href = '../index.html' }, 1000);
             } catch (err) {
-                this.displayMessage('login', err, 'danger');
+                console.log('erro');
+                // this.displayMessage('login', err, 'danger');
             }
         });
 
