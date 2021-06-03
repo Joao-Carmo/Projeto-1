@@ -103,14 +103,43 @@ body {
     border: 3px solid white;
     padding: 20px; 
     width: 400px;
-    height: 350px;
+    height: 380px;
+    overflow: hidden;
 }
-form {
-    top: 140px;
+#profile {
+    position: absolute;
+    top: 65px;
     left: 20px;
     margin-left: 38px;
     width: 300px;
+    text-align: left;
+    line-height: 30px;
+    transition: 0.5s;
+} #edit {
     position: absolute;
+    top: 30px;
+    left: 430px;
+    margin-left: 38px;
+    width: 300px;
+    transition: 0.5s;
+}
+
+#switchEdit {
+    position: absolute;
+    top: -45px;
+    left: 220px;
+    background-color: white;
+    border-radius: 25px;
+    height: 43px;
+    padding-left: 8px;
+} #switchProfile {
+    position: absolute;
+    top: -10px;
+    left: -38px;
+    background-color: white;
+    border-radius: 25px;
+    height: 44px;
+    padding-right: 8px;
 }
 
 .image {
@@ -164,6 +193,16 @@ input:focus {
     color: white;
     border-radius: 15px;
     filter: drop-shadow(3px 6px 3px #0a9cb6);
+}
+
+#btnLogOut {
+    color: white;
+    background-color: #ff2e2e;
+    border-radius: 15px;
+    margin-top: 10px;
+    filter: drop-shadow(3px 6px 3px #0a9cb6);
+    height: 44px;
+    width: 157px;
 }
 
 button {
