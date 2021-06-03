@@ -3,17 +3,15 @@
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
 }
 
-body {
-    background-image: linear-gradient(to top,#00C2E3,#00C2E3 70%);
-    background-attachment: scroll;
-}
-
-    /* ---MENU--- */
-#menuLinks,p {
+#header p {
     font-family: 'FonteSite';
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
     font-size: 25px;
     color: white;
+}
+
+a:link , a:visited {
+    text-decoration: none;
 }
 
 #header {
@@ -95,21 +93,4 @@ body {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.2);
-}
-    /* ---FIM DO MENU--- */
-
-
-    /* Parte título ranking + parabenizar o utilizador */
-#pRanking {
-    display: flex;
-    position: relative;
-    font-size: 70px;
-}
-
-a:link , a:visited {
-    text-decoration: none;
-}
-
-#btnPersonal, #btnMundial {
-    background-color: #006FDB;
 }
