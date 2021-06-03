@@ -35,4 +35,16 @@ export default class userController {
     isLogged() {
         return sessionStorage.getItem('loggedUser') ? true : false
     }
+
+    isAdmin() {
+        return sessionStorage.getItem('typeUser') === 'admin' ? true : false
+    }
+
+    isUser() {
+        return sessionStorage.getItem('typeUser') === 'user' ? true : false
+    }
+
+    isBlocked() {
+        return sessionStorage.getItem('typeUser') === 'blocked' ? true : false
+    }
 }
