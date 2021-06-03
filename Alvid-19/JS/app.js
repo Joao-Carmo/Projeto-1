@@ -1,27 +1,27 @@
-import FavoritesView from './views/FavoritesView.js'
+// import FavoritesView from '../views/FavoritesView.js'
 import userAuthenticationView from './views/userAuthenticationView.js'
-import editProfileView from './views/editProfileView.js'
-import commentsView from './views/commentsView.js'
+// import editProfileView from '../views/editProfileView.js'
+// import commentsView from '../views/commentsView.js'
 
 class App {
     constructor() {
         // Mapeamento entre os ficheiros HTML e as views que estes vão carregar
         this.routes = {
             '': [
-                FavoritesView
+                // FavoritesView
             ],
             'index': [
-                FavoritesView
+                // FavoritesView
             ],
             'userAuthentication': [
                 userAuthenticationView
-            ],
-            'editProfile': [
-                editProfileView
-            ],
-            'comments': [
-                commentsView
             ]
+            // 'editProfile': [
+            //     editProfileView
+            // ],
+            // 'comments': [
+            //     commentsView
+            // ]
         };
 
         // importa dados dummy para testes
@@ -48,63 +48,74 @@ class App {
     }
 
     #importDataFixtures() {
-        // const bands = [
-        //     {
-        //         id: 1,
-        //         name: 'Muse',
-        //         genre: 'Pop-Rock',
-        //         photo: 'http://www.planckmachine.com/wp-content/uploads/2016/09/hysteria-muse-meaning-song.jpg',
-        //         description: 'The best band ever',
-        //         video: 'https://www.youtube.com/watch?v=AR6A3dap6MI'
-        //     },
-        //     {
-        //         id: 2,
-        //         name: 'RadioHead',
-        //         genre: 'Pop-Rock',
-        //         photo: 'https://ep01.epimg.net/elpais/imagenes/2017/05/17/icon/1495017818_647155_1495125183_noticia_normal.jpg',
-        //         description: 'The best band ever',
-        //         video: 'https://www.youtube.com/watch?v=fHiGbolFFGw'
-        //     },
-        //     {
-        //         id: 3,
-        //         name: 'James',
-        //         genre: 'Pop-Rock',
-        //         photo: 'http://ksassets.timeincuk.net/wp/uploads/sites/55/2013/01/2012JamesBandPress181212-2.jpg',
-        //         description: 'The best band ever',
-        //         video: 'https://www.youtube.com/watch?v=BlucfrfxAUc'
-        //     },
-        //     {
-        //         id: 4,
-        //         name: 'Metallica',
-        //         genre: 'Metal',
-        //         photo: 'https://images.impresa.pt/blitz/2016-08-19-metallica.jpg/original/mw-860',
-        //         description: 'The best band ever',
-        //         video: 'https://www.youtube.com/watch?v=pZTJBViOoik'
-        //     }
-        // ];
+
+        const quizDetails = [
+            {
+                id: 1,
+                name: 'Como ser Herói',
+                image: '../Images/Como ser Herói!.png',
+                description: 'Neste quiz, serão apresentadas situações similares à vida real. Apartir daí, precisarás fazer algumas escolhas de acordo com estas. Quantas mais respostas certas, mais pontos recebes!',
+                questions: [
+                    {
+                        id: 1,
+                        title: 'title',
+                        answers: [
+                            'resposta1','resposta2','resposta3','resposta4'
+                        ],
+                        correctAnswer: 1
+                    }
+                ]
+            },
+            {
+                id: 2,
+                name: 'Jogo da Forca',
+                image: '../Images/Jogo da f rca.png',
+                description: 'O jogo da forca é um jogo em que terás que acertar qual é a palavra proposta. Na tela terás toda a informação que precisas, o número de letras e uma frase que servirá de dica. A cada letra errada, é desenhado uma parte do corpo, se todas as partes do corpo forem desenhadas, perdes! Acerta na palavra e ganha pontos!'
+            },
+            {
+                id: 3,
+                name: 'Verdade ou Mentira',
+                image: '../Images/Verdade ou mentira.png',
+                description: '"Verdade ou Mentira" é um quiz onde vais ter que acertar se uma frase é verdade ou mentira! A frase será disposta no ecrã. A cada resposta certa, receberás pontos!'
+            }
+        ]
 
         const users = [
             {
                 id: 1,
+                type: 'admin',
                 username: 'MariaEduarda',
-                password: '12345'
+                password: '12345',
+                email: 'admin@gmail.com',
+                date: '09/02/2000',
+                points: '1000000'
             },
             {
                 id: 2,
+                type: 'admin',
                 username: 'JoãoCarmo',
-                password: '12345'
+                password: '12345',
+                email: 'admin@gmail.com',
+                date: '14/07/2001',
+                points: '1000000'
             },
             {
                 id: 3,
+                type: 'admin',
                 username: 'Viviana',
-                password: '12345'
+                password: '12345',
+                email: 'admin@gmail.com',
+                date: '27/04/2002',
+                points: '1000000'
             }
-
         ];
 
         // Load the fixtures in case there is no data in the local storage
         if (!localStorage.users) {
             localStorage.setItem('users', JSON.stringify(users));
+        }
+        if (!localStorage.quizDetails) {
+            localStorage.setItem('quizDetails', JSON.stringify(quizDetails));
         }
     }
 }
