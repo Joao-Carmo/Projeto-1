@@ -19,7 +19,10 @@ export default class userController {
 
     login(username, password) {
         if (this.users.some(user => user.username === username && user.password === password)) {
+            const type = this.users.find(user => user.username === username).type
+            console.log(type);
             sessionStorage.setItem('loggedUser', username)
+            sessionStorage.setItem('typeUser', type)
         } else {
             throw Error('Invalid login!');
         }
