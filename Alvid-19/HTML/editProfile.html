@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Profile Page</title>
+    <title>o meu cu</title>
 
     <!-- css -->
     <link rel="stylesheet" href="../CSS/editProfile.css">
@@ -81,23 +81,55 @@
             </div>
             <div class="col mt-5 ml-5">
                 <div class="form">
-                        <div class="image" style="background-image: url('../Images/perfil.png'); background-size: contain; opacity: 100%;">
-                            <a href="">
-                                <img src="../Images/camera.png.png" id="camera" width="36%">
-                            </a>
-                            
+                    <div id="profile">
+                        <button type="button" id="switchEdit">Editar  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                          </svg></button>
+                        <div class="row">
+                            <p>Nome de utilizador:</p>
+                            <p>Data de nascimento:</p>
+                            <p>E-mail:</p>
+                            <p>Pontuação total:</p>
+                            <p>Nº de comentários:</p>
+                            <button type="button" id="btnLogOut">Terminar Sessão</button>
                         </div>
-                    <form class="form-part">
-                        <input type="text" id="userName" placeholder="Nome de utilizador" required>
-                        <input type="password" id="userPw" placeholder="Palavra-passe" required>
+                    </div>
+                    <form id="edit">
+                        <button type="button" id="switchProfile"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+                              </svg>  Perfil</button>
+                        
+                        <div class="image my-4" style="background-image: url('../Images/perfil.png'); background-size: contain; opacity: 100%; position: relative; left: -8px;">
+                            <a href="">
+                                <img src="../Images/camera.png.png" id="camera" width="40%">
+                            </a>
+                        </div>
+                        
+                        <input type="text" id="userName" placeholder="Nome de utilizador">
+                        <input type="password" id="userPw" placeholder="Palavra-passe">
                         <button id="btnEditProfile" type="submit">Atualizar perfil</button>
                     </form>
                 </div>
             </div>
-            
         </div>
-
     </div>
+    <script>
+        const switchEdit = document.querySelector('#switchEdit');
+        const switchProfile = document.querySelector('#switchProfile');
+        const formProfile = document.querySelector('#profile');
+        const formEdit = document.querySelector('#edit');
+
+
+        switchEdit.addEventListener('click', () => {
+            formProfile.style.transform = "translateX(-375px)"
+            formEdit.style.transform = "translateX(-410px)"
+        })
+
+        switchProfile.addEventListener('click', () => {
+            formProfile.style.transform = "translateX(0px)"
+            formEdit.style.transform = "translateX(0px)"
+        })
+    </script>
 </body>
 
 </html>
