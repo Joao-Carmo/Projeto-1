@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>o meu cu</title>
+    <title>Alvid 19 | Perfil</title>
 
     <!-- css -->
-    <link rel="stylesheet" href="../CSS/editProfile.css">
+    <link rel="stylesheet" href="../CSS/profile.css">
 
     <!-- Icone Alvid -->
     <link rel="shortcut icon" href="../Images/alvid_icone.ico" type="image/x-icon">
@@ -24,47 +24,60 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div id="container">
         <!-- linha do menu -->
         <div id="header">
             <nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="height: 135px;">
                 <a class="navbar-brand" href="../index.html">
                     <img class="ml-4" src="../Images/logo_alvid.png" width="250px" id="logoAlvid" alt="LOGO Alvid-19">
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#widget-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: 0px;">
-                    <img src="../Images/popup_menu_mobile.png" width="78px" alt="Menu Hamburger Mobile" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#widget-menu"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    style="border: 0px;">
+                    <img src="../Images/popup_menu_mobile.png" width="78px" alt="Menu Hamburger Mobile"
+                        style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
                 </button>
-            
+
                 <div class="collapse navbar-collapse" id="widget-menu">
                     <ul class="navbar-nav mr-auto mt-5" style="height: 135px;">
-                        <li class="nav-item active mx-4 mt-1"> <!-- Jogos -->
+                        <li class="nav-item active mx-4 mt-1">
+                            <!-- Jogos -->
                             <a class="nav-link" href="index.html">
-                                <img src="../Images/jogos.png" width="60px" alt="Ícone Jogos" id="iconJogos" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                                <img src="../Images/jogos.png" width="60px" alt="Ícone Jogos" id="iconJogos"
+                                    style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
                                 <!-- <span class="sr-only">(current)</span> -->
                                 <p class="text-center mt-2" id="#pMenu">Jogos</p>
                             </a>
                         </li>
-                        <li class="nav-item mx-4"> <!-- Quizzes -->
+                        <li class="nav-item mx-4">
+                            <!-- Quizzes -->
                             <a class="nav-link" href="index.html">
-                                <img src="../Images/quizz.png" width="70px" alt="Ícone Quizzes" id="iconQuizzes" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                                <img src="../Images/quizz.png" width="70px" alt="Ícone Quizzes" id="iconQuizzes"
+                                    style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
                                 <p class="text-center mt-2" id="#pMenu">Quizzes</p>
                             </a>
                         </li>
-                        <li class="nav-item mx-4 my-1"> <!-- Ranking -->
+                        <li class="nav-item mx-4 my-1">
+                            <!-- Ranking -->
                             <a class="nav-link" href="HTML/ranking.html">
-                                <img src="../Images/ranking.png" width="45px" alt="Ícone Ranking" id="iconRanking" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                                <img src="../Images/ranking.png" width="45px" alt="Ícone Ranking" id="iconRanking"
+                                    style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
                                 <p class="text-center mt-2" id="#pMenu">Ranking</p>
                             </a>
                         </li>
-                        <li class="nav-item mx-4 my-1"> <!-- Favoritos -->
+                        <li class="nav-item mx-4 my-1">
+                            <!-- Favoritos -->
                             <a class="nav-link" href="index.html">
-                                <img src="../Images/favoritos.png" width="55px" alt="Ícone Favoritos" id="iconFavoritos" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                                <img src="../Images/favoritos.png" width="55px" alt="Ícone Favoritos" id="iconFavoritos"
+                                    style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
                                 <p class="text-center mt-2" id="#pMenu">Favoritos</p>
                             </a>
                         </li>
-                        <li class="nav-item ml-5 mr-5"> <!-- Perfil -->
+                        <li class="nav-item ml-5 mr-5">
+                            <!-- Perfil -->
                             <a class="nav-link" href="editProfile.html">
-                                <img src="../Images/perfil.png" width="84px" alt="Ícone Perfil" id="iconPerfil" id="iconPerfil" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                                <img src="../Images/perfil.png" width="84px" alt="Ícone Perfil" id="iconPerfil"
+                                    id="iconPerfil" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
                             </a>
                         </li>
                     </ul>
@@ -72,19 +85,21 @@
             </nav>
         </div>
 
-        
+
         <!-- formulário -->
 
         <div class="row">
             <div class="col mt-5 text-center">
                 <img src="../Images/Alvid-19.png" width="250px" alt="Alvid" id="Alvid">
             </div>
-            <div class="col mt-5 ml-5">
+            <div class="col-xl mt-5 d-flex justify-content-center">
                 <div class="form">
                     <div id="profile">
-                        <button type="button" id="switchEdit">Editar  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-                          </svg></button>
+                        <button type="button" id="switchEdit">Editar <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                height="20" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                            </svg></button>
                         <div class="row">
                             <p>Nome de utilizador:</p>
                             <p>Data de nascimento:</p>
@@ -95,16 +110,19 @@
                         </div>
                     </div>
                     <form id="edit">
-                        <button type="button" id="switchProfile"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
-                              </svg>  Perfil</button>
-                        
-                        <div class="image my-4" style="background-image: url('../Images/perfil.png'); background-size: contain; opacity: 100%; position: relative; left: -8px;">
+                        <button type="button" id="switchProfile"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                height="20" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+                            </svg> Perfil</button>
+
+                        <div class="image my-4"
+                            style="background-image: url('../Images/perfil.png'); background-size: contain; opacity: 100%; position: relative; left: -8px;">
                             <a href="">
                                 <img src="../Images/camera.png.png" id="camera" width="40%">
                             </a>
                         </div>
-                        
+
                         <input type="text" id="userName" placeholder="Nome de utilizador">
                         <input type="password" id="userPw" placeholder="Palavra-passe">
                         <button id="btnEditProfile" type="submit">Atualizar perfil</button>

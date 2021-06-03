@@ -4,16 +4,18 @@
 }
 
 body {
-    background-image: linear-gradient(to top,#00C2E3,#00C2E3 70%);
+    background-image: linear-gradient(to top, #00C2E3, #00C2E3 70%);
     background-attachment: scroll;
 }
 
-html, body {
+html,
+body {
     max-width: 100%;
     overflow-x: hidden;
 }
 
-#menuLinks,p {
+#menuLinks,
+p {
     font-family: 'FonteSite';
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
     font-size: 25px;
@@ -29,25 +31,29 @@ html, body {
     width: auto;
 }
 
-    /* logo+animação+sombra logo */
+/* logo+animação+sombra logo */
 #logoAlvid {
     max-width: 281px;
     -moz-transition: all 0.3s;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
-} #logoAlvid:hover {
+}
+
+#logoAlvid:hover {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
 
-    /* Ícone+animação+sombra Perfil */
+/* Ícone+animação+sombra Perfil */
 #iconPerfil {
     max-width: 101px;
     -moz-transition: all 0.3s;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
-} #iconPerfil:hover {
+}
+
+#iconPerfil:hover {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
@@ -59,7 +65,9 @@ html, body {
     -moz-transition: all 0.3s;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
-} #iconRanking:hover {
+}
+
+#iconRanking:hover {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.2);
@@ -71,7 +79,9 @@ html, body {
     -moz-transition: all 0.3s;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
-} #iconFavoritos:hover {
+}
+
+#iconFavoritos:hover {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.2);
@@ -83,7 +93,9 @@ html, body {
     -moz-transition: all 0.3s;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
-} #iconQuizzes:hover {
+}
+
+#iconQuizzes:hover {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.2);
@@ -95,12 +107,15 @@ html, body {
     -moz-transition: all 0.3s;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
-} #iconJogos:hover {
+}
+
+#iconJogos:hover {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.2);
 }
-    /* ---FIM DO MENU--- */
+
+/* ---FIM DO MENU--- */
 
 
 @media (max-width: 700px) {
@@ -108,12 +123,14 @@ html, body {
         transform: scaleX(0.9) scaleY(0.9);
     }
 }
+
 @media (max-width: 400px) {
     .form {
         transform: scaleX(0.8) scaleY(0.8);
     }
 }
-@media (max-width: 300px) {
+
+@media (max-width: 320px) {
     .form {
         transform: scaleX(0.65) scaleY(0.65);
     }
@@ -125,13 +142,14 @@ html, body {
     margin-top: 16px;
     border-radius: 62px;
     border: 3px solid white;
-    padding: 20px; 
+    padding: 20px;
     width: 400px;
     height: 320px;
     overflow: hidden;
     transition: 0.5s;
-    
+
 }
+
 form {
     top: 110px;
     margin-left: 38px;
@@ -143,18 +161,22 @@ form {
 #login {
     left: 20px;
 }
+
 #register {
     top: 88px;
     left: 400px;
 }
+
 #btnLoginSwitch {
     position: absolute;
     left: 28.5%;
 }
+
 #btnRegSwitch {
     position: absolute;
     right: 28.5%;
 }
+
 #button {
     position: absolute;
     width: 80px;
@@ -169,20 +191,26 @@ form {
     transition: transform 0.5s;
 }
 
-#userName, #userEmail, #userPw {
+#userName,
+#userEmail,
+#userPw {
     border: 0px;
     padding: 10px 48px;
     border-radius: 13px;
     margin-bottom: 18px;
     filter: drop-shadow(3px 6px 3px #0a9cb6);
-    
-} ::placeholder {
+
+}
+
+::placeholder {
     color: #006FDB;
     opacity: 55%;
     font-family: 'FonteSite';
     font-size: 25px;
 
-} #date {
+}
+
+#date {
     border: 0px;
     padding: 4px 48px;
     border-radius: 13px;
@@ -190,11 +218,10 @@ form {
     font-family: 'FonteSite';
     font-size: 25px;
     color: #74b0eb;
-} 
+}
 
-input:focus { 
-    outline: none!important;
-
+input:focus {
+    outline: none !important;
 }
 
 #btnLogin {
@@ -203,9 +230,6 @@ input:focus {
     color: white;
     border-radius: 15px;
     filter: drop-shadow(3px 6px 3px #0a9cb6);
-} #btnLogin:hover {
-    transform: scale(0.95, 0.95);
-    transition: 0.3s;
 }
 
 #btnRegister {
@@ -214,9 +238,6 @@ input:focus {
     color: white;
     border-radius: 15px;
     filter: drop-shadow(3px 6px 3px #0a9cb6);
-}  #btnRegister:hover {
-    transform: scale(0.95, 0.95);
-    transition: 0.3s;
 }
 
 button {
@@ -224,16 +245,19 @@ button {
     background-color: transparent;
     color: #006FDB;
     border: 0;
-    font-family: 'FonteSite'!important;
-    font-size: 28px!important;
-} button:focus {
-    outline: none!important;
+    font-family: 'FonteSite' !important;
+    font-size: 28px !important;
 }
-a:link , a:visited {
+
+button:focus {
+    outline: none !important;
+}
+
+a:link,
+a:visited {
     text-decoration: none;
 }
 
 /* a:hover , a:active {
     size: 50px;
 } */
-
