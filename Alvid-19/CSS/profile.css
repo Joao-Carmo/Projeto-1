@@ -4,18 +4,16 @@
 }
 
 body {
-    background-image: linear-gradient(to top, #00C2E3, #00C2E3 70%);
+    background-image: linear-gradient(to top,#00C2E3,#00C2E3 70%);
     background-attachment: scroll;
 }
 
-html,
-body {
+html, body {
     max-width: 100%;
     overflow-x: hidden;
 }
 
-#menuLinks,
-p {
+#menuLinks,p {
     font-family: 'FonteSite';
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
     font-size: 25px;
@@ -31,29 +29,25 @@ p {
     width: auto;
 }
 
-/* logo+animação+sombra logo */
+    /* logo+animação+sombra logo */
 #logoAlvid {
     max-width: 281px;
     -moz-transition: all 0.3s;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
-}
-
-#logoAlvid:hover {
+} #logoAlvid:hover {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
 
-/* Ícone+animação+sombra Perfil */
+    /* Ícone+animação+sombra Perfil */
 #iconPerfil {
     max-width: 101px;
     -moz-transition: all 0.3s;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
-}
-
-#iconPerfil:hover {
+} #iconPerfil:hover {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
@@ -65,9 +59,7 @@ p {
     -moz-transition: all 0.3s;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
-}
-
-#iconRanking:hover {
+} #iconRanking:hover {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.2);
@@ -79,9 +71,7 @@ p {
     -moz-transition: all 0.3s;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
-}
-
-#iconFavoritos:hover {
+} #iconFavoritos:hover {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.2);
@@ -93,9 +83,7 @@ p {
     -moz-transition: all 0.3s;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
-}
-
-#iconQuizzes:hover {
+} #iconQuizzes:hover {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.2);
@@ -107,74 +95,72 @@ p {
     -moz-transition: all 0.3s;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
-}
-
-#iconJogos:hover {
+} #iconJogos:hover {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.2);
 }
+    /* ---FIM DO MENU--- */
 
-/* ---FIM DO MENU--- */
-
-
-@media (max-width: 700px) {
-    .form {
-        transform: scaleX(0.9) scaleY(0.9);
-    }
-}
-
-@media (max-width: 400px) {
-    .form {
-        transform: scaleX(0.8) scaleY(0.8);
-    }
-}
-
-@media (max-width: 320px) {
-    .form {
-        transform: scaleX(0.65) scaleY(0.65);
-    }
-}
-
-/* border branca dos formulários */
 .form {
     position: absolute;
-    margin-top: 16px;
     border-radius: 62px;
     border: 3px solid white;
-    padding: 20px;
+    padding: 20px; 
     width: 400px;
-    height: 320px;
+    height: 380px;
     overflow: hidden;
-    transition: 0.5s;
-
 }
-
-form {
-    top: 110px;
+#profile {
+    position: absolute;
+    top: 65px;
+    left: 20px;
     margin-left: 38px;
     width: 300px;
+    text-align: left;
+    line-height: 30px;
+    transition: 0.5s;
+} #edit {
     position: absolute;
-    transition: transform 0.5s;
+    top: 30px;
+    left: 430px;
+    margin-left: 38px;
+    width: 300px;
+    transition: 0.5s;
 }
 
-#login {
-    left: 20px;
-}
-
-#register {
-    top: 88px;
-    left: 400px;
-}
-
-#btnLoginSwitch {
+#switchEdit {
     position: absolute;
-    left: 28.5%;
+    top: -45px;
+    left: 220px;
+    background-color: white;
+    border-radius: 25px;
+    height: 43px;
+    padding-left: 8px;
+    filter: drop-shadow(0px 5px 3px #0a9cb6);
+} #switchProfile {
+    position: absolute;
+    top: -10px;
+    left: -38px;
+    background-color: white;
+    border-radius: 25px;
+    height: 44px;
+    padding-right: 8px;
+    filter: drop-shadow(0px 5px 3px #0a9cb6);
 }
 
-#btnRegSwitch {
-    position: absolute;
-    right: 28.5%;
+.image {
+    width: 92px;
+    height: 92px;
+    margin: auto;
+    border: hidden;
+    border-radius: 25px;
+}
+
+#camera {
+    float: right;
+    position: relative;
+    margin-top: 65px;
 }
 
 #button {
@@ -184,60 +170,48 @@ form {
     border-radius: 15px;
     background-color: white;
     top: 26px;
-    right: 213px;
+    right: 214px;
     z-index: -1;
     opacity: 95%;
-    filter: drop-shadow(0px 5px 3px #0a9cb6);
     transition: transform 0.5s;
 }
 
-#userName,
-#userEmail,
-#userPw {
+#userName, #userPw {
     border: 0px;
     padding: 10px 48px;
     border-radius: 13px;
     margin-bottom: 18px;
     filter: drop-shadow(3px 6px 3px #0a9cb6);
-
-}
-
-::placeholder {
+    
+} ::placeholder {
     color: #006FDB;
     opacity: 55%;
     font-family: 'FonteSite';
     font-size: 25px;
+}
+input:focus { 
+    outline: none!important;
 
 }
 
-#date {
-    border: 0px;
-    padding: 4px 48px;
-    border-radius: 13px;
-    filter: drop-shadow(3px 6px 3px #0a9cb6);
-    font-family: 'FonteSite';
-    font-size: 25px;
-    color: #74b0eb;
-}
-
-input:focus {
-    outline: none !important;
-}
-
-#btnLogin {
+#btnEditProfile {
     background-color: #ffde08;
     margin-top: 10px;
     color: white;
     border-radius: 15px;
     filter: drop-shadow(3px 6px 3px #0a9cb6);
+    transform: scale(0.95, 0.95);
+    transition: 0.3s;
 }
 
-#btnRegister {
-    background-color: #ffde08;
-    margin-top: 25px;
+#btnLogOut {
     color: white;
+    background-color: #ff2e2e;
     border-radius: 15px;
+    margin-top: 10px;
     filter: drop-shadow(3px 6px 3px #0a9cb6);
+    height: 44px;
+    width: 157px;
 }
 
 button {
@@ -245,19 +219,16 @@ button {
     background-color: transparent;
     color: #006FDB;
     border: 0;
-    font-family: 'FonteSite' !important;
-    font-size: 28px !important;
+    font-family: 'FonteSite'!important;
+    font-size: 28px!important;
+} button:focus {
+    outline: none!important;
 }
-
-button:focus {
-    outline: none !important;
-}
-
-a:link,
-a:visited {
+a:link , a:visited {
     text-decoration: none;
 }
 
 /* a:hover , a:active {
     size: 50px;
 } */
+

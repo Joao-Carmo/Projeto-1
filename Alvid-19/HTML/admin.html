@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Profile Page</title>
+    <title>Gestão do site</title>
 
     <!-- css -->
-    <link rel="stylesheet" href="../CSS/editProfile.css">
+    <link rel="stylesheet" href="../CSS/menu.css">
+    <link rel="stylesheet" href="../CSS/admin.css">
 
     <!-- Icone Alvid -->
     <link rel="shortcut icon" href="../Images/alvid_icone.ico" type="image/x-icon">
@@ -22,9 +23,8 @@
         integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous">
     </script>
 </head>
-
 <body>
-    <div class="container-fluid">
+    <div id="container">
         <!-- linha do menu -->
         <div id="header">
             <nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="height: 135px;">
@@ -38,32 +38,31 @@
                 <div class="collapse navbar-collapse" id="widget-menu">
                     <ul class="navbar-nav mr-auto mt-5" style="height: 135px;">
                         <li class="nav-item active mx-4 mt-1"> <!-- Jogos -->
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="../index.html">
                                 <img src="../Images/jogos.png" width="60px" alt="Ícone Jogos" id="iconJogos" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
-                                <!-- <span class="sr-only">(current)</span> -->
                                 <p class="text-center mt-2" id="#pMenu">Jogos</p>
                             </a>
                         </li>
                         <li class="nav-item mx-4"> <!-- Quizzes -->
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="../index.html">
                                 <img src="../Images/quizz.png" width="70px" alt="Ícone Quizzes" id="iconQuizzes" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
                                 <p class="text-center mt-2" id="#pMenu">Quizzes</p>
                             </a>
                         </li>
                         <li class="nav-item mx-4 my-1"> <!-- Ranking -->
-                            <a class="nav-link" href="HTML/ranking.html">
+                            <a class="nav-link" href="ranking.html">
                                 <img src="../Images/ranking.png" width="45px" alt="Ícone Ranking" id="iconRanking" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
                                 <p class="text-center mt-2" id="#pMenu">Ranking</p>
                             </a>
                         </li>
                         <li class="nav-item mx-4 my-1"> <!-- Favoritos -->
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="../index.html">
                                 <img src="../Images/favoritos.png" width="55px" alt="Ícone Favoritos" id="iconFavoritos" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
                                 <p class="text-center mt-2" id="#pMenu">Favoritos</p>
                             </a>
                         </li>
                         <li class="nav-item ml-5 mr-5"> <!-- Perfil -->
-                            <a class="nav-link" href="editProfile.html">
+                            <a class="nav-link" href="userAuthentication.html">
                                 <img src="../Images/perfil.png" width="84px" alt="Ícone Perfil" id="iconPerfil" id="iconPerfil" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
                             </a>
                         </li>
@@ -72,32 +71,67 @@
             </nav>
         </div>
 
-        
-        <!-- formulário -->
-
-        <div class="row">
-            <div class="col mt-5 text-center">
-                <img src="../Images/Alvid-19.png" width="250px" alt="Alvid" id="Alvid">
+        <!-- <div class="my-5 row">
+            <div class="my-5 col-6 d-flex justify-content-center">
+                <a href="" id="btnManagement">
+                    <div class="row" id="divImgBtn">
+                        <img src="../Images/perfil.png">
+                    </div>
+                    <div class="mt-3 row text-center">
+                        <p>Gerenciar utilizadores</p>
+                    </div>
+                </a>
             </div>
-            <div class="col mt-5 ml-5">
-                <div class="form">
-                        <div class="image" style="background-image: url('../Images/perfil.png'); background-size: contain; opacity: 100%;">
-                            <a href="">
-                                <img src="../Images/camera.png.png" id="camera" width="36%">
-                            </a>
-                            
+            <div class="my-5 col-6 d-flex justify-content-center" id="divBtnQuizzes">
+                <a href="" id="btnManagement">
+                    <div class="row" id="divImgBtn">
+                        <img src="../Images/quizz.png" class="img-fluid">
+                    </div>
+                    <div class="row text-center">
+                        <p>Gerenciar quizzes</p>
+                    </div>
+                </a>
+            </div>
+        </div> -->
+
+        <div class="mt-5" id="navTabs">
+            <ul class="nav nav-tabs row">
+                <li class="nav-item col-6 d-flex justify-content-center">
+                    <a class="nav-link active text-center" data-toggle="tab" href="#users">
+                        <img src="../Images/utilizadoresAdm.png">
+                        <p class="text-center">Gerenciar utilizadores</p> 
+                    </a>
+                </li>
+                <li class="nav-item col-6 d-flex justify-content-center">
+                    <a class="nav-link text-center" data-toggle="tab" href="#quizzes">
+                        <img src="../Images/quizzesAdm.png">
+                        <p class="text-center">Gerenciar quizzes</p>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="my-5 mx-5 row tab-content">
+                <div class="tab-pane active container-fluid" id="users">
+                    <div class="row">
+                        <div class="m-5 col-4" id="colLeft">
+                            <form class="form-part">
+                                <input type="text" id="userName" placeholder="Nome de utilizador" required>
+                                <button id="btnSearch" type="submit">Pesquisar</button>
+                            </form>
                         </div>
-                    <form class="form-part">
-                        <input type="text" id="userName" placeholder="Nome de utilizador" required>
-                        <input type="password" id="userPw" placeholder="Palavra-passe" required>
-                        <button id="btnEditProfile" type="submit">Atualizar perfil</button>
-                    </form>
+                        <div class="col-8" id="colRight">
+
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="tab-pane container-fluid" id="quizzes">
+
                 </div>
             </div>
-            
+            <div style="visibility: hidden;">.</div>
         </div>
-
     </div>
 </body>
-
 </html>

@@ -61,6 +61,14 @@ export default class userView {
         });
 
     }
+
+
+
+
+    displayMessage(event, text, type) {
+        const message = `<div class="alert alert-${type}" role="alert">${text}</div>`;
+        event == 'login' ? this.loginMessage.innerHTML = message : this.registerMessage.innerHTML = message
+    }
 }
 
 

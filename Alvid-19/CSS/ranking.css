@@ -109,3 +109,7 @@ body {
 a:link , a:visited {
     text-decoration: none;
 }
+
+#btnPersonal, #btnMundial {
+    background-color: #006FDB;
+}
