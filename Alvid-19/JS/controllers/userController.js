@@ -13,7 +13,7 @@ export default class userController {
             this.users.push(new userModel(id,type,username,password,email,date,points));
             localStorage.setItem('users', JSON.stringify(this.users))
         } else {
-            throw Error(`User with username "${username}" already exists!`);
+            throw Error(`O utilizador "${username}" já existe!`);
         }
     }
 
@@ -24,7 +24,7 @@ export default class userController {
             sessionStorage.setItem('loggedUser', username)
             sessionStorage.setItem('typeUser', type)
         } else {
-            throw Error('Invalid login!');
+            throw Error('Login inválido!');
         }
     }
 
