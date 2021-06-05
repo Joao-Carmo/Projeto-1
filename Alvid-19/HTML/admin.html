@@ -71,29 +71,6 @@
             </nav>
         </div>
 
-        <!-- <div class="my-5 row">
-            <div class="my-5 col-6 d-flex justify-content-center">
-                <a href="" id="btnManagement">
-                    <div class="row" id="divImgBtn">
-                        <img src="../Images/perfil.png">
-                    </div>
-                    <div class="mt-3 row text-center">
-                        <p>Gerenciar utilizadores</p>
-                    </div>
-                </a>
-            </div>
-            <div class="my-5 col-6 d-flex justify-content-center" id="divBtnQuizzes">
-                <a href="" id="btnManagement">
-                    <div class="row" id="divImgBtn">
-                        <img src="../Images/quizz.png" class="img-fluid">
-                    </div>
-                    <div class="row text-center">
-                        <p>Gerenciar quizzes</p>
-                    </div>
-                </a>
-            </div>
-        </div> -->
-
         <div class="mt-5" id="navTabs">
             <ul class="nav nav-tabs row">
                 <li class="nav-item col-6 d-flex justify-content-center">
@@ -112,19 +89,86 @@
 
             <div class="my-5 mx-5 row tab-content">
                 <div class="tab-pane active container-fluid" id="users">
-                    <div class="row">
-                        <div class="m-5 col-4" id="colLeft">
+                    <div class="my-5 row">
+                        <!-- parte da lista de todos os utilizadores -->
+                        <div class="col-lg-6 mb-2 col-md-12" id="colLeft">
                             <form class="form-part">
-                                <input type="text" id="userName" placeholder="Nome de utilizador" required>
-                                <button id="btnSearch" type="submit">Pesquisar</button>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <input type="text" id="txtUsernameSearch" placeholder="Nome de utilizador">
+                                    </div>
+                                    <div class="col-4">
+                                        <select id="userTypeSearch">
+                                            <option value="">Tipo de utilizador</option>
+                                            <option value="admin">Admin</option>
+                                            <option value="blocked">Bloqueado</option>
+                                            <option value="user">Utilizador</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-3">
+                                        <button id="btnSearch" type="submit">Pesquisar</button>
+                                    </div>
+                                    <br>
+                                    <br>
+                                </div>
                             </form>
-                        </div>
-                        <div class="col-8" id="colRight">
 
+                            <div class="mt-5" id="usersList">
+                                <table class="table table-striped">
+                                    <tr>
+                                        <td class="col-9">[Nome utilizador]</td>
+                                        <td class="col-1">
+                                            <a id="btnEdit">
+                                                <img src="../Images/editar.png">
+                                            </a>
+                                        </td>
+                                        <td class="col-1">
+                                            <a id="btnBlock">
+                                                <img src="../Images/bloquear.png">
+                                            </a>
+                                        </td>
+                                        <td class="col-1">
+                                            <a id="btnRemove">
+                                                <img src="../Images/remover.png">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12" id="colRight">
+                            <div class="text-center">
+                                <img src="../Images/perfil.png" width="15%">
+                                <p>[Nome utilizador]</p>
+                            </div>
+                            <div>
+                                <form>
+                                    <div class="row">
+                                        <div class="col-3"></div>
+                                        <div class="col-6">
+                                            <input type="text" id="txtUsernameEdit" placeholder="Alterar o nome do utilizador">
+                                        </div><br><br>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-3"></div>
+                                        <div class="col-6">
+                                            <input type="password" id="txtPasswordEdit" placeholder="Alterar a password do utilizador">
+                                        </div><br><br>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-3"></div>
+                                        <div class="col-2">
+                                            <button id="btnUpdate" type="submit">Atualizar</button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button id="btnAdmin" type="submit">Transformar em admin</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-
                 
                 <div class="tab-pane container-fluid" id="quizzes">
 

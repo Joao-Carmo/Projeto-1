@@ -13,7 +13,7 @@ html, body {
 }
 
 #container {
-    background-image: linear-gradient(to top, var(--blue),var(--blue) 40%);
+    background-image: linear-gradient(to top, #fff,var(--blue) 40%);
     background-attachment: scroll;
     height: 100%;
 }
@@ -21,7 +21,7 @@ html, body {
 p {
     font-family: 'FonteSite';
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
-    font-size: 100%;
+    font-size: 140%;
     color: white;
 }
 
@@ -71,38 +71,60 @@ p {
     top: 0.5em;
 }
 
-#users, #quizzes{
+#users, #quizzes {
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 35px;
     border: 3px solid white;
-    height: 400px;
-} #colLeft {
-    border-right: 1.5px solid white;
 } #colRight {
     border-left: 1.5px solid white;
 }
 
-#userName {
+#txtUsernameSearch, #userTypeSearch, #txtUsernameEdit, #txtPasswordEdit {
     font-family: 'FonteSite';
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
     font-size: 120%;
-    border: none;
-    padding: 10px 48px;
+    width: 100%;
+    height: 100%;
     border-radius: 13px;
     filter: drop-shadow(3px 6px 3px #5bb2c2);
+    border: none;
     outline: none;
-} #userName:focus {
-    outline: none;
-} #btnSearch {
+    color: #757575;
+} #btnSearch, #btnUpdate, #btnAdmin {
     font-family: 'FonteSite';
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
     font-size: 120%;
-    border: none;
-    padding: 10px 48px;
-    background-color: #ffde08;
+    width: 100%;
+    height: 100%;
     color: white;
-    border-radius: 15px;
     filter: drop-shadow(3px 6px 3px #5bb2c2);
-} #btnSearch:focus {
+    border: none;
+} #txtUsernameSearch:focus, #userTypeSearch:focus, #btnSearch:focus, #btnUpdate:focus, #btnAdmin:focus {
     outline: none;
+} #btnSearch {
+    background-color: #ffde08;
+    border-radius: 15px;
+} #btnUpdate {
+    background-color: #ffde08;
+    border-radius: 10px;
+} #btnAdmin {
+    background-color: #ff6b08;
+    border-radius: 10px;
+}
+
+#usersList {
+    height: 13em;
+    border: 2px solid white;
+    border-radius: 5px;
+    overflow-y: scroll;
+} #usersList table {
+    background-color: rgba(255, 255, 255, 0.8);
+} #usersList img {
+    width: 60%;
+}
+
+#btnEdit, #btnBlock, #btnRemove {
+    outline: none;
+    border: none;
+    background-color: transparent;
 }
