@@ -109,7 +109,7 @@
                             <button type="button" id="btnLogOut">Terminar Sessão</button>
                         </div>
                     </div>
-                    <form id="edit">
+                    <form id="edit" class="was-validated">
                         <button type="button" id="switchProfile"><svg xmlns="http://www.w3.org/2000/svg" width="20"
                                 height="20" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
@@ -123,9 +123,15 @@
                             </a>
                         </div>
 
-                        <input type="text" id="userName" placeholder="Nome de utilizador">
-                        <input type="password" id="userPw" placeholder="Palavra-passe">
-                        <button id="btnEditProfile" type="submit">Atualizar perfil</button>
+                        <input type="text" id="txtNewUsername" placeholder="Nome de utilizador">
+                        <input type="password" id="txtNewPassword" placeholder="Palavra-passe">
+                        <div class="row">
+                            <div class="col">
+                                <button id="btnEditProfile" type="submit">Atualizar perfil</button>
+                            </div>
+                            <div class="col text-center" id="editMessage"></div>
+                        </div>
+
                     </form>
                 </div>
             </div>
@@ -148,6 +154,8 @@
             formEdit.style.transform = "translateX(0px)"
         })
     </script>
+
+    <script src="../JS/app.js" type="module"></script>
 </body>
 
 </html>

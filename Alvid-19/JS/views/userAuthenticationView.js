@@ -7,16 +7,18 @@ export default class userView {
 
         //gestão do formulário de login
         this.formLogin = document.querySelector('#login');
-        this.loginUsername = document.querySelector('#userName');
-        this.loginPassword = document.querySelector('#userPw');
+        this.loginUsername = document.querySelector('#txtUsername');
+        this.loginPassword = document.querySelector('#txtPassword');
+        this.loginMessage = document.querySelector('#loginMessage');
         this.bindLoginForm()
 
         //gestão do formulário de registo
         this.formRegister = document.querySelector('#register');
-        this.registerUsername = document.querySelector('#userName');
-        this.registerEmail = document.querySelector('#userEmail')
-        this.registerPassword = document.querySelector('#userPw');
-        this.registerDate = document.querySelector('#date');
+        this.registerUsername = document.querySelector('#txtUsernameRegister');
+        this.registerEmail = document.querySelector('#txtUserEmail')
+        this.registerPassword = document.querySelector('#txtPasswordRegister');
+        this.registerDate = document.querySelector('#dateBirth');
+        this.registerMessage = document.querySelector('#registerMessage');
         this.bindRegisterForm();
 
     }
@@ -30,12 +32,12 @@ export default class userView {
             try {
                 this.userController.register(this.registerUsername.value, this.registerPassword.value, this.registerEmail.value, this.registerDate.value);
                 console.log('sucesso');
-                // this.displayMessage('register', 'User registered with success!', 'success');
+                
                 // Espera 1 seg. antes de fazer refresh à pagina
                 // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
                 setTimeout(() => { location.reload() }, 1000);
             } catch (err) {
-                // this.displayMessage('register', err, 'danger');
+                this.displayMessage('register', err);
                 console.log('erro');
             }
         })
@@ -50,24 +52,22 @@ export default class userView {
             try {
                 this.userController.login(this.loginUsername.value, this.loginPassword.value);
                 console.log('sucesso');
-                // this.displayMessage('login', 'User logged in with success!', 'success');
+                
                 // Espera 1 seg. antes de fazer refresh à pagina
                 // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
                 setTimeout(() => { location.href = '../index.html' }, 1000);
             } catch (err) {
-                console.log('erro');
-                // this.displayMessage('login', err, 'danger');
+                this.displayMessage('login', err);
             }
         });
 
     }
 
-
-
-
-    displayMessage(event, text, type) {
-        const message = `<div class="alert alert-${type}" role="alert">${text}</div>`;
-        event == 'login' ? this.loginMessage.innerHTML = message : this.registerMessage.innerHTML = message
+    /**
+     * Função que define uma mennsagem de erro
+     */
+    displayMessage(event, text) {
+        event == 'login' ? this.loginMessage.innerHTML = text : this.registerMessage.innerHTML = text
     }
 }
 
