@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../CSS/jogoDaMemoria.css">
+
+   <!-- Icone Alvid -->
+   <link rel="shortcut icon" href="../Images/alvid_icone.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+
+    <title>Alvid-19 | Jogo da Memória</title> 
+</head>
+<body>
+
+    <div id="container">
+        <!-- linha do menu -->
+        <div id="header">
+            <nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="height: 135px;">
+                <a class="navbar-brand" href="../index.html">
+                    <img class="ml-4" src="../Images/logo_alvid.png" width="250px" id="logoAlvid" alt="LOGO Alvid-19">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#widget-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: 0px;">
+                    <img src="../Images/popup_menu_mobile.png" width="78px" alt="Menu Hamburger Mobile" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                </button>
+            
+                <div class="collapse navbar-collapse" id="widget-menu">
+                    <ul class="navbar-nav mr-auto mt-5" style="height: 135px;">
+                        <li class="nav-item active mx-4 mt-1"> <!-- Jogos -->
+                            <a class="nav-link" href="index.html">
+                                <img src="../Images/jogos.png" width="60px" alt="Ícone Jogos" id="iconJogos" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                                <p class="text-center mt-2" id="#pMenu">Jogos</p>
+                            </a>
+                        </li>
+                        <li class="nav-item mx-4"> <!-- Quizzes -->
+                            <a class="nav-link" href="index.html">
+                                <img src="../Images/quizz.png" width="70px" alt="Ícone Quizzes" id="iconQuizzes" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                                <p class="text-center mt-2" id="#pMenu">Quizzes</p>
+                            </a>
+                        </li>
+                        <li class="nav-item mx-4 my-1"> <!-- Ranking -->
+                            <a class="nav-link" href="HTML/ranking.html">
+                                <img src="../Images/ranking.png" width="45px" alt="Ícone Ranking" id="iconRanking" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                                <p class="text-center mt-2" id="#pMenu">Ranking</p>
+                            </a>
+                        </li>
+                        <li class="nav-item mx-4 my-1"> <!-- Favoritos -->
+                            <a class="nav-link" href="index.html">
+                                <img src="../Images/favoritos.png" width="55px" alt="Ícone Favoritos" id="iconFavoritos" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                                <p class="text-center mt-2" id="#pMenu">Favoritos</p>
+                            </a>
+                        </li>
+                        <li class="nav-item ml-5 mr-5"> <!-- Perfil -->
+                            <a class="nav-link" href="userAuthentication.html">
+                                <img src="../Images/perfil.png" width="84px" alt="Ícone Perfil" id="iconPerfil" id="iconPerfil" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>     
+
+        <div class="text-center" id="quizz">
+            <!-- COLOCAR AQUI ATRAVÉS DO HTML A LINHA SEGUINTE -->
+            <p id="titleSection">Jogo da Memória</p>
+        </div>
+
+        <!-- Detalhes do quiz -->
+        <div>
+            <div class="mt-5" id="backgroundQuizHead">
+                <img src="../Images/balãoAmarelo.png" class="img-fluid" alt="Responsive image" style="width: 100%; visibility: hidden;">
+            </div>
+        </div>
+
+        <!-- Imagens+descrição quizzes -->
+        <div class="row" style="background-color: #fce500;">   
+
+            <div class="col-1"></div>
+            <div class="col-4">
+                <img src="../Images/Jogo da Memoria.png" id="quizCarousel" width="100%">
+                <div class="my-4 text-center">
+                    <button class="btn btn-primary" id="btnFavorites">
+                        <img src="../Images/favoritos.png" style="width: 10%;">
+                        Adicionar aos favoritos
+                    </button>
+                </div>
+            </div>
+        </div>
+            <div id="memoria" class='my-5'>
+                <div id="imagens">
+                    <div id="cardBoard" class="row row-cols-5">
+                        <!-- <div class="col-3">
+                            <img id="i0"/>
+                        </div>
+                        <div class="col-3">
+                            <img id="i1"/>
+                        </div>
+                        <div class="col-3">
+                            <img id="i2"/>
+                        </div>
+                        <div class="col-3">
+                            <img id="i3"/>
+                        </div>
+                        
+                    
+                    
+                        <div class="col-3">
+                            <img id="i4"/>
+                        </div>
+                        <div class="col-3">
+                            <img id="i5"/>
+                        </div>
+                        <div class="col-3">
+                            <img id="i6"/>
+                        </div>
+                        <div class="col-3">
+                            <img id="i7"/>
+                        </div>
+                        
+                    
+                    
+                        <div class="col-3">
+                            <img id="i8"/>
+                        </div>
+                        <div class="col-3">
+                            <img id="i9"/>
+                        </div>
+                        <div class="col-3">
+                            <img id="i10"/>
+                        </div>
+                        <div class="col-3">
+                            <img id="i11"/>
+                        </div>
+                        
+                    
+                    
+                        <div class="col-3">
+                            <img id="i12"/>
+                        </div>
+                        <div class="col-3">
+                            <img id="i13"/>
+                        </div>
+                        <div class="col-3">
+                            <img id="i14"/>
+                        </div>
+                        <div class="col-3">
+                            <img id="i15"/>
+                        </div>   
+                    
+                        <div class="col-3">
+                            <img id="i16"/>
+                        </div>
+                        <div class="col-3">
+                            <img id="i17"/>
+                        </div>
+                        <div class="col-3">
+                            <img id="i18"/>
+                        </div>
+                        <div class="col-3">
+                            <img id="i19"/>
+                        </div> -->
+                    </div>
+                    <div class="row d-flex justify-content-center mt-4">
+                        <div class="col-sm-2  my-1">
+                            <button class="btn btn-primary mb-1 " type="start" id="btnStart">START</button>
+                        </div>
+                    </div>
+                    
+                </div>
+        </div>
+    </div>
+    <script src="../js/views/jogoDaMemoria.js"></script>
+    <script src="../JS/app.js" type="module"></script>
+</body>
+</html>
