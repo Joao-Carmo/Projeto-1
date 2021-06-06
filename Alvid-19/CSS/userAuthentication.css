@@ -12,6 +12,7 @@ html,
 body {
     max-width: 100%;
     overflow-x: hidden;
+    height: 127%;
 }
 
 #menuLinks,
@@ -148,7 +149,6 @@ p {
     height: 320px;
     overflow: hidden;
     transition: 0.5s;
-
 }
 
 .row {
