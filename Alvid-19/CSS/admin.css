@@ -21,7 +21,7 @@ html, body {
 p {
     font-family: 'FonteSite';
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
-    font-size: 140%;
+    font-size: 130%;
     color: white;
 }
 
@@ -46,7 +46,6 @@ p {
 } #navTabs ul {
     border: none;
 } #navTabs ul li a{
-    width: 35%;
     padding: 0%;
     color: white;
     background-color: var(--yellow);
@@ -82,7 +81,9 @@ p {
 #txtUsernameSearch, #userTypeSearch, #txtUsernameEdit, #txtPasswordEdit {
     font-family: 'FonteSite';
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
-    font-size: 120%;
+    font-size: 105%;
+    margin-top: 5%;
+    margin-bottom: 5%;
     width: 100%;
     height: 100%;
     border-radius: 13px;
@@ -90,6 +91,9 @@ p {
     border: none;
     outline: none;
     color: #757575;
+} #btnSearch {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
 } #btnSearch, #btnUpdate, #btnAdmin {
     font-family: 'FonteSite';
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
