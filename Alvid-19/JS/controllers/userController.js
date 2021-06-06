@@ -10,7 +10,8 @@ export default class userController {
             const id = this.users.length + 1
             const type = 'user'
             const points = 0
-            this.users.push(new userModel(id,type,username,password,email,date,points));
+            const photo = '../Images/avatars/1.png'
+            this.users.push(new userModel(id,type,username,password,email,date,points,photo,favorites));
             localStorage.setItem('users', JSON.stringify(this.users))
         } else {
             throw `O utilizador "${username}" já existe!`
