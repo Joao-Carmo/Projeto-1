@@ -70,17 +70,18 @@
                 </div>
             </nav>
         </div>
-
+        
         <div class="mt-5" id="navTabs">
+            <!-- Botões de gerenciar utilizadores ou quizzes -->
             <ul class="nav nav-tabs row">
                 <li class="nav-item col-6 d-flex justify-content-center">
-                    <a class="nav-link active text-center" data-toggle="tab" href="#users">
+                    <a class="col-lg-4 col-md-6 col-sm-6 col-xs-6 nav-link active text-center" data-toggle="tab" href="#users">
                         <img src="../Images/utilizadoresAdm.png">
                         <p class="text-center">Gerenciar utilizadores</p> 
                     </a>
                 </li>
                 <li class="nav-item col-6 d-flex justify-content-center">
-                    <a class="nav-link text-center" data-toggle="tab" href="#quizzes">
+                    <a class="col-lg-4 col-md-6 col-sm-6 col-xs-6 nav-link text-center" data-toggle="tab" href="#quizzes">
                         <img src="../Images/quizzesAdm.png">
                         <p class="text-center">Gerenciar quizzes</p>
                     </a>
@@ -90,14 +91,14 @@
             <div class="my-5 mx-5 row tab-content">
                 <div class="tab-pane active container-fluid" id="users">
                     <div class="my-5 row">
-                        <!-- parte da lista de todos os utilizadores -->
+                        <!-- form de filtrar utilizadores -->
                         <div class="col-lg-6 mb-2 col-md-12" id="colLeft">
                             <form class="form-part">
                                 <div class="row">
-                                    <div class="col-4">
+                                    <div class="col-lg-4 col-md-4 col-sm-6 mt-1">
                                         <input type="text" id="txtUsernameSearch" placeholder="Nome de utilizador">
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-lg-4 col-md-4 col-sm-6 mt-1">
                                         <select id="userTypeSearch">
                                             <option value="">Tipo de utilizador</option>
                                             <option value="admin">Admin</option>
@@ -105,30 +106,29 @@
                                             <option value="user">Utilizador</option>
                                         </select>
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-lg-4 col-md-4 col-sm-12 mt-3">
                                         <button id="btnSearch" type="submit">Pesquisar</button>
                                     </div>
-                                    <br>
-                                    <br>
                                 </div>
                             </form>
 
+                            <!-- tabela com lista de utilizadores -->
                             <div class="mt-5" id="usersList">
                                 <table class="table table-striped">
                                     <tr>
-                                        <td class="col-9">[Nome utilizador]</td>
-                                        <td class="col-1">
-                                            <a id="btnEdit">
+                                        <td class="col-lg-9 col-md-9 col-sm-6 col-xs-6">[Nome utilizador]</td>
+                                        <td class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                                            <a href="" id="btnEdit">
                                                 <img src="../Images/editar.png">
                                             </a>
                                         </td>
-                                        <td class="col-1">
-                                            <a id="btnBlock">
+                                        <td class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                                            <a href="" id="btnBlock">
                                                 <img src="../Images/bloquear.png">
                                             </a>
                                         </td>
-                                        <td class="col-1">
-                                            <a id="btnRemove">
+                                        <td class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                                            <a href="" id="btnRemove">
                                                 <img src="../Images/remover.png">
                                             </a>
                                         </td>
@@ -136,32 +136,36 @@
                                 </table>
                             </div>
                         </div>
+
+                        <!-- Parte de edição de perfil -->
                         <div class="col-lg-6 col-md-12" id="colRight">
                             <div class="text-center">
-                                <img src="../Images/perfil.png" width="15%">
+                                <img src="../Images/perfil.png" class="col-lg-2 col-3">
                                 <p>[Nome utilizador]</p>
                             </div>
                             <div>
                                 <form>
                                     <div class="row">
-                                        <div class="col-3"></div>
-                                        <div class="col-6">
+                                        <div class="col-lg-3 col-md-3 col-sm-1"></div>
+                                        <div class="col-lg-6 col-md-6 col-sm-10">
                                             <input type="text" id="txtUsernameEdit" placeholder="Alterar o nome do utilizador">
-                                        </div><br><br>
+                                        </div>
+                                        <!-- <br><br> -->
                                     </div>
                                     <div class="row mt-2">
-                                        <div class="col-3"></div>
-                                        <div class="col-6">
+                                        <div class="col-lg-3 col-md-3 col-sm-1"></div>
+                                        <div class="col-lg-6 col-md-6 col-sm-10">
                                             <input type="password" id="txtPasswordEdit" placeholder="Alterar a password do utilizador">
-                                        </div><br><br>
+                                        </div>
+                                        <!-- <br><br> -->
                                     </div>
                                     <div class="row mt-2">
-                                        <div class="col-3"></div>
-                                        <div class="col-2">
+                                        <div class="col-lg-3 col-md-3 col-sm-1"></div>
+                                        <div class="col-lg-3 col-md-3 col-sm-5 mt-3">
                                             <button id="btnUpdate" type="submit">Atualizar</button>
                                         </div>
-                                        <div class="col-4">
-                                            <button id="btnAdmin" type="submit">Transformar em admin</button>
+                                        <div class="col-lg-3 col-md-3 col-sm-5 mt-3">
+                                            <button id="btnAdmin" type="submit">Tornar admin</button>
                                         </div>
                                     </div>
                                 </form>

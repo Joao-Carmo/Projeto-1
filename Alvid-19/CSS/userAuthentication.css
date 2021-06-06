@@ -119,6 +119,7 @@ p {
 
 
 @media (max-width: 700px) {
+
     .form {
         transform: scaleX(0.9) scaleY(0.9);
     }
@@ -148,6 +149,10 @@ p {
     overflow: hidden;
     transition: 0.5s;
 
+}
+
+.row {
+    margin-bottom: 50px;
 }
 
 form {
@@ -191,33 +196,39 @@ form {
     transition: transform 0.5s;
 }
 
-#userName,
-#userEmail,
-#userPw {
+#txtUsername,
+#txtPassword,
+#txtUsernameRegister,
+#txtUserEmail,
+#txtPasswordRegister {
+    font-family: 'FonteSite';
+    font-size: 110%;
     border: 0px;
     padding: 10px 48px;
     border-radius: 13px;
     margin-bottom: 18px;
     filter: drop-shadow(3px 6px 3px #0a9cb6);
-
+    width: 90%;
 }
 
 ::placeholder {
     color: #006FDB;
     opacity: 55%;
     font-family: 'FonteSite';
-    font-size: 25px;
+    font-size: 120%;
 
 }
 
-#date {
+#dateBirth {
     border: 0px;
     padding: 4px 48px;
     border-radius: 13px;
     filter: drop-shadow(3px 6px 3px #0a9cb6);
     font-family: 'FonteSite';
-    font-size: 25px;
+    font-size: 130%;
     color: #74b0eb;
+    height: 45px;
+    width: 90%;
 }
 
 input:focus {
@@ -230,6 +241,20 @@ input:focus {
     color: white;
     border-radius: 15px;
     filter: drop-shadow(3px 6px 3px #0a9cb6);
+}
+
+#loginMessage {
+    font-family: 'FonteSite';
+    font-size: 20px;
+    margin-top: 15px;
+    color: #ff2e2e;
+}
+
+#registerMessage {
+    font-family: 'FonteSite';
+    font-size: 20px;
+    margin-top: 32px;
+    color: #ff2e2e;
 }
 
 #btnRegister {

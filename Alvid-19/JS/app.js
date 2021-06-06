@@ -1,6 +1,6 @@
-// import FavoritesView from '../views/FavoritesView.js'
+import favoritesView from './views/favoritesView.js'
 import userAuthenticationView from './views/userAuthenticationView.js'
-// import editProfileView from '../views/editProfileView.js'
+import profileView from './views/profileView.js'
 // import commentsView from '../views/commentsView.js'
 
 class App {
@@ -8,17 +8,17 @@ class App {
         // Mapeamento entre os ficheiros HTML e as views que estes vão carregar
         this.routes = {
             '': [
-                // FavoritesView
+                favoritesView
             ],
             'index': [
-                // FavoritesView
+                favoritesView
             ],
             'userAuthentication': [
                 userAuthenticationView
+            ],
+            'profile': [
+                profileView
             ]
-            // 'editProfile': [
-            //     editProfileView
-            // ],
             // 'comments': [
             //     commentsView
             // ]

@@ -246,7 +246,6 @@ html, body {
     /* Botões: */
 #carouselCovidRight {
     width: 40%;
-    height: 60%;
     float: left;
     filter: drop-shadow(0px 9px 3px #0a9cb6);
     max-width: 100%;
@@ -259,7 +258,6 @@ html, body {
     transform: scale(0.8);
 } #carouselCovidLeft {
     width: 40%;
-    height: 60%;
     float: right;
     filter: drop-shadow(0px 9px 3px #0a9cb6);
     max-width: 100%;
@@ -274,11 +272,8 @@ html, body {
 #carouselCovidContentBackground {
     width: 55%;
     height: 55vh;
-    background-color: #38E169; 
-    border-top-left-radius: 10% 20%;
-    border-top-right-radius: 10% 20%;
-    border-bottom-right-radius: 10% 20%;
-    border-bottom-left-radius: 10% 20%;
+    background-color: #38E169;
+    border-radius: 55px;
 } #carouselCovidContentImage { 
     border-top-left-radius: 5% 10%;
     border-top-right-radius: 5% 10%;
@@ -286,6 +281,7 @@ html, body {
     border-bottom-left-radius: 5% 10%;
 } #carouselCovidContentParagraph {
     text-align: center;
+    font-size: 130%;
 }
 
 /* Carrossel JOGOS */
@@ -356,6 +352,8 @@ html, body {
     -moz-transition: all 0.1s;
     -webkit-transition: all 0.1s;
     transition: all 0.3s;
+    width: 7%;
+    filter: drop-shadow(1px 5px 4px #47584c)
 } #imgHelpButton:hover {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
@@ -382,8 +380,10 @@ html, body {
 }
 
 /* Alvid-19 personagem */
-#caracterAlvid {
-    width: 20%;
+#divAlvid {
+    height: 50vh;
+} #caracterAlvid {
+    height: 100%;
 } #backgroundCloud1 {
     background-image: url('../Images/nuvem01.png');
     background-size: contain;
@@ -415,4 +415,83 @@ html, body {
   to {
     background-position: -50% 0;
   }
+}
+
+
+/* Responsividade conforme ecrãs e seus tamanhos */
+/* XS */
+@media screen and (max-width: 540px) {
+    #carouselCovidContentParagraph {
+        font-size: 100%;
+    } #carouselCovidContentBackground {
+        height: 35vh;
+    } #carouselGames, #carouselGamesContent {
+        height: 17vh;
+    } #titleSection {
+        font-size: 50px;
+    }
+
+    #divAlvid {
+        height: 40vh;
+    }
+
+    /* NUVENS animadas do divAlvid */
+    #backgroundCloud1 {
+        background-image: url('../Images/nuvem01.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        animation: animatedBackground 25s linear infinite alternate;
+    } #backgroundCloud2 {
+        background-image: url('../Images/nuvem02.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        animation: animatedBackground2 20s linear infinite alternate;
+    } #backgroundCloud3 {
+        position: relative;
+        left: 24.3px;
+        background-image: url('../Images/nuvem03.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        animation: animatedBackground2 35s linear infinite alternate;
+    } @keyframes animatedBackground {
+      from {
+        background-position: -300px 0;
+      }
+      to {
+        background-position: 370px 0;
+      }
+    } @keyframes animatedBackground2 {
+      from {
+        background-position: 370px 0;
+      }
+      to {
+        background-position: -300px 0;
+      }
+    }
+}
+/* SM */
+@media screen and (min-width: 540px) and (max-width: 780px) {
+    #carouselCovidContentParagraph {
+        font-size: 100%;
+    } #carouselCovidContentBackground {
+        height: 25vh;
+    } #carouselGames, #carouselGamesContent {
+        height: 25vh;
+    } #titleSection {
+        font-size: 60px;
+    }
+
+    #divAlvid {
+        height: 35vh;
+    }
+}
+/* ipad pro */
+@media only screen and (min-width: 1020px) and (max-width: 1030px) and (max-height: 1400px) {
+    #carouselCovidContentBackground {
+        height: 20em;
+    } #carouselGames, #carouselGamesContent {
+        height: 20vh;
+    } #titleSection {
+        font-size: 70px;
+    }
 }

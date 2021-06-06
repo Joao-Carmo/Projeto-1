@@ -54,7 +54,7 @@
                           <p class="text-center mt-2" id="#pMenu">Favoritos</p>
                       </a>
                   </li>
-                  <li class="nav-item ml-5 mr-5"> <!-- Perfil -->
+                  <li class="nav-item ml-5 mr-5" id="profileIcon"> <!-- Perfil -->
                       <a class="nav-link" href="HTML/userAuthentication.html">
                           <img src="Images/perfil.png" width="84px" alt="Ícone Perfil" id="iconPerfil" id="iconPerfil" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
                       </a>
@@ -132,8 +132,10 @@
     <div class="my-5">
       <div class="row" id="backgroundCloud1">
         <div class="row" id="backgroundCloud2">
-          <div class="row d-flex justify-content-center" id="backgroundCloud3">  
-            <img src="Images/Alvid-19.png" alt="Personagem Alvid-19" id="caracterAlvid">
+          <div class="row" id="backgroundCloud3">
+            <div class="d-flex justify-content-center" id="divAlvid">
+              <img src="Images/Alvid-19.png" alt="Personagem Alvid-19" id="caracterAlvid">
+            </div>
           </div>
         </div>
       </div>
@@ -145,10 +147,10 @@
         <div id="carouselCovidContentBackground">
           <div class="carousel-item active">
             <div class="row d-flex justify-content-center mt-4">
-              <div class="col-7">
+              <div class="col-lg-7 col-md-7 col-sm-8 col-8">
                 <img src="Images/mascara.png" id="carouselCovidContentImage" alt="Responsive image" class="img-fluid">
               </div>
-              <div class="mt-4 col-8">
+              <div class="mt-4 col-lg-7 col-md-7 col-sm-8 col-8">
                 <p id="carouselCovidContentParagraph">Saiba como o uso de máscaras faciais são importantes! Apenas um tecido pode salvar vidas!</p>
               </div>
             </div>
@@ -168,8 +170,8 @@
               <div class="col-7">
                 <img src="Images/contactar.png" id="carouselCovidContentImage" alt="Responsive image" class="img-fluid">
               </div>
-              <div class="mt-4 col-8" id="carouselCovidContentParagraph">
-                <p>Ficarmos longe é a maneira mais rápida de voltarmos para perto!</p>
+              <div class="mt-4 col-8">
+                <p id="carouselCovidContentParagraph">Ficarmos longe é a maneira mais rápida de voltarmos para perto!</p>
               </div>
             </div>
           </div>
@@ -178,8 +180,8 @@
               <div class="col-7">
                 <img src="Images/ajudar um amigo.png" id="carouselCovidContentImage" alt="Responsive image" class="img-fluid">
               </div>
-              <div class="mt-4 col-8" id="carouselCovidContentParagraph">
-                <p>A melhor maneira de nos ajudarmos é cumprindo com as regras de segurança!</p>
+              <div class="mt-4 col-8">
+                <p id="carouselCovidContentParagraph">A melhor maneira de nos ajudarmos é cumprindo com as regras de segurança!</p>
               </div>
             </div>
           </div>
@@ -309,11 +311,9 @@
       </section>
 
       <!--Botão de ajuda-->
-      <!-- <div class="help col-1"> -->
         <a id="helpButton" class="helpButton">
-          <img src="Images/helpButton.png" id="imgHelpButton" class="button-image " alt="Responsive image" width="7%" style="filter: drop-shadow(1px 5px 4px #47584c)">
+          <img src="Images/helpButton.png" id="imgHelpButton" class="button-image " alt="Responsive image">
         </a>
-      <!-- </div> -->
 
 
       <div class="row justify-content-around" style="background-color: #38E169;">
