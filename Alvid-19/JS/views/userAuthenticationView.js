@@ -70,6 +70,3 @@ export default class userView {
         event == 'login' ? this.loginMessage.innerHTML = text : this.registerMessage.innerHTML = text
     }
 }
-
-
-        
