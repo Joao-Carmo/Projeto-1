@@ -31,11 +31,11 @@ export default class userView {
             event.preventDefault();
             try {
                 this.userController.register(this.registerUsername.value, this.registerPassword.value, this.registerEmail.value, this.registerDate.value);
-                console.log('sucesso');
                 
                 // Espera 1 seg. antes de fazer refresh à pagina
                 // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
                 setTimeout(() => { location.reload() }, 1000);
+                console.log('sucesso');
             } catch (err) {
                 this.displayMessage('register', err);
                 console.log('erro');

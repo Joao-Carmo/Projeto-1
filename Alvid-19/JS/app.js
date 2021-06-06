@@ -1,6 +1,6 @@
 // import FavoritesView from '../views/FavoritesView.js'
 import userAuthenticationView from './views/userAuthenticationView.js'
-// import editProfileView from '../views/editProfileView.js'
+import profileView from './views/profileView.js'
 // import commentsView from '../views/commentsView.js'
 
 class App {
@@ -15,10 +15,10 @@ class App {
             ],
             'userAuthentication': [
                 userAuthenticationView
+            ],
+            'profile': [
+                profileView
             ]
-            // 'editProfile': [
-            //     editProfileView
-            // ],
             // 'comments': [
             //     commentsView
             // ]
