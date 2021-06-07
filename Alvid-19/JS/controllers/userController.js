@@ -77,4 +77,14 @@ export default class userController {
     isBlocked() {
         return sessionStorage.getItem('typeUser') === 'blocked' ? true : false
     }
+
+    usersList(filterUsername, userType) {
+        let filteredUsers = this.users.filter(
+            user =>
+                (user.username.toLowerCase().includes(filterUsername.toLowerCase()) || filterUsername === '')
+                &&
+                (user.type == userType || userType === '')
+        )
+        return filteredUsers
+    }
 }
