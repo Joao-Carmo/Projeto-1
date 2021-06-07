@@ -132,3 +132,10 @@ p {
     border: none;
     background-color: transparent;
 }
+
+#errorMessage {
+    font-family: 'FonteSite';
+    font-size: 20px;
+    margin-top: 15px;
+    color: #ff2e2e;
+}
