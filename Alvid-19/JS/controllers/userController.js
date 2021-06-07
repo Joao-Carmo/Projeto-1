@@ -78,6 +78,9 @@ export default class userController {
         return sessionStorage.getItem('typeUser') === 'blocked' ? true : false
     }
 
+    /**
+     * Função utilizada apenas por um admin: filtra utilizadores numa tabela. 
+     */
     usersList(filterUsername, userType) {
         let filteredUsers = this.users.filter(
             user =>
@@ -86,5 +89,41 @@ export default class userController {
                 (user.type == userType || userType === '')
         )
         return filteredUsers
+    }
+
+    /**
+     * Função utilizada apenas por um admin: edita um utilizador. 
+     */
+    adminUserEdit(username, newUsername, newPassword) {
+        const id = this.users.find(user => user.username === username).id
+
+        if (newUsername == '' && newPassword == '') {
+            throw `Nada a mudar!`
+
+        } else if (this.users.some(user => user.username === newUsername)) {
+            throw `O utilizador "${newUsername}" já existe!`
+
+        } else if (newUsername == '') {
+            this.users[id-1].password = newPassword
+            localStorage.setItem('users', JSON.stringify(this.users))
+
+        } else if (newPassword == '') {
+            this.users[id-1].username = newUsername
+            localStorage.setItem('users', JSON.stringify(this.users))
+
+        } else {
+            this.users[id-1].username = newUsername
+            this.users[id-1].password = newPassword
+            localStorage.setItem('users', JSON.stringify(this.users))
+        }
+    }
+
+    /**
+     * Função utilizada apenas por um admin: bloqueia um utilizador. 
+     */
+    blockUser(username) {
+        const id = this.users.find(user => user.username === username).id
+        this.users[id-1].type = blocked
+        localStorage.setItem('users', JSON.stringify(this.users))
     }
 }
