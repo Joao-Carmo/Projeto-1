@@ -30,11 +30,12 @@ images.forEach((img,i) =>{
             <a type='button' id='carta'><img class="front-face" data-valor= '${i}' width='100%' src="../Images/jogo da memoria/${img}" style="visibility:hidden"></a>
         </div>
     `
+    
     /* clickCartinha() */
-    /* a.onclick = alert('cu2') */
+    /* a.onclick = alert('ola') */
     const cartas = document.querySelectorAll('#carta')
     for (const carta of cartas) {
-    carta.onclick = alert('cu2')
+    carta.onclick = alert('ola')
 }})
 
 // evento para o botão
@@ -53,7 +54,7 @@ document.querySelector('#btnStart').addEventListener('click', function () {
     const cartas = document.querySelectorAll('#carta')
     for (const carta of cartas) {
     carta.addEventListener('onclick', function (event) {
-        alert('cu')
+        alert('ola')
         event.preventDefault()
 })
 }
