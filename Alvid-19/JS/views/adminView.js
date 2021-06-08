@@ -4,35 +4,39 @@ export default class adminView {
     constructor() {
         this.userController = new userController();
 
-
+        //Gerar lista de utilizadores na tabela
+        this.usersList = document.querySelector('#usersTable')        
+        this.generateList();
 
         //Editar utilizador
         this.btnEdit = document.querySelectorAll('#btnEdit');
-        //this.bindEdit();
+        this.bindEdit();
 
         //Bloquear utilizador
         this.btnBlock = document.querySelectorAll('#btnBlock');
-        //this.bindBlock();
-
-        this.usersList = document.querySelector('#usersTable')
+        this.bindBlock();
 
         this.btnSearch = document.querySelector('#btnSearch');
-
-        this.generateList();
     }
 
     bindBlock() {
-        this.btnBlock.addEventListener('click', event => {
-            event.preventDefault();
-            this.userController.blockUser();
-        })
+        for (const button of this.btnBlock) {
+            button.addEventListener('click', event => {
+                alert('oi')
+                event.preventDefault();
+                this.userController.blockUser();
+            })
+        }
     }
 
     bindEdit() {
-        this.btnEdit.addEventListener('click', event => {
-            event.preventDefault();
-            this.userController.adminUserEdit();
-        })  
+        for (const button of this.btnEdit) {
+            button.addEventListener('click', event => {
+                alert('olá')
+                event.preventDefault();
+                this.userController.adminUserEdit();
+            })
+        }
     }
 
 
@@ -48,7 +52,6 @@ export default class adminView {
     */
 
     generateList() {
-        console.log('olá');
         const users = this.userController.usersArray();
         console.log(users);
         let html = ""
