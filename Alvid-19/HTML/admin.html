@@ -77,13 +77,13 @@
                 <li class="nav-item col-6 d-flex justify-content-center">
                     <a class="col-lg-4 col-md-6 col-sm-6 col-xs-6 nav-link active text-center" data-toggle="tab" href="#users">
                         <img src="../Images/utilizadoresAdm.png">
-                        <p class="text-center">Gerenciar utilizadores</p> 
+                        <p class="text-center">Gerir utilizadores</p> 
                     </a>
                 </li>
                 <li class="nav-item col-6 d-flex justify-content-center">
                     <a class="col-lg-4 col-md-6 col-sm-6 col-xs-6 nav-link text-center" data-toggle="tab" href="#quizzes">
                         <img src="../Images/quizzesAdm.png">
-                        <p class="text-center">Gerenciar quizzes</p>
+                        <p class="text-center">Gerir quizzes</p>
                     </a>
                 </li>
             </ul>
@@ -135,7 +135,7 @@
                         <!-- Parte de edição de perfil -->
                         <div class="col-lg-6 col-md-12" id="colRight">
                             <div class="text-center">
-                                <img src="../Images/perfil.png" class="col-lg-2 col-3">
+                                <img src="../Images/perfil.png" class="col-lg-2 col-2">
                                 <p>[Nome utilizador]</p>
                                 <div class="col-7 text-center" id="errorMessage"></div>
                             </div>
@@ -150,7 +150,13 @@
                                     <div class="row mt-2">
                                         <div class="col-lg-3 col-md-3 col-sm-1"></div>
                                         <div class="col-lg-6 col-md-6 col-sm-10">
-                                            <input type="password" id="txtPasswordEdit" placeholder="Alterar a password do utilizador">
+                                            <input type="password" id="txtPasswordEdit" placeholder="Alterar a palavra-passe do utilizador">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-lg-3 col-md-3 col-sm-1"></div>
+                                        <div class="col-lg-6 col-md-6 col-sm-10">
+                                            <input type="password" id="txtPasswordEditConfirm" placeholder="Confirmar a palavra-passe do utilizador">
                                         </div>
                                     </div>
                                     <div class="row mt-2">
@@ -168,8 +174,89 @@
                     </div>
                 </div>
                 
+                <!-- Parte dos quizzes -->
                 <div class="tab-pane container-fluid" id="quizzes">
+                    <div class="mt-5 row">
+                        <!-- Parte da esquerda // tabela com quizzes e formulário de filtrar -->
+                        <div class="col-lg-6 mb-2 col-md-12" id="colLeft">
+                            <form class="form-part">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-6 mt-1">
+                                        <input type="text" id="txtQuizSearch" placeholder="Nome do quiz">
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-12 mt-3">
+                                        <button id="btnQuizSearch" type="submit">Pesquisar</button>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-12 mt-3">
+                                        <button id="btnCreateNewQuiz" type="submit">Criar um quiz novo</button>
+                                    </div>
+                                </div>
+                            </form>
 
+                            <!-- tabela com lista de utilizadores -->
+                            <div class="mt-5" id="usersList">
+                                <table class="table table-striped" id="usersTable">
+                                    <tr>
+                                        <td class="col-lg-9 col-md-9 col-sm-6 col-xs-6">[Nome quiz]</td>
+                                        <td class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                                            <a type="button" id="btnEdit">
+                                                <img src="../Images/editar.png">
+                                            </a>
+                                        </td>
+                                        <td class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                                            <a type="button" id="btnBlock">
+                                                <img src="../Images/manutencao.png">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                    <!-- Parte da direita // edição ou criação de um novo quiz -->
+                    <div class="col-lg-6 col-md-12" id="colRight">
+                        <div class="ml-5 row">
+                            <div class="col-2 text-right" style="background-image: url('../Images/quizz.png'); background-size: contain; background-repeat: no-repeat;">
+                                <a type="button">
+                                    <img src="../Images/quizz.png" width="100%" id="imgQuizzes">
+                                </a>
+                            </div>
+                            <div class="col-5 text-left">
+                                <input type="text" id="txtQuizSearch" placeholder="Nome do quiz">
+                            </div>
+                        </div>
+                        <div>
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-1"></div>
+                                    <div class="col-lg-6 col-md-6 col-sm-10">
+                                        <input type="text" id="txtUsernameEdit" placeholder="Alterar o nome do utilizador">
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-lg-3 col-md-3 col-sm-1"></div>
+                                    <div class="col-lg-6 col-md-6 col-sm-10">
+                                        <input type="password" id="txtPasswordEdit" placeholder="Alterar a palavra-passe do utilizador">
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-lg-3 col-md-3 col-sm-1"></div>
+                                    <div class="col-lg-6 col-md-6 col-sm-10">
+                                        <input type="password" id="txtPasswordEditConfirm" placeholder="Confirmar a palavra-passe do utilizador">
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-lg-3 col-md-3 col-sm-1"></div>
+                                    <div class="col-lg-3 col-md-3 col-sm-5 mt-3">
+                                        <button id="btnUpdate" type="submit">Atualizar</button>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-5 mt-3">
+                                        <button id="btnAdmin" type="submit">Tornar admin</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div style="visibility: hidden;">.</div>
