@@ -144,3 +144,85 @@ html, body {
     border: solid #ffffff 3px;
     border-radius: 15px;
 }
+
+
+
+.flex-container-2 {
+    display: flex;
+    justify-content: left;
+    font-family: 'FonteSite';
+    src: url("../Fonts/MouseMemoirs-Regular.ttf");
+}
+
+.flex-container-2-2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    padding-bottom: 200px;
+
+}
+
+.flex-container-3 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: -1000px;
+    font-family: 'FonteSite';
+    src: url("../Fonts/MouseMemoirs-Regular.ttf");
+}
+
+
+
+span {
+    display: flex;
+    justify-content: center;
+    border-bottom: 3px solid #DC1F27;
+    width: 40px;
+    margin: 5px;
+    padding-bottom: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.flex-container-3 button {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    width: 35px;
+    padding: 10px 0;
+    background-color: #5452ca;
+    color: #FFFFFF;
+    border: 1px solid #5452ca;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    text-transform: uppercase;
+    position: relative;
+    bottom: 100px;
+}
+
+.flex-container-3 button:hover {
+    background-color: #2a28c2;
+}
+
+.flex-container-3 button.novo-bt {
+    width: auto;
+    padding: 10px;
+}
+
+#certa, #certa:hover {
+    background-color: #08df37;
+    border: 1px solid #08df37;
+    cursor: inherit;
+}
+
+#errada, #errada:hover {
+    background-color: #DC1F27;
+    border: 1px solid #DC1F27;
+    cursor: inherit;
+}
