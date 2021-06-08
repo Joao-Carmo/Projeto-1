@@ -22,9 +22,9 @@ export default class adminView {
     bindBlock() {
         for (const button of this.btnBlock) {
             button.addEventListener('click', event => {
-                alert('oi')
                 event.preventDefault();
-                this.userController.blockUser();
+                const username = button.parentNode.parentNode.cells[0].innerHTML;
+                this.userController.blockUser(username);
             })
         }
     }
@@ -32,9 +32,9 @@ export default class adminView {
     bindEdit() {
         for (const button of this.btnEdit) {
             button.addEventListener('click', event => {
-                alert('olá')
                 event.preventDefault();
-                this.userController.adminUserEdit();
+                const username = button.parentNode.parentNode.cells[0].innerHTML;
+                this.userController.adminUserEdit(username);
             })
         }
     }
