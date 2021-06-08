@@ -145,7 +145,7 @@ html, body {
     border-radius: 15px;
 }
 
-
+/* Começo jogo da forca */
 
 .flex-container-2 {
     display: flex;
@@ -210,18 +210,18 @@ span {
     background-color: #2a28c2;
 }
 
-.flex-container-3 button.novo-bt {
+.flex-container-3 button.new-bt {
     width: auto;
     padding: 10px;
 }
 
-#certa, #certa:hover {
+#correct, #correct:hover {
     background-color: #08df37;
     border: 1px solid #08df37;
     cursor: inherit;
 }
 
-#errada, #errada:hover {
+#wrong, #wrong:hover {
     background-color: #DC1F27;
     border: 1px solid #DC1F27;
     cursor: inherit;
