@@ -1,11 +1,12 @@
-let palavras = ["programador", "algoritmo", "javascript", "html", "css", "web", "frontend", "backend", "fullstack", "desenvolvimento", "aplicativo", "jogo", "site", "software"];
+let palavras = ["covid", "alvid", "aprender", "jogar", "mascara", "vacina", "alcool", "brincar", "quarentena", "distancia", "aplicativo", "quiz", "sabao", "crianca"];
 
 let palavra = palavras[Math.floor(Math.random() * palavras.length)];
 
 let chances = 6;
-let acertos = 0;
+let acertos = 1;
 
 let imagem = 0;
+
 
 let posicao;
 
@@ -28,8 +29,10 @@ for (posicao = 0; posicao < letras.length; posicao++) {
     botao.setAttribute('onclick', 'escolheLetra(\''+letras[posicao]+'\')');
     botao.setAttribute('id', letras[posicao]);
 
-    let div = document.getElementById("letras");
-    div.appendChild(botao);
+    botao.setAttribute('class', 'buttons')
+
+    let section = document.getElementById("letras");
+    section.appendChild(botao);
 }
 
 function escolheLetra(letra) {
@@ -38,25 +41,28 @@ function escolheLetra(letra) {
 
     for (posicao = 0; posicao < palavra.length; posicao++) {
         if (letra === palavra[posicao]) {
+            acertos++;
             let span = document.getElementById(posicao);
             let l = document.createTextNode(letra);
 
             span.appendChild(l);
 
             let botao = document.getElementById(letra);
+            
             botao.setAttribute('id', 'certa');
+            
             botao.removeAttribute('onclick');
 
-            acertos++;
+            
             acertou = true;
         }
     }
 
     if (acertou === false) {
         imagem++;
-        document.getElementById("forca").src = "images/forca-"+imagem+".png";
+        document.getElementById("forca").src = "../Images/jogo_da_forca/forca-"+imagem+".png";
 
-        var botao = document.getElementById(letra);
+        let botao = document.getElementById(letra);
         botao.setAttribute('id', 'errada');
         botao.removeAttribute('onclick');
 
@@ -68,8 +74,16 @@ function escolheLetra(letra) {
         let t1 = document.createTextNode("Você perdeu!");
         mensagem.appendChild(t1);
 
+        let buttons = document.querySelectorAll('.buttons')
+
+        for (const button of buttons) {
+            button.removeAttribute('onclick')
+        }
+
+
         let botao = document.createElement("button");
         let t2 = document.createTextNode("jogar novamente");
+        //acertos=1
         
         botao.appendChild(t2);
         botao.setAttribute('class', 'novo-bt');
@@ -84,6 +98,12 @@ function escolheLetra(letra) {
         let mensagem = document.createElement("p");
         let t1 = document.createTextNode("Você venceu!");
         mensagem.appendChild(t1);
+
+        let buttons = document.querySelectorAll('.buttons')
+
+        for (const button of buttons) {
+            button.removeAttribute('onclick')
+        }
 
         let botao = document.createElement("button");
         let t2 = document.createTextNode("jogar novamente");
