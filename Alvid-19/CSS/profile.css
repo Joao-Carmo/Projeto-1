@@ -123,13 +123,13 @@ p {
     border: 3px solid white;
     padding: 20px;
     width: 400px;
-    height: 380px;
+    height: 445px;
     overflow: hidden;
 }
 
 #profile {
     position: absolute;
-    top: 65px;
+    top: 100px;
     left: 20px;
     margin-left: 38px;
     width: 300px;
@@ -149,7 +149,7 @@ p {
 
 #switchEdit {
     position: absolute;
-    top: -45px;
+    top: -79px;
     left: 220px;
     background-color: white;
     border-radius: 25px;
@@ -197,7 +197,8 @@ p {
 }
 
 #txtNewUsername,
-#txtNewPassword {
+#txtNewPassword,
+#txtConfirmNewPassword {
     border: 0px;
     padding: 10px 48px;
     border-radius: 13px;
@@ -206,7 +207,6 @@ p {
     font-size: 110%;
     filter: drop-shadow(3px 6px 3px #0a9cb6);
     width: 92%;
-
 }
 
 #editMessage {
@@ -235,16 +235,16 @@ input:focus {
     filter: drop-shadow(3px 6px 3px #0a9cb6);
     transform: scale(0.95, 0.95);
     transition: 0.3s;
-    height: 44px;
+    height: 45px;
 }
 
 #btnLogOut {
     color: white;
     background-color: #ff2e2e;
     border-radius: 15px;
-    margin-top: 10px;
+    margin-top: 40px;
     filter: drop-shadow(3px 6px 3px #0a9cb6);
-    height: 44px;
+    height: 45px;
     width: 157px;
 }
 

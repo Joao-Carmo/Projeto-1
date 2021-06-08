@@ -17,6 +17,7 @@ export default class userView {
         this.registerUsername = document.querySelector('#txtUsernameRegister');
         this.registerEmail = document.querySelector('#txtUserEmail')
         this.registerPassword = document.querySelector('#txtPasswordRegister');
+        this.confirmPassword = document.querySelector('#txtConfirmPassword');
         this.registerDate = document.querySelector('#dateBirth');
         this.registerMessage = document.querySelector('#registerMessage');
         this.bindRegisterForm();
@@ -30,7 +31,7 @@ export default class userView {
         this.formRegister.addEventListener('submit', event => {
             event.preventDefault();
             try {
-                this.userController.register(this.registerUsername.value, this.registerPassword.value, this.registerEmail.value, this.registerDate.value);
+                this.userController.register(this.registerUsername.value, this.registerPassword.value, this.confirmPassword.value, this.registerEmail.value, this.registerDate.value);
                 
                 // Espera 1 seg. antes de fazer refresh à pagina
                 // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar

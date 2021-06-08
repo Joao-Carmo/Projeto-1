@@ -5,7 +5,7 @@ export default class adminView {
         this.userController = new userController();
 
         //Gerar lista de utilizadores na tabela
-        this.usersList = document.querySelector('#usersTable')        
+        this.usersList = document.querySelector('#usersTable') 
         this.generateList();
 
         //Editar utilizador

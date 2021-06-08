@@ -7,8 +7,9 @@ export default class profileView {
         this.logoutButton = document.querySelector('#btnLogOut');
         this.bindLogout();
 
-        this.newUsername = document.querySelector('#txtNewUsername')
-        this.newPassword = document.querySelector('#txtNewPassword')
+        this.newUsername = document.querySelector('#txtNewUsername');
+        this.newPassword = document.querySelector('#txtNewPassword');
+        this.confirmNewPassword = document.querySelector('#txtConfirmNewPassword');
         this.editForm = document.querySelector('#edit');
         this.editMessage = document.querySelector('#editMessage');
         this.bindEdit();
@@ -26,7 +27,6 @@ export default class profileView {
                 location.href = '../index.html'
             }, 1000);
         })
-
     }
 
     /**
@@ -36,11 +36,13 @@ export default class profileView {
         this.editForm.addEventListener('submit', event => {
             event.preventDefault();
             try {
-                this.userController.edit(this.newUsername.value, this.newPassword.value);
+                this.userController.edit(this.newUsername.value, this.newPassword.value, this.confirmNewPassword.value);
                 console.log('sucesso');
                 // Espera 1 seg. antes de fazer refresh à pagina
                 // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
-                setTimeout(() => {location.reload()}, 1000);
+                setTimeout(() => {
+                    location.reload()
+                }, 1000);
             } catch (err) {
                 this.displayMessage(err);
             }
