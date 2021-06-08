@@ -1,5 +1,5 @@
 export default class userModel {
-    constructor(id, type, username, password, email, date, points, photo) {
+    constructor(id, type, username, password, email, date, points, photo, favorites) {
         this.id = id
         this.type = type
         this.username = username
@@ -8,5 +8,6 @@ export default class userModel {
         this.date = date
         this.points = points
         this.photo = photo
+        this.favorites = favorites
     }
 }

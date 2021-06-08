@@ -88,7 +88,9 @@ class App {
                 password: '12345',
                 email: 'admin@gmail.com',
                 date: '09/02/2000',
-                points: '1000000'
+                points: '1000000',
+                photo: '../Images/avatars/6.png',
+                favorites: ''
             },
             {
                 id: 2,
@@ -97,7 +99,9 @@ class App {
                 password: '12345',
                 email: 'admin@gmail.com',
                 date: '14/07/2001',
-                points: '1000000'
+                points: '1000000',
+                photo: '../Images/avatars/11.png',
+                favorites: ''
             },
             {
                 id: 3,
@@ -106,7 +110,9 @@ class App {
                 password: '12345',
                 email: 'admin@gmail.com',
                 date: '27/04/2002',
-                points: '1000000'
+                points: '1000000',
+                photo: '../Images/avatars/3.png',
+                favorites: ''
             }
         ];
 
