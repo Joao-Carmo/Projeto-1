@@ -94,7 +94,7 @@ class App {
                 date: '09/02/2000',
                 points: '1000000',
                 photo: '../Images/avatars/6.png',
-                favorites: ''
+                favorites: []
             },
             {
                 id: 2,
@@ -105,7 +105,7 @@ class App {
                 date: '14/07/2001',
                 points: '1000000',
                 photo: '../Images/avatars/11.png',
-                favorites: ''
+                favorites: []
             },
             {
                 id: 3,
@@ -116,7 +116,7 @@ class App {
                 date: '27/04/2002',
                 points: '1000000',
                 photo: '../Images/avatars/3.png',
-                favorites: ''
+                favorites: []
             }
         ];
 

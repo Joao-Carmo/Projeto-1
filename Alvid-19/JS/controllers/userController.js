@@ -6,18 +6,23 @@ export default class userController {
     }
 
     usersArray() {
-        //const users = this.users;
         return this.users
     }
 
-    register(username, password, email, date) {
+    register(username, password, passwordConfirm, email, date) {
         if (!this.users.some(user => user.username === username)) {
-            const id = this.users.length + 1
-            const type = 'user'
-            const points = 0
-            const photo = '../Images/avatars/1.png'
-            this.users.push(new userModel(id,type,username,password,email,date,points,photo,favorites));
-            localStorage.setItem('users', JSON.stringify(this.users))
+            if (password == passwordConfirm) {
+                const id = this.users.length + 1
+                const type = 'user'
+                const points = 0
+                const photo = '../Images/avatars/1.png'
+                const favorites = []
+                this.users.push(new userModel(id,type,username,password,email,date,points,photo,favorites));
+                localStorage.setItem('users', JSON.stringify(this.users))
+            } else {
+                throw `A palavras-passe não coincide!`
+            }
+            
         } else {
             throw `O utilizador "${username}" já existe!`
         }
@@ -35,18 +40,22 @@ export default class userController {
         }
     }
 
-    edit(newUsername, newPassword) {
+    edit(newUsername, newPassword, newPasswordConfirm) {
         const id = sessionStorage.getItem('loggedUserId')
 
-        if (newUsername == '' && newPassword == '') {
+        if (newUsername == '' && newPassword == '' && newPasswordConfirm == '') {
             throw `Nada a mudar!`
 
         } else if (this.users.some(user => user.username === newUsername)) {
             throw `O utilizador "${newUsername}" já existe!`
 
         } else if (newUsername == '') {
-            this.users[id-1].password = newPassword
-            localStorage.setItem('users', JSON.stringify(this.users))
+            if (newPassword == newPasswordConfirm) {
+                this.users[id-1].password = newPassword
+                localStorage.setItem('users', JSON.stringify(this.users))
+            } else {
+                throw `A palavras-passe não coincide!`
+            }
 
         } else if (newPassword == '') {
             this.users[id-1].username = newUsername
@@ -54,10 +63,14 @@ export default class userController {
             sessionStorage.setItem('loggedUser', newUsername)
 
         } else {
-            this.users[id-1].username = newUsername
-            this.users[id-1].password = newPassword
-            localStorage.setItem('users', JSON.stringify(this.users))
-            sessionStorage.setItem('loggedUser', newUsername)
+            if (newPassword == newPasswordConfirm) {
+                this.users[id-1].username = newUsername
+                this.users[id-1].password = newPassword
+                localStorage.setItem('users', JSON.stringify(this.users))
+                sessionStorage.setItem('loggedUser', newUsername)
+            } else {
+                throw `A palavras-passe não coincide!`
+            }
         }
     }
 
