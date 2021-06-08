@@ -5,6 +5,11 @@ export default class userController {
         this.users = localStorage.users ? JSON.parse(localStorage.getItem("users")) : [];
     }
 
+    usersArray() {
+        //const users = this.users;
+        return this.users
+    }
+
     register(username, password, email, date) {
         if (!this.users.some(user => user.username === username)) {
             const id = this.users.length + 1
