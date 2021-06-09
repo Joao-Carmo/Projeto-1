@@ -104,7 +104,7 @@ class App {
                 email: 'admin@gmail.com',
                 date: '14/07/2001',
                 points: '1000000',
-                photo: '../Images/avatars/11.png',
+                photo: '../Images/avatars/5.png',
                 favorites: []
             },
             {

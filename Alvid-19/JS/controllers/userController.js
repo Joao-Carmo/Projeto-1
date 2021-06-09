@@ -141,7 +141,7 @@ export default class userController {
      */
     blockUser(username) {
         const id = this.users.find(user => user.username === username).id
-        this.users[id-1].type = blocked
+        this.users[id-1].type = 'blocked'
         localStorage.setItem('users', JSON.stringify(this.users))
     }
 }
