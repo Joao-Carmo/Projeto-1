@@ -72,7 +72,7 @@ class App {
                     {
                         id: 2,
                         title: 'Alguém está sem máscara perto de ti. O que fazes?',
-                        photo:'../Images/como_ser_heroi/Pessoa sem máscara.png',
+                        photo:'../Images/como_ser_heroi/Pessoa sem máscara.gif',
                         answers: [
                             'Afasta-te na mesma hora.','Aproximas-te, e pedes para a colocar.','Emprestas a tua para ela.','Ligas a polícia.'
                         ],
@@ -90,7 +90,7 @@ class App {
                     {
                         id: 4,
                         title: 'Ao entrar na sala de aula, Onde sentas?',
-                        photo:'../Images/como_ser_heroi/Onde sentas na escola.png',
+                        photo:'../Images/como_ser_heroi/Onde sentas na escola.gif',
                         answers: [
                             '1 - Entre teus dois amigos.','2 - Ao lado de teus colegas.','3 - Um pouco mais afastado de teus colegas.','Nenhuma das anteriores.'
                         ],
