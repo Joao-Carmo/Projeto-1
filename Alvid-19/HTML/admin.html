@@ -93,7 +93,7 @@
                     <div class="my-5 row">
                         <!-- form de filtrar utilizadores -->
                         <div class="col-lg-6 mb-2 col-md-12" id="colLeft">
-                            <form class="form-part">
+                            <form class="form-part" id="searchForm">
                                 <div class="row">
                                     <div class="col-lg-4 col-md-4 col-sm-6 mt-1">
                                         <input type="text" id="txtUsernameSearch" placeholder="Nome de utilizador">
@@ -187,9 +187,6 @@
                                     <div class="col-lg-4 col-md-4 col-sm-12 mt-3">
                                         <button id="btnQuizSearch" type="submit">Pesquisar</button>
                                     </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-12 mt-3">
-                                        <button id="btnCreateNewQuiz" type="submit">Criar um quiz novo</button>
-                                    </div>
                                 </div>
                             </form>
 
@@ -213,49 +210,117 @@
                             </div>
                         </div>
 
-                    <!-- Parte da direita // edição ou criação de um novo quiz -->
-                    <div class="col-lg-6 col-md-12" id="colRight">
-                        <div class="ml-5 row">
-                            <div class="col-2 text-right" style="background-image: url('../Images/quizz.png'); background-size: contain; background-repeat: no-repeat;">
-                                <a type="button">
-                                    <img src="../Images/quizz.png" width="100%" id="imgQuizzes">
-                                </a>
-                            </div>
-                            <div class="col-5 text-left">
-                                <input type="text" id="txtQuizSearch" placeholder="Nome do quiz">
-                            </div>
+                        <!-- Edição de quizzes -->
+                        <div class="mt-5 col-lg-6 col-md-12" id="colRight">
+                            oi
                         </div>
-                        <div>
-                            <form>
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-3 col-sm-1"></div>
-                                    <div class="col-lg-6 col-md-6 col-sm-10">
-                                        <input type="text" id="txtUsernameEdit" placeholder="Alterar o nome do utilizador">
+                    </div>
+
+                    <!-- Criação de um novo quiz -->
+                    <div class="mt-5 col-lg-12 col-md-12" id="createQuiz">
+                        <div class="mt-4 text-center">
+                            <p class="ml-4" id="titleCreateQuiz">Crie um quiz!</p>
+                            
+                            <!-- Form de criar um novo quiz -->
+                            <form class="row d-flex justify-content-center">
+
+                                <!-- Input do nome do quiz: -->
+                                <div class="my-4 col-2">
+                                    <input type="text" id="txtQuizName" placeholder="Nome do quiz" required>
+                                </div>
+
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-2">
+                                        <a type="button">
+                                            <img id="imgQuiz" src="../Images/banner.png" width="100%">
+                                        </a>
+                                    </div>
+
+                                <!-- Input da descrição do quiz: -->
+                                    <div class="col-5">
+                                        <textarea type="text" id="txtQuizDescription" placeholder="Descrição do quiz" required></textarea>
                                     </div>
                                 </div>
-                                <div class="row mt-2">
-                                    <div class="col-lg-3 col-md-3 col-sm-1"></div>
-                                    <div class="col-lg-6 col-md-6 col-sm-10">
-                                        <input type="password" id="txtPasswordEdit" placeholder="Alterar a palavra-passe do utilizador">
-                                    </div>
-                                </div>
-                                <div class="row mt-2">
-                                    <div class="col-lg-3 col-md-3 col-sm-1"></div>
-                                    <div class="col-lg-6 col-md-6 col-sm-10">
-                                        <input type="password" id="txtPasswordEditConfirm" placeholder="Confirmar a palavra-passe do utilizador">
-                                    </div>
-                                </div>
-                                <div class="row mt-2">
-                                    <div class="col-lg-3 col-md-3 col-sm-1"></div>
-                                    <div class="col-lg-3 col-md-3 col-sm-5 mt-3">
-                                        <button id="btnUpdate" type="submit">Atualizar</button>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-5 mt-3">
-                                        <button id="btnAdmin" type="submit">Tornar admin</button>
-                                    </div>
-                                </div>
+
+                                        <!-- Form pergunta com respostas -->
+                                        <div class="my-5">
+                                            <h1>Acrescente agora o conteúdo:</h1>
+                                            <div class="row" id="divQuestions">
+                                                <div class="col-2"></div>
+                                                <div class="col-8">
+                                                    <!-- Pergunta -->
+                                                    <input type="text" id="question1" placeholder="Crie uma pergunta" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="row" id="divAnswers">
+                                                <div class="col-1"></div>
+                                                <div class="col-10">
+                                                    <!-- Respostas à pergunta -->
+                                                    <div class="row">
+                                                        <div class="col-5">
+                                                            <input type="text" id="question1A" placeholder="Resposta (A)" required>
+                                                        </div>
+                                                        <div class="col-2"></div>
+                                                        <div class="col-5">
+                                                            <input type="text" id="question1B" placeholder="Resposta (B)" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5">
+                                                            <input type="text" id="question1C" placeholder="Resposta (C)" required>
+                                                        </div>
+                                                        <div class="col-2"></div>
+                                                        <div class="col-5">
+                                                            <input type="text" id="question1D" placeholder="Resposta (D)" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            
+                                            <h4>Qual destas opções é a opção certa?</h4>
+
+                                            <div class="row d-flex justify-content-center mb-5">
+                                                <div class="mx-2 col-1">
+                                                    <input id="rdA" type="radio" name="rightAnswer" value="A" required>
+                                                    <label for="rdA">A</label>
+                                                </div>
+                                                <div class="mx-2 col-1">
+                                                    <input id="rdB" type="radio" name="rightAnswer" value="B">
+                                                    <label for="rdB">B</label>
+                                                </div>
+                                                <div class="mx-2 col-1">
+                                                    <input id="rdC" type="radio" name="rightAnswer" value="C">
+                                                    <label for="rdC">C</label>
+                                                </div>
+                                                <div class="mx-2 col-1">
+                                                    <input id="rdD" type="radio" name="rightAnswer" value="D">
+                                                    <label for="rdD">D</label>
+                                                </div>
+                                            </div>
+
+                                            
+                                            <!-- Botão de submit do form -->
+                                            <div class="row d-flex justify-content-center">
+                                                <div class="col-4">
+                                                    <button id="btnCreateNewQuiz" type="click">Finalizar</button>
+                                                </div>
+                                                <div class="col-4">
+                                                    <button id="btnAddQuestion" type="submit">Adicionar pergunta</button>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+
+                        
+
+
+                                
                             </form>
+
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>

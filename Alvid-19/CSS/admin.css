@@ -13,7 +13,7 @@ html, body {
 }
 
 #container {
-    background-image: linear-gradient(to top, #fff,var(--blue) 40%);
+    background-image: linear-gradient(to top, #b6f3ff,var(--blue) 40%);
     background-attachment: scroll;
     height: 100%;
 }
@@ -23,6 +23,11 @@ p {
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
     font-size: 130%;
     color: white;
+} h1,h4 {
+    font-family: 'FonteSite';
+    src: url("../Fonts/MouseMemoirs-Regular.ttf");
+    color: white;
+    text-shadow: 0px 3px 5px #585858;
 }
 
 /* #btnManagement {
@@ -73,17 +78,52 @@ p {
 #imgQuizzes {
     position: relative;
     top: 14px;
+} #imgQuizzesCamera {
+    position: relative;
+    /* right: 30%;
+    top: 20px; */
+} #imgQuiz {
+    border-radius: 20px;
 }
 
 #users, #quizzes {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.01);
     border-radius: 35px;
     border: 3px solid white;
 } #colRight {
     border-left: 1.5px solid white;
+} #createQuiz {
+    border-top: 1.5px solid white;
+} #titleCreateQuiz {
+    font-size: 40px;
 }
 
 #txtUsernameSearch, #userTypeSearch, #txtQuizSearch {
+    font-family: 'FonteSite';
+    src: url("../Fonts/MouseMemoirs-Regular.ttf");
+    font-size: 105%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 100%;
+    height: 100%;
+    border-radius: 13px;
+    filter: drop-shadow(3px 6px 3px #5bb2c2);
+    border: none;
+    outline: none;
+    color: #757575;
+} #txtQuizDescription {
+    font-family: 'FonteSite';
+    src: url("../Fonts/MouseMemoirs-Regular.ttf");
+    font-size: 105%;
+    margin-bottom: 5%;
+    width: 100%;
+    height: 100%;
+    border-radius: 13px;
+    filter: drop-shadow(3px 6px 3px #5bb2c2);
+    border: none;
+    outline: none;
+    color: #757575;
+} #txtQuizName {
     font-family: 'FonteSite';
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
     font-size: 105%;
@@ -109,10 +149,10 @@ p {
     border: none;
     outline: none;
     color: #757575;
-} #btnSearch, #btnQuizSearch, #btnCreateNewQuiz {
+} #btnSearch, #btnQuizSearch {
     margin-top: 2.5%;
     margin-bottom: 2.5%;
-} #btnSearch, #btnUpdate, #btnAdmin, #btnQuizSearch, #btnCreateNewQuiz {
+} #btnSearch, #btnUpdate, #btnAdmin, #btnQuizSearch, #btnCreateNewQuiz, #btnAddQuestion {
     font-family: 'FonteSite';
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
     font-size: 120%;
@@ -123,7 +163,7 @@ p {
     border: none;
 } #txtUsernameSearch:focus, #userTypeSearch:focus, #btnSearch:focus, #btnUpdate:focus, #btnAdmin:focus {
     outline: none;
-} #btnSearch, #btnQuizSearch {
+} #btnSearch, #btnQuizSearch, #btnAddQuestion {
     background-color: #ffde08;
     border-radius: 15px;
 } #btnCreateNewQuiz {
@@ -159,4 +199,33 @@ p {
     font-size: 20px;
     margin-top: 15px;
     color: #ff2e2e;
+}
+
+/* Carrossel dos quizzes */
+#divQuestions input {
+    font-family: 'FonteSite';
+    src: url("../Fonts/MouseMemoirs-Regular.ttf");
+    font-size: 105%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 100%;
+    height: 50px;
+    border-radius: 13px;
+    filter: drop-shadow(3px 6px 3px #5bb2c2);
+    border: none;
+    outline: none;
+    color: #757575;
+} #divAnswers input {
+    font-family: 'FonteSite';
+    src: url("../Fonts/MouseMemoirs-Regular.ttf");
+    font-size: 105%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 100%;
+    height: 50px;
+    border-radius: 13px;
+    filter: drop-shadow(3px 6px 3px #5bb2c2);
+    border: none;
+    outline: none;
+    color: #757575;
 }
