@@ -5,13 +5,12 @@ export default class adminView {
         this.userController = new userController();
 
         //Gerar lista de utilizadores na tabela
-        this.usersList = document.querySelector('#usersTable')
+        this.usersList = document.querySelector('#usersTable');
         this.bindUsersList();
 
         //Editar utilizador
         this.btnEdit = document.querySelectorAll('#btnEdit');
         this.adminEditUser = document.querySelector('#adminEditUser');
-        this.bindEdit();
 
         //Bloquear utilizador
         this.btnBlock = document.querySelectorAll('#btnBlock');
@@ -22,6 +21,19 @@ export default class adminView {
         this.usertypeSearch = document.querySelector('#userTypeSearch');
         this.searchForm = document.querySelector('#searchForm');
         this.bindSearch();
+
+        //Alterar o perfil do utilizador (palavra-passe e nome)
+        this.formEditAdmin = document.querySelector('#formEditAdmin');
+        this.newUsername = document.querySelector('#txtUsernameEdit');
+        this.newPassword = document.querySelector('#txtPasswordEdit');
+        this.confirmNewPassword = document.querySelector('#txtPasswordEditConfirm');
+        this.errorMessage = document.querySelector('#errorMessage');
+        this.bindEditButton();
+
+        //Alterar o tipo de utilizador
+        this.btnAdmin = document.querySelector('#btnAdmin');
+        this.changeUserType();
+
     }
 
     bindBlock() {
@@ -34,7 +46,7 @@ export default class adminView {
         }
     }
 
-    bindEdit() {
+    bindEditButton() {
         for (const button of this.btnEdit) {
             button.addEventListener('click', event => {
                 event.preventDefault();
@@ -42,21 +54,43 @@ export default class adminView {
                 const users = this.userController.usersArray();
                 const photo = users.find(users => users.username === username).photo
                 this.adminEditUser.innerHTML = `
-                    <img src="${photo}" class="col-lg-2 col-2">
-                    <p>${username}</p>
-                    <div class="col-7 text-center" id="errorMessage"></div>`
-            }
-        )}
-    }
-    /*bindEdit() {
-        for (const button of this.btnEdit) {
-            button.addEventListener('click', event => {
-                event.preventDefault();
-                const username = button.parentNode.parentNode.cells[0].innerHTML;
-                this.userController.adminUserEdit(username);
+                    <img src="${photo}" class="col-lg-2 col-2" style="border-radius: 50px">
+                    <p>${username}</p>`
+                this.bindEditUser(username);
+                this.changeUserType(users);
             })
         }
-    }*/
+    }
+
+    bindEditUser(username) {
+        this.formEditAdmin.addEventListener('submit', event => {
+            event.preventDefault();
+            try {
+                this.userController.adminUserEdit(username, this.newUsername.value, this.newPassword.value /*, this.confirmNewPassword.value*/ );
+                console.log('sucesso');
+                // Espera 1 seg. antes de fazer refresh à pagina
+                // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
+                setTimeout(() => {
+                    location.reload()
+                }, 1000);
+            } catch (err) {
+                this.displayMessage(err);
+            }
+        })
+    }
+
+    changeUserType(users) {
+        this.btnAdmin.addEventListener('click', () => {
+
+            if (this.users.type == 'admin') {
+                alert(users)
+                this.userController.makeUser(users);
+
+            } else if (users.type == 'user') {
+                this.userController.users.makeAdmin(users);
+            }
+        })
+    }
 
     bindSearch() {
         //const users = this.userController.usersArray()
@@ -91,10 +125,14 @@ export default class adminView {
             </tr>
             `
         }
-        
+
         this.usersList.innerHTML = html
-        
     }
 
-    
+    /**
+     * Função que define uma mensagem de erro
+     */
+    displayMessage(text) {
+        this.errorMessage.innerHTML = text;
+    }
 }

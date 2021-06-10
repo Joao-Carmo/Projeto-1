@@ -144,4 +144,19 @@ export default class userController {
         this.users[id-1].type = 'blocked'
         localStorage.setItem('users', JSON.stringify(this.users))
     }
+
+    makeAdmin(username) {
+        const id = this.users.find(user => user.username === username).id
+        this.users[id-1].type = 'admin'
+        localStorage.setItem('users', JSON.stringify(this.users))
+    }
+
+    makeUser(username) {
+        const id = this.users.find(user => user.username === username).id
+        this.users[id-1].type = 'user'
+        localStorage.setItem('users', JSON.stringify(this.users))
+    }
+
 }
+
+    
