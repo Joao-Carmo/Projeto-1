@@ -31,7 +31,7 @@ export default class adminView {
         this.bindEditButton();
 
         //Alterar o tipo de utilizador
-        this.btnAdmin = document.querySelector('#btnAdmin');
+        this.btnAdmin = document.querySelector('#changeUserType');
         this.changeUserType();
 
     }
@@ -50,14 +50,16 @@ export default class adminView {
         for (const button of this.btnEdit) {
             button.addEventListener('click', event => {
                 event.preventDefault();
+                this.errorMessage.innerHTML = '';
                 const username = button.parentNode.parentNode.cells[0].innerHTML;
                 const users = this.userController.usersArray();
                 const photo = users.find(users => users.username === username).photo
+                const type = this.userController.isUserType(username);
                 this.adminEditUser.innerHTML = `
                     <img src="${photo}" class="col-lg-2 col-2" style="border-radius: 50px">
                     <p>${username}</p>`
                 this.bindEditUser(username);
-                this.changeUserType(users);
+                this.changeUserType(username, type);
             })
         }
     }
@@ -79,15 +81,16 @@ export default class adminView {
         })
     }
 
-    changeUserType(users) {
+    changeUserType(username, type) {
         this.btnAdmin.addEventListener('click', () => {
-
-            if (this.users.type == 'admin') {
-                alert(users)
-                this.userController.makeUser(users);
-
-            } else if (users.type == 'user') {
-                this.userController.users.makeAdmin(users);
+            if (type == 'admin') {
+                this.btnAdmin.innerHTML = `<button id="btnAdmin" type="button">Tornar user</button>`;
+                this.userController.makeUser(username);
+            } else if (type == 'user') {
+                this.btnAdmin.innerHTML = `<button id="btnAdmin" type="button">Tornar admin</button>`;
+                this.userController.makeAdmin(username);
+            } else if (type == 'blocked') {
+                alert('This user is blocked');
             }
         })
     }

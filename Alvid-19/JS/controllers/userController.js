@@ -145,18 +145,33 @@ export default class userController {
         localStorage.setItem('users', JSON.stringify(this.users))
     }
 
+    /**
+     * Função utilizada apenas por um admin: bloqueia um utilizador. 
+     */
     makeAdmin(username) {
         const id = this.users.find(user => user.username === username).id
         this.users[id-1].type = 'admin'
         localStorage.setItem('users', JSON.stringify(this.users))
     }
 
+    /**
+     * Função utilizada apenas por um admin: bloqueia um utilizador. 
+     */
     makeUser(username) {
         const id = this.users.find(user => user.username === username).id
         this.users[id-1].type = 'user'
         localStorage.setItem('users', JSON.stringify(this.users))
     }
 
+    isUserType(username) {
+        if (this.users.find(user => user.username === username).type == 'user') {
+            return 'user'
+        } else if (this.users.find(user => user.username === username).type == 'admin') {
+            return 'admin'
+        } else {
+            return 'blocked'
+        }
+    }
 }
 
     
