@@ -62,9 +62,46 @@ class App {
                 questions: [
                     {
                         id: 1,
-                        title: 'title',
+                        title: 'Há apenas um lugar livre, no autocarro, ao lado de uma senhora. O que fazes?',
+                        photo:'../Images/como_ser_heroi/Onde sentas.png',
                         answers: [
-                            'resposta1','resposta2','resposta3','resposta4'
+                            'Sentas ao lado da senhora.','Ficas em pé.','Pedes para a senhora levantar-se.','Sentas-te no chão.'
+                        ],
+                        correctAnswer: 2
+                    },
+                    {
+                        id: 2,
+                        title: 'Alguém está sem máscara perto de ti. O que fazes?',
+                        photo:'../Images/como_ser_heroi/Pessoa sem máscara.gif',
+                        answers: [
+                            'Afasta-te na mesma hora.','Aproximas-te, e pedes para a colocar.','Emprestas a tua para ela.','Ligas a polícia.'
+                        ],
+                        correctAnswer: 1
+                    },
+                    {
+                        id: 3,
+                        title: 'Ao chegar a casa após um longo dia na rua. O que fazes?',
+                        photo:'../Images/como_ser_heroi/Ao chegar a casa.png',
+                        answers: [
+                            'Vais diretamente para a cama.','Cumprimentas teus familiares.','Vais a cozinha comer.','Vais tomar banho.'
+                        ],
+                        correctAnswer: 4
+                    },
+                    {
+                        id: 4,
+                        title: 'Ao entrar na sala de aula, Onde sentas?',
+                        photo:'../Images/como_ser_heroi/Onde sentas na escola.gif',
+                        answers: [
+                            '1 - Entre teus dois amigos.','2 - Ao lado de teus colegas.','3 - Um pouco mais afastado de teus colegas.','Nenhuma das anteriores.'
+                        ],
+                        correctAnswer: 3
+                    },
+                    {
+                        id: 5,
+                        title: 'Ao sentir sintomas de Covid-19, O que fazes?',
+                        photo:'../Images/como_ser_heroi/sentir sintomas.png',
+                        answers: [
+                            'Ligas para o Serviço Nacional de Saúde.','Procuras respostas na internet.','Ficas deitado(a) até melhorar.','Vais ao hospital mais próximo.'
                         ],
                         correctAnswer: 1
                     }
