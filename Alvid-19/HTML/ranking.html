@@ -18,7 +18,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container-fluid" style="padding: 0px;">
+    <div>
         <div id="header">
             <nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="height: 135px;">
                 <a class="navbar-brand" href="../index.html">
@@ -65,7 +65,7 @@
             </nav>
         </div>
         
-        <div class="mb-5 container-fluid">
+        <div class="mb-5">
             <div class="row ml-5">
                 <div class="ml-4 col-6">
                     <p class="float-right nav px-0" id="pRanking">Ranking</p>
@@ -75,7 +75,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-3 text-right">
+                <div class="col-3 text-right" id="divRankingCongratulator">
                     <img src="../Images/perfil.png" width="100px" alt="Ícone perfil">
                 </div>
                 <div class="col-9 align-self-center">
@@ -98,8 +98,8 @@
                 </li>
             </ul>
 
-            <div class="row tab-content" style="padding: 0px;">
-                <div class="tab-pane active container-fluid" id="personal" style="background-color: #006FDB;">
+            <div class="row tab-content">
+                <div class="tab-pane active" id="personal" style="background-color: #006FDB;">
                     <div class="row">
                         <div class="col-1 p-0"></div>
                         <div class="col-2 mr-5 align-self-end">
@@ -109,7 +109,7 @@
                         <div class="col-8 my-3">
                             <div id="carouselRankingPersonal" class="carousel slide">
                                 <div class="carousel-inner" style="background-image: url('../Images/quadro-ranking.png'); background-position: center; background-size: cover;">
-                                    <img src="../Images/quadro-ranking.png" class="img-fluid" alt="Quadro Ranking" style="visibility: hidden;">
+                                    <img src="../Images/quadro-ranking.png" width="100%" alt="Quadro Ranking" style="visibility: hidden;">
                                     <div class="carousel-item active" >
                                         <!-- COLOCAR GRÁFICO QUE MOSTRE QUANTAS VEZES O UTILIZADOR JÁ JOGOU JOGOS VS QUIZZES MAIS TEMPO GASTO EM CADA -->
                                     </div>
@@ -130,12 +130,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane container-fluid" id="mundial" style="background-color: #006FDB;">
-                    Mundial
-                    <!-- ACRESCENTAR TABELA COM OS DADOS/PONTUAÇÕES DE TODOS OS UTILIZADORES -->
+
+                <!-- Tabela com dados/pontuações de todos os utilizadores -->
+                <div class="tab-pane" id="mundial" style="background-color: #006FDB;">
+                    <div class="mt-5">
+                        <table class="table table-striped" id="usersPointsTable" style="background-color: #ffffffbb;">
+                            <th>
+                                <td class="col">Utilizador</td>
+                                <td class="col">Pontuação</td>
+                                <td class="col">Jogos</td>
+                                <td class="col">Quiz</td>
+                            </th>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="../JS/app.js" type="module"></script>
 </body>
 </html>

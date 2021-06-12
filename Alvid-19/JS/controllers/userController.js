@@ -191,8 +191,11 @@ export default class userController {
      * Função que adiciona aos favoritos do utilizador, o jogo/quiz que o mesmo favoritou. 
      */
     userFavorites(favorited) {
-        user = sessionStorage.getItem('loggedUser')
-        
+        const id = sessionStorage.getItem('loggedUserId')
+        let favorites = this.users[id-1].favorites
+        favorites = favorites.push(favorited)
+        this.users[id-1].favorites = favorites
+        localStorage.setItem('users', JSON.stringify(this.users))
     }
 }
 

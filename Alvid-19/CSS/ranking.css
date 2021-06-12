@@ -3,13 +3,18 @@
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
 }
 
+/* Block scroll horizontal */
 body {
     background-image: linear-gradient(to top,#00C2E3,#00C2E3 70%);
     background-attachment: scroll;
 }
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
     /* ---MENU--- */
-#menuLinks,p {
+#menuLinks,p,th,td {
     font-family: 'FonteSite';
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
     font-size: 25px;

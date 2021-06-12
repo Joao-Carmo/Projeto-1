@@ -106,18 +106,6 @@ class App {
                         correctAnswer: 1
                     }
                 ]
-            },
-            {
-                id: 2,
-                name: 'Jogo da Forca',
-                image: '../Images/Jogo da f rca.png',
-                description: 'O jogo da forca é um jogo em que terás que acertar qual é a palavra proposta. Na tela terás toda a informação que precisas, o número de letras e uma frase que servirá de dica. A cada letra errada, é desenhado uma parte do corpo, se todas as partes do corpo forem desenhadas, perdes! Acerta na palavra e ganha pontos!'
-            },
-            {
-                id: 3,
-                name: 'Verdade ou Mentira',
-                image: '../Images/Verdade ou mentira.png',
-                description: '"Verdade ou Mentira" é um quiz onde vais ter que acertar se uma frase é verdade ou mentira! A frase será disposta no ecrã. A cada resposta certa, receberás pontos!'
             }
         ]
 
