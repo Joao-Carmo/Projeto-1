@@ -74,6 +74,10 @@ export default class userController {
         }
     }
 
+    loggedUser() {
+        return sessionStorage.getItem('loggedUser')
+    }
+
     logout() {
         sessionStorage.removeItem('loggedUser')
         sessionStorage.removeItem('loggedUserId')
