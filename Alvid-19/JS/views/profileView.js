@@ -19,7 +19,6 @@ export default class profileView {
         this.bindEdit();
     }
 
-
     /**
      * Função que define um listener para o botão de logout
      */
@@ -55,19 +54,13 @@ export default class profileView {
 
 
     updateStatusUI() {
+        const username = this.userController.loggedUser();
         const users = this.userController.usersArray();
         const photo = users.find(users => users.username === username).photo
-        if (this.userController.loggedUser.isLogged()) {
-            this.profileIcon.innerHTML =
-                `<a class="nav-link" href="HTML/profile.html">
-                    <img src="${photo}" width="84px" alt="Ícone Perfil" id="iconPerfil" id="iconPerfil" style="filter: drop-shadow(0px 9px 3px #0a9cb6);border-radius: 50px">
-                </a>`
-        } else {
-            this.profileIcon.innerHTML =
-                `<a class="nav-link" href="HTML/userAuthentication.html">
-                    <img src="../Images/perfil.png" width="84px" alt="Ícone Perfil" id="iconPerfil" id="iconPerfil" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
-                </a>`
-        }
+        this.profileIcon.innerHTML = `
+            <a class="nav-link" href="HTML/profile.html">
+                <img src="../Images${photo}" width="84px" alt="Ícone Perfil" id="iconPerfil" id="iconPerfil" style="filter: drop-shadow(0px 9px 3px #0a9cb6);border-radius: 50px">
+            </a>`
     }
 
     /**

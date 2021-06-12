@@ -130,7 +130,7 @@ class App {
                 email: 'admin@gmail.com',
                 date: '09/02/2000',
                 points: '1000000',
-                photo: '../Images/avatars/6.png',
+                photo: '/avatars/6.png',
                 favorites: [],
                 games: 0,
                 quizzes: 0
@@ -143,7 +143,7 @@ class App {
                 email: 'admin@gmail.com',
                 date: '14/07/2001',
                 points: '1000000',
-                photo: '../Images/avatars/5.png',
+                photo: '/avatars/5.png',
                 favorites: [],
                 games: 0,
                 quizzes: 0
@@ -156,7 +156,7 @@ class App {
                 email: 'admin@gmail.com',
                 date: '27/04/2002',
                 points: '1000000',
-                photo: '../Images/avatars/3.png',
+                photo: '/avatars/3.png',
                 favorites: [],
                 games: 0,
                 quizzes: 0
@@ -169,7 +169,7 @@ class App {
                 idUser: '3',
                 username: 'Viviana',
                 date: '26/05/2021',
-                photo: '../Images/avatars/3.png',
+                photo: '/avatars/3.png',
                 message: 'Alvid é o meu melhor amigo de todos os tempos!'
             }
         ];
@@ -177,57 +177,57 @@ class App {
         const avatars = [
             {
                 id: '1',
-                photo: '../Images/avatars/1.png',
+                photo: '/avatars/1.png',
                 points: '0'
             },
             {
                 id: '2',
-                photo: '../Images/avatars/2.png',
+                photo: '/avatars/2.png',
                 points: '150'
             },
             {
                 id: '3',
-                photo: '../Images/avatars/3.png',
+                photo: '/avatars/3.png',
                 points: '300'
             },
             {
                 id: '4',
-                photo: '../Images/avatars/4.png',
+                photo: '/avatars/4.png',
                 points: '450'
             },
             {
                 id: '5',
-                photo: '../Images/avatars/5.png',
+                photo: '/avatars/5.png',
                 points: '600'
             },
             {
                 id: '6',
-                photo: '../Images/avatars/6.png',
+                photo: '/avatars/6.png',
                 points: '750'
             },
             {
                 id: '7',
-                photo: '../Images/avatars/7.png',
+                photo: '/avatars/7.png',
                 points: '900'
             },
             {
                 id: '8',
-                photo: '../Images/avatars/8.png',
+                photo: '/avatars/8.png',
                 points: '1050'
             },
             {
                 id: '9',
-                photo: '../Images/avatars/9.png',
+                photo: '/avatars/9.png',
                 points: '1200'
             },
             {
                 id: '10',
-                photo: '../Images/avatars/10.png',
+                photo: '/avatars/10.png',
                 points: '1350'
             },
             {
                 id: '11',
-                photo: '../Images/avatars/11.png',
+                photo: '/avatars/11.png',
                 points: '1500'
             }
         ]
