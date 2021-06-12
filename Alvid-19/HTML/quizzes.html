@@ -67,7 +67,7 @@
             </nav>
         </div>     
 
-        <div class="text-center" id="quizz">
+        <div class="text-center" id="quizzTitle">
             <!-- COLOCAR AQUI ATRAVÉS DO HTML A LINHA SEGUINTE -->
             <p id="titleSection">Como ser Herói!</p>
         </div>
@@ -100,13 +100,48 @@
                 </div>   
             </div>
         </div>
+
+        <!-- Quiz -->
+        <div class="container" id="quiz">
+            <div class="row d-flex justify-content-center text-center mt-4">
+                <p class="question"> 1. Quem descobriu o Brasil?</p>
+            </div>
+
+            <div class="row d-flex justify-content-center mt-4">
+                <div class="col-sm-5  my-1 mb-4" id="imgQuiz">
+                    <img src="../Images/como_ser_heroi/Ao chegar a casa.png" width="100%" >
+                </div>
+            </div>
+
+            <div class="row d-flex justify-content-center text-center mt-4">
+                <div class="col-6">
+                    <button class="btn btn-primary mb-1 col-6" >a) Jesus</button>
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-primary mb-1 col-6" >b) Michael Jackson</button>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center text-center mt-4">
+                <div class="col-6">
+                    <button class="btn btn-primary mb-1 col-6" >c) Pedro Álvares Cabral</button>
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-primary mb-1 col-6" >d) Índios</button>
+                </div>
+            </div>
+        </div>
+
+        
         <div class="row d-flex justify-content-center mt-4">
             <div class="col-sm-2  my-1 mb-4">
                 <button class="btn btn-primary mb-1 " type="start" id="btnStart">START</button>
             </div>
         </div>
+
+       
     </div>
 
+    <script src="../js/views/quizzes.js"></script>
     <script src="../JS/app.js" type="module"></script>
 </body>
 </html>
