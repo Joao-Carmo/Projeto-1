@@ -49,7 +49,7 @@ export default class adminView {
     bindEditButton() {
         for (const button of this.btnEdit) {
             button.addEventListener('click', event => {
-                event.preventDefault();
+                
                 this.errorMessage.innerHTML = '';
                 const username = button.parentNode.parentNode.cells[0].innerHTML;
                 const users = this.userController.usersArray();
@@ -60,6 +60,7 @@ export default class adminView {
                     <p>${username}</p>`
                 this.bindEditUser(username);
                 this.changeUserType(username, type);
+                event.preventDefault();
             })
         }
     }
@@ -68,10 +69,10 @@ export default class adminView {
         this.formEditAdmin.addEventListener('submit', event => {
             event.preventDefault();
             try {
-                this.userController.adminUserEdit(username, this.newUsername.value, this.newPassword.value /*, this.confirmNewPassword.value*/ );
+                this.userController.adminUserEdit(username, this.newUsername.value, this.newPassword.value, this.confirmNewPassword.value );
                 console.log('sucesso');
+
                 // Espera 1 seg. antes de fazer refresh à pagina
-                // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
                 setTimeout(() => {
                     location.reload()
                 }, 1000);
@@ -83,14 +84,24 @@ export default class adminView {
 
     changeUserType(username, type) {
         this.btnAdmin.addEventListener('click', () => {
-            if (type == 'admin') {
-                this.btnAdmin.innerHTML = `<button id="btnAdmin" type="button">Tornar user</button>`;
-                this.userController.makeUser(username);
-            } else if (type == 'user') {
-                this.btnAdmin.innerHTML = `<button id="btnAdmin" type="button">Tornar admin</button>`;
-                this.userController.makeAdmin(username);
-            } else if (type == 'blocked') {
-                alert('This user is blocked');
+            try {
+                if (type == 'admin') {
+                    this.btnAdmin.innerHTML = `<button id="btnAdmin" style="background-color: #38E169" type="button">Tornar user</button>`;
+                    this.userController.makeUser(username);
+                } else if (type == 'user') {
+                    this.btnAdmin.innerHTML = `<button id="btnAdmin" type="button">Tornar admin</button>`;
+                    this.userController.makeAdmin(username);
+                } else if (type == 'blocked') {
+                    alert('This user is blocked');
+                    this.btnAdmin.innerHTML = `<button id="btnAdmin" style="background-color: #38E169" type="button">Tornar user</button>`;
+                    this.userController.makeUser(username);
+                }
+
+                setTimeout(() => {
+                    location.reload()
+                }, 1000);
+            } catch (err) {
+                this.displayMessage(err);
             }
         })
     }
