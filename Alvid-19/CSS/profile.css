@@ -185,7 +185,7 @@ p {
 
 /* Modal Avatars */
 #modalContent {
-    background-color: #00C2E3;
+    background-color: #ffffffa6;
 } #btnModalAvatarsClose {
     opacity: 100%;
     color: black;
@@ -195,7 +195,7 @@ p {
 } #modalBody {
     height: 15em;
     overflow-y: scroll;
-} #modalBody img {
+} #modalBody img, #btnAvatarsImg div {
     border-radius: 20px;
 } #modalBody button {
     -moz-transition: all 0.1s;
