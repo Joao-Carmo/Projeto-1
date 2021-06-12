@@ -92,7 +92,7 @@
     /* ---FIM DO MENU--- */
 
 
-#menuLinks,h1,p {
+#menuLinks,h1,p,button {
     font-family: 'FonteSite';
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
     font-size: 25px;
@@ -158,4 +158,9 @@ html, body {
     border: none;
     background-color: #ffde08;
     border-radius: 15px;
+}
+
+.question{
+    font-size: 45px;
+    color: rgb(0, 0, 0);
 }
