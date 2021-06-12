@@ -10,4 +10,8 @@ export default class userModel {
         this.photo = photo
         this.favorites = favorites
     }
+    
+    set favorites(favorited) {
+        this.favorites.push(favorited)
+    }
 }

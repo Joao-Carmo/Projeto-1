@@ -183,6 +183,35 @@ p {
     margin-top: 65px;
 }
 
+/* Modal Avatars */
+#modalContent {
+    background-color: #00C2E3;
+} #btnModalAvatarsClose {
+    opacity: 100%;
+    color: black;
+} h5 {
+    font-family: 'FonteSite';
+    src: url("../Fonts/MouseMemoirs-Regular.ttf");
+} #modalBody {
+    height: 15em;
+    overflow-y: scroll;
+} #modalBody img {
+    border-radius: 20px;
+} #modalBody button {
+    -moz-transition: all 0.1s;
+    -webkit-transition: all 0.1s;
+    transition: all 0.3s;
+} button:active {
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(0.9);
+} #modalBody p {
+    font-family: 'FonteSite';
+    src: url("../Fonts/MouseMemoirs-Regular.ttf");
+    color: black;
+    font-size: 60%;
+}
+
 #button {
     position: absolute;
     width: 80px;

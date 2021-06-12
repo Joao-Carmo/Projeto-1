@@ -157,12 +157,26 @@ class App {
             }
         ];
 
+        const comments = [
+            {
+                id: '1',
+                idUser: '3',
+                username: 'Viviana',
+                date: '26/05/2021',
+                photo: '../Images/avatars/3.png',
+                message: 'Alvid é o meu melhor amigo de todos os tempos!'
+            }
+        ];
+
         // Load the fixtures in case there is no data in the local storage
         if (!localStorage.users) {
             localStorage.setItem('users', JSON.stringify(users));
         }
         if (!localStorage.quizDetails) {
             localStorage.setItem('quizDetails', JSON.stringify(quizDetails));
+        }
+        if (!localStorage.comments) {
+            localStorage.setItem('comments', JSON.stringify(comments));
         }
     }
 }
