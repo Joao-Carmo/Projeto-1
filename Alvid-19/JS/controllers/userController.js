@@ -3,6 +3,7 @@ import userModel from '../models/userModel.js'
 export default class userController {
     constructor() {
         this.users = localStorage.users ? JSON.parse(localStorage.getItem("users")) : [];
+        this.comments = localStorage.comments ? JSON.parse(localStorage.getItem("comments")) : [];
     }
 
     usersArray() {
@@ -42,6 +43,7 @@ export default class userController {
 
     edit(newUsername, newPassword, newPasswordConfirm) {
         const id = sessionStorage.getItem('loggedUserId')
+        const username = sessionStorage.getItem('loggedUser')
 
         if (newUsername == '' && newPassword == '' && newPasswordConfirm == '') {
             throw `Nada a mudar!`
@@ -54,7 +56,7 @@ export default class userController {
                 this.users[id-1].password = newPassword
                 localStorage.setItem('users', JSON.stringify(this.users))
             } else {
-                throw `A palavras-passe não coincide!`
+                throw `As palavras-passe não coincidem!`
             }
 
         } else if (newPassword == '') {
@@ -69,7 +71,7 @@ export default class userController {
                 localStorage.setItem('users', JSON.stringify(this.users))
                 sessionStorage.setItem('loggedUser', newUsername)
             } else {
-                throw `A palavras-passe não coincide!`
+                throw `As palavras-passe não coincidem!`
             }
         }
     }
@@ -116,7 +118,7 @@ export default class userController {
     /**
      * Função utilizada apenas por um admin: edita um utilizador. 
      */
-    adminUserEdit(username, newUsername, newPassword) {
+    adminUserEdit(username, newUsername, newPassword, confirmNewPassword) {
         const id = this.users.find(user => user.username === username).id
 
         if (newUsername == '' && newPassword == '') {
@@ -126,17 +128,25 @@ export default class userController {
             throw `O utilizador "${newUsername}" já existe!`
 
         } else if (newUsername == '') {
-            this.users[id-1].password = newPassword
-            localStorage.setItem('users', JSON.stringify(this.users))
+            if (confirmNewPassword == newPassword) {
+                this.users[id-1].password = newPassword
+                localStorage.setItem('users', JSON.stringify(this.users))
+            } else {
+                throw `As palavras-passe não coincidem`
+            }
 
         } else if (newPassword == '') {
             this.users[id-1].username = newUsername
             localStorage.setItem('users', JSON.stringify(this.users))
 
         } else {
-            this.users[id-1].username = newUsername
-            this.users[id-1].password = newPassword
-            localStorage.setItem('users', JSON.stringify(this.users))
+            if (confirmNewPassword == newPassword) {
+                this.users[id-1].username = newUsername
+                this.users[id-1].password = newPassword
+                localStorage.setItem('users', JSON.stringify(this.users))
+            } else {
+                throw `As palavras-passe não coincidem`
+            }
         }
     }
 
@@ -175,6 +185,14 @@ export default class userController {
         } else {
             return 'blocked'
         }
+    }
+
+    /**
+     * Função que adiciona aos favoritos do utilizador, o jogo/quiz que o mesmo favoritou. 
+     */
+    userFavorites(favorited) {
+        user = sessionStorage.getItem('loggedUser')
+        
     }
 }
 

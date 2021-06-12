@@ -73,7 +73,7 @@
                                 <p class="text-center mt-2" id="#pMenu">Favoritos</p>
                             </a>
                         </li>
-                        <li class="nav-item ml-5 mr-5">
+                        <li class="nav-item ml-5 mr-5" id="profileIcon">
                             <!-- Perfil -->
                             <a class="nav-link" href="editProfile.html">
                                 <img src="../Images/perfil.png" width="84px" alt="Ícone Perfil" id="iconPerfil"
@@ -118,9 +118,61 @@
 
                         <div class="image my-4"
                             style="background-image: url('../Images/perfil.png'); background-size: contain; opacity: 100%; position: relative; left: -8px;">
-                            <a href="">
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#modalAvatars" id="btnAvatars">
                                 <img src="../Images/camera.png.png" id="camera" width="40%">
                             </a>
+                        </div>
+
+                        <!-- Modal Avatars -->
+                        <div class="modal" id="modalAvatars">
+                            <div class="modal-dialog">
+                            <div class="modal-content" id="modalContent">
+                            <!-- Cabeçalho da Modal -->
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Escolha uma nova foto de perfil!</h5>
+                                    <button type="button" class="close" data-dismiss="modal" id="btnModalAvatarsClose">&times;</button>
+                                </div>
+                            <!-- Corpo da Modal -->
+                                <div class="modal-body" id="modalBody">
+                                    <div class="row row-cols-2">
+                                        <button id="btnAvatarsImg" type="button" class="col">
+                                            <img src="../Images/avatars/1.png" alt="Porco" width="100%">
+                                            <p>Desbloqueado!</p>
+                                        </button>
+                                        <button id="btnAvatarsImg" type="button" class="col" disabled>
+                                            <div style="background-color: rgb(216, 216, 216);">
+                                                <img src="../Images/avatars/2.png" alt="Panda" width="100%" style="opacity: 25%;">
+                                            </div>
+                                            <p>300XP</p>
+                                        </button>
+                                        <button id="btnAvatarsImg" type="button" class="col" disabled>
+                                            <div style="background-color: rgb(216, 216, 216);">
+                                                <img src="../Images/avatars/3.png" alt="Panda" width="100%" style="opacity: 25%;">
+                                            </div>
+                                            <p>300XP</p>
+                                        </button>
+                                        <button id="btnAvatarsImg" type="button" class="col" disabled>
+                                            <div style="background-color: rgb(216, 216, 216);">
+                                                <img src="../Images/avatars/4.png" alt="Panda" width="100%" style="opacity: 25%;">
+                                            </div>
+                                            <p>300XP</p>
+                                        </button>
+                                        <button id="btnAvatarsImg" type="button" class="col" disabled>
+                                            <div style="background-color: rgb(216, 216, 216);">
+                                                <img src="../Images/avatars/5.png" alt="Panda" width="100%" style="opacity: 25%;">
+                                            </div>
+                                            <p>300XP</p>
+                                        </button>
+                                        <button id="btnAvatarsImg" type="button" class="col" disabled>
+                                            <div style="background-color: rgb(216, 216, 216);">
+                                                <img src="../Images/avatars/6.png" alt="Panda" width="100%" style="opacity: 25%;">
+                                            </div>
+                                            <p>300XP</p>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
                         </div>
 
                         <input type="text" id="txtNewUsername" placeholder="Nome de utilizador">
@@ -153,6 +205,19 @@
         switchProfile.addEventListener('click', () => {
             formProfile.style.transform = "translateX(0px)"
             formEdit.style.transform = "translateX(0px)"
+        })
+
+
+        const modalAvatars = document.getElementById('modalAvatars')
+        const btnAvatars = document.getElementById('btnAvatars')
+        const btnModalAvatarsClose = document.getElementById('btnModalAvatarsClose')
+
+        btnAvatars.addEventListener('click', function(){
+            modalAvatars.style.display = "block";
+        })
+
+        btnModalAvatarsClose.addEventListener('click', function(){
+            modalAvatars.style.display = ""
         })
     </script>
 
