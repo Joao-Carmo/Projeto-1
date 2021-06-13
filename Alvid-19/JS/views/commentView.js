@@ -7,11 +7,13 @@ export default class commentView {
         this.userController = new userController();
 
 
+        this.btnDiv = document.querySelector('#btnDiv');
+        this.isLogged()
         this.btnSendComment = document.querySelector('#btnSendComment');
         this.userComment = document.querySelector('#floatingTextarea2');
-        this.btnDiv = document.querySelector('#btnDiv');
+        
         this.commentsBox = document.querySelector('#commentsBox');
-        this.isLogged()
+        
         this.bindCommentsList()
         this.addComment()
     }
@@ -31,7 +33,7 @@ export default class commentView {
                     <div class="card" id="backgroundCommentCard">
                         <div class="card-body">
                             <div class="text-center mb-3">
-                                <img src="../Images${photo}" class=" rounded" width="100px" alt="Ícone Perfil" id="" id="iconPerfil" style="filter: drop-shadow(2px 2px 3px #606464);">
+                                <img src="../Images${photo}" width="100px" alt="Ícone Perfil" id="" id="iconPerfil" style="filter: drop-shadow(2px 2px 3px #606464); border-radius: 50px">
                             </div>
                             <p class="card-title text-center">${username}</p>
                             <p class="card-text" style="color: #5e5e5e;">${comment}</p>
@@ -73,7 +75,6 @@ export default class commentView {
 
     isLogged() {
         if (this.userController.isLogged()) {
-            // this.btnSendComment.disabled = true
             this.btnDiv.innerHTML = ' <button type="button" class="efeito efeito-1" id="btnSendComment">Enviar Cometário</button>'
             
         } else {

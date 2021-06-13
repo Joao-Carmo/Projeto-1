@@ -20,8 +20,6 @@ export default class commentController {
 
     addComment(comment) {
         const username = sessionStorage.getItem('loggedUser')
-        alert(username)
-        alert(this.users);
         const idUser = this.users.find(user => user.username === username).id
         const photo = this.users.find(user => user.username === username).photo
         const date = this.getDate();
