@@ -2,6 +2,7 @@ import favoritesView from './views/favoritesView.js'
 import userAuthenticationView from './views/userAuthenticationView.js'
 import profileView from './views/profileView.js'
 import adminView from './views/adminView.js'
+import rankingView from './views/rankingView.js';
 // import commentsView from '../views/commentsView.js'
 
 class App {
@@ -22,6 +23,9 @@ class App {
             ],
             'admin': [
                 adminView
+            ],
+            'ranking': [
+                rankingView
             ]
             // 'comments': [
             //     commentsView
