@@ -8,16 +8,17 @@ export default class rankingView {
         this.divRankingCongratulator = document.querySelector('#divRankingCongratulator')
         this.congralutator();
 
-        // this.generateTable();
+        this.usersPointsTable = document.querySelector('#usersPointsTable')
+        this.generateTable();
     }
 
     congralutator() {
-        const loggedUser = this.userController.loggedUser();
+        const username = this.userController.loggedUser();
+        const users = this.userController.usersArray();
         const photo = users.find(users => users.username === username).photo
 
-        this.divRankingCongratulator.innerHTML = `<img src="${photo}" width="100px" alt="Ícone perfil">`
-        this.pRankingCongratulator.innerHTML = `Parabéns ${loggedUser}! Estás a fazer progresso!`
-
+        this.divRankingCongratulator.innerHTML = `<img src="../Images${photo}" width="100px" alt="Ícone perfil" style="border-radius: 50px">`
+        this.pRankingCongratulator.innerHTML = `Parabéns ${username}! Estás a fazer progresso!`
     }
 
     generateTable() {
@@ -26,22 +27,23 @@ export default class rankingView {
         let html = ""
         for (let pos = 0; pos < users.length; pos++) {
             html += `
-            <tr>
-                <td class="col-lg-9 col-md-9 col-sm-6 col-xs-6">${users[pos].username}</td>
-                <td class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
-                    <a href="" id="btnEdit">
-                        <img src="../Images/editar.png">
-                    </a>
-                </td>
-                <td class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
-                    <a href="" id="btnBlock">
-                        <img src="../Images/bloquear.png">
-                    </a>
-                </td>
-            </tr>
+                <tr>
+                    <td class="col">${users[pos].username}</td>
+                    <td class="col">${users[pos].points}</td>
+                    <td class="col">Jogos</td>
+                    <td class="col">Quiz</td>
+                </tr>
             `
         }
+        html = `
+            <tr style="background-color: #F5E400;">
+                <td class="col" style="color:black;">Utilizador</td>
+                <td class="col" style="color:black;">Pontuação</td>
+                <td class="col" style="color:black;">Jogos</td>
+                <td class="col" style="color:black;">Quiz</td>
+            </tr>
+        ` + html
 
-        this.usersList.innerHTML = html
+        this.usersPointsTable.innerHTML = html
     }
 }
