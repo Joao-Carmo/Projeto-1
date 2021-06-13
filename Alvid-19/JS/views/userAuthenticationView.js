@@ -4,16 +4,22 @@ export default class userView {
     constructor() {
         this.userController = new userController();
 
+        //gestão dos botões de trocar entre formulários
+        this.button = document.querySelector('#button');
+        this.switchLogin = document.querySelector('#btnLoginSwitch');
+        this.switchRegister = document.querySelector('#btnRegSwitch');
+        this.form = document.querySelector('.form');
+        this.formLogin = document.querySelector('#login');
+        this.formRegister = document.querySelector('#register');
+        this.bindSwitchForms()
 
         //gestão do formulário de login
-        this.formLogin = document.querySelector('#login');
         this.loginUsername = document.querySelector('#txtUsername');
         this.loginPassword = document.querySelector('#txtPassword');
         this.loginMessage = document.querySelector('#loginMessage');
         this.bindLoginForm()
 
         //gestão do formulário de registo
-        this.formRegister = document.querySelector('#register');
         this.registerUsername = document.querySelector('#txtUsernameRegister');
         this.registerEmail = document.querySelector('#txtUserEmail')
         this.registerPassword = document.querySelector('#txtPasswordRegister');
@@ -21,7 +27,6 @@ export default class userView {
         this.registerDate = document.querySelector('#dateBirth');
         this.registerMessage = document.querySelector('#registerMessage');
         this.bindRegisterForm();
-
     }
 
      /**
@@ -64,10 +69,37 @@ export default class userView {
 
     }
 
+
+    //funções que transformam os fomulários quando os botões switch login e register são clicados
+    bindSwitchForms() {
+        this.switchRegister.addEventListener('click', () => {
+            this.formLogin.style.transform = "translateX(-375px)"
+            this.formRegister.style.transform = "translateX(-380px)"
+            this.button.style.transform = "translateX(100px)"
+            this.form.style.height = "490px"
+        })
+    
+        this.switchLogin.addEventListener('click', () => {
+            this.formLogin.style.transform = "translateX(0px)"
+            this.formRegister.style.transform = "translateX(0px)"
+            this.button.style.transform = "translateX(0px)"
+            this.form.style.height = "320px"
+        })
+    }
+    
+
+
+
+
+
+
+
+
     /**
      * Função que define uma mennsagem de erro
      */
     displayMessage(event, text) {
         event == 'login' ? this.loginMessage.innerHTML = text : this.registerMessage.innerHTML = text
     }
+
 }

@@ -9,18 +9,18 @@ export default class adminView {
         this.bindUsersList();
 
         //Editar utilizador
-        this.btnEdit = document.querySelectorAll('#btnEdit');
         this.adminEditUser = document.querySelector('#adminEditUser');
-
-        //Bloquear utilizador
-        this.btnBlock = document.querySelectorAll('#btnBlock');
-        this.bindBlock();
 
         //Filtrar a lista de utilizadores (por admin, user ou blocked)
         this.usernameSearch = document.querySelector('#txtUsernameSearch');
         this.usertypeSearch = document.querySelector('#userTypeSearch');
         this.searchForm = document.querySelector('#searchForm');
         this.bindSearch();
+        
+
+        //Bloquear utilizador
+        this.btnBlock = document.querySelectorAll('#btnBlock');
+        this.bindBlock();
 
         //Alterar o perfil do utilizador (palavra-passe e nome)
         this.formEditAdmin = document.querySelector('#formEditAdmin');
@@ -47,20 +47,25 @@ export default class adminView {
     }
 
     bindEditButton() {
-        for (const button of this.btnEdit) {
+        const btnEdit = document.querySelectorAll('#btnEdit')
+        for (const button of btnEdit) {
             button.addEventListener('click', event => {
                 
+                
+                event.preventDefault();
                 this.errorMessage.innerHTML = '';
+                
                 const username = button.parentNode.parentNode.cells[0].innerHTML;
                 const users = this.userController.usersArray();
                 const photo = users.find(users => users.username === username).photo
                 const type = this.userController.isUserType(username);
                 this.adminEditUser.innerHTML = `
-                    <img src="${photo}" class="col-lg-2 col-2" style="border-radius: 50px">
+                    <img src="../Images${photo}" class="col-lg-2 col-2" style="border-radius: 50px">
                     <p>${username}</p>`
                 this.bindEditUser(username);
                 this.changeUserType(username, type);
-                event.preventDefault();
+                
+                
             })
         }
     }
@@ -113,6 +118,7 @@ export default class adminView {
             //alert(this.usernameSearch.value)
             //alert(this.usertypeSearch.options[this.usertypeSearch.selectedIndex].value)
             this.generateList(this.userController.usersList(this.usernameSearch.value, this.usertypeSearch.options[this.usertypeSearch.selectedIndex].value));
+            this.bindEditButton();
         })
     }
 
@@ -127,12 +133,12 @@ export default class adminView {
             <tr>
                 <td class="col-lg-9 col-md-9 col-sm-6 col-xs-6">${users[pos].username}</td>
                 <td class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
-                    <a href="" id="btnEdit">
+                    <a type="button" id="btnEdit">
                         <img src="../Images/editar.png">
                     </a>
                 </td>
                 <td class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
-                    <a href="" id="btnBlock">
+                    <a type="button" id="btnBlock">
                         <img src="../Images/bloquear.png">
                     </a>
                 </td>
