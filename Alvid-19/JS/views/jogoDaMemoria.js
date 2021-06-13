@@ -18,13 +18,20 @@ let cantClick = false; //cliquesTravados
 let cardTurned = false //temCartaVirada
 let cardPairNumber = -1 //posicaoCartaVirada
 let cardBoardPosition = 0 //valorCartaVirada
-let correct = 0 //pontos
+let correct = 0 //pares
+let points = 0 // Pontos
+const gameTimer = new Timer('#timer') // Temporizador HTML
+
 
 
 
 // Evento para o botão (mistura as imagens)
 
 document.querySelector('#btnStart').addEventListener('click', function () {
+    document.querySelector('#timer').style.backgroundColor = 'rgb(255, 136, 0)' // Troca de cor do Timer quando começar
+    gameTimer.start() // começa a função de iniciar o tempo
+
+
     for(let i=0; i<cards.length; i++){
         let p = Math.trunc(Math.random()*cards.length);
         let tool = cards[p];
@@ -97,7 +104,7 @@ function addCards(cards,images) {
                     const p0 = cardBoardPosition
                     // const p2 = cardPairNumber
                     cantClick=true    // Se não, trava os cliques por 1.3s e desvira as duas imagens
-                    setTimeout( ()=>{
+                    setTimeout( ()=>{  // Executa um bloco específico uma vez depois de um determinado tempo
                         btnCard.childNodes[0].style.visibility="hidden"
                         
                         let turnedCard = document.getElementById(p0)
@@ -122,6 +129,30 @@ function addCards(cards,images) {
             //let valor = valorCartaVirada
             if(correct==10){     // Concluindo os 10 pares, o botão start abilita novamente
                 document.querySelector('#btnStart').disabled = false
+                document.querySelector('#timer').style.backgroundColor = 'rgb(7, 241, 18)'; //Muda de cor quando ele ganhar
+                gameTimer.stop() // para a função de iniciar o tempo
+                
+                let endTime = document.querySelector("#timer") // pega texto html
+                let endMinutes = endTime.innerHTML.slice(0,2)
+                alert('Tempo de Jogo'+endTime)
+                // Verifica Pontos
+                
+                if (endMinutes == "00") {
+                    points+=75
+                    alert('Ganhaste 75 Pontos!')
+                } else if(endMinutes == "01"){
+                    points+=65
+                    alert('Ganhaste 65 Pontos!')
+                }else if(endMinutes == "02"){
+                    points+=55
+                    alert('Ganhaste 55 Pontos!')
+                }else if(endMinutes == "03"){
+                    points+=45
+                    alert('Ganhaste 45 Pontos!')
+                }else if(endMinutes >= "04"){
+                    points+=35
+                    alert('Ganhaste 35 Pontos!')
+                }
             } 
     })}
 }
@@ -138,4 +169,33 @@ function giveClickCard(btnCard) {
     <a type='button' id='card'>
         ${btnCard.innerHTML}
     </a>`
+}
+
+//------------------------
+// Timer
+//------------------------
+
+function Timer(element) {
+    this.element = element
+    this.time = 0 // controla o tempo
+    this.control = null
+    this.start = () => { // inicia o contador
+        this.time = 0 // zera o tempo assim que recomeçar
+        this.control = setInterval ( ()=>{ // Executa um bloco específico repetidamente a cada 1000
+            this.time++;
+            const minutes = Math.trunc(this.time / 60); // Converte o formato
+            const seconds = this.time % 60
+            document.querySelector(this.element).innerHTML = 
+            (minutes < 10 ? '0':'') + minutes + ':'+(seconds < 10?'0': '') + seconds // Ajusta formatação, se for menor que 10 colocar um "0" a frente do número
+        }, 1000)
+    }
+    this.stop = () => {
+        clearInterval(this.control);
+        this.control = null
+        
+    }
+
+    
+
+    
 }

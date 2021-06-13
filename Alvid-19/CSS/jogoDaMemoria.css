@@ -156,3 +156,11 @@ html, body {
     background-color: #ffde08;
     border-radius: 15px;
 }
+
+#timer{
+    font-size: 36pt;
+    font-weight: bold;
+    text-align: center;
+    background-color:rgb(46, 38, 66) ;
+
+}

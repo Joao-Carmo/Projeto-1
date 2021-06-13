@@ -11,6 +11,7 @@ let image = 0;
 let position;
 
 
+
 // Cria Span com os espaços das letters da word
 
 for (position = 0; position < word.length; position++) {
