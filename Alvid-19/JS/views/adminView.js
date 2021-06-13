@@ -42,7 +42,21 @@ export default class adminView {
                 event.preventDefault();
                 const username = button.parentNode.parentNode.cells[0].innerHTML;
                 this.userController.blockUser(username);
+                this.changeBtnBlock(username)
             })
+        }
+    }
+
+    changeBtnBlock(username) {
+        const btnBlock = document.querySelector(`.${username}`)
+
+        const type = this.userController.isUserBlocked(username);
+
+
+        if (type == 'blocked') {
+            btnBlock.innerHTML = `<img src="../Images/bloquearVermelho.png">`
+        } else {
+            btnBlock.innerHTML = `<img src="../Images/bloquear.png">`
         }
     }
 
@@ -50,29 +64,34 @@ export default class adminView {
         const btnEdit = document.querySelectorAll('#btnEdit')
         for (const button of btnEdit) {
             button.addEventListener('click', event => {
-                
-                
+
                 event.preventDefault();
                 this.errorMessage.innerHTML = '';
                 
                 const username = button.parentNode.parentNode.cells[0].innerHTML;
                 const users = this.userController.usersArray();
                 const photo = users.find(users => users.username === username).photo
-                const type = this.userController.isUserType(username);
+
+                this.userController.userFromTable(username);
+                this.changeBtnUserType();
+
                 this.adminEditUser.innerHTML = `
                     <img src="../Images${photo}" class="col-lg-2 col-2" style="border-radius: 50px">
                     <p>${username}</p>`
-                this.bindEditUser(username);
-                this.changeUserType(username, type);
+                
+                this.bindEditUser();
+                // this.changeUserType();
+                
+                
             })
         }
     }
 
-    bindEditUser(username) {
+    bindEditUser() {
         this.formEditAdmin.addEventListener('submit', event => {
             event.preventDefault();
             try {
-                this.userController.adminUserEdit(username, this.newUsername.value, this.newPassword.value, this.confirmNewPassword.value );
+                this.userController.adminUserEdit(this.newUsername.value, this.newPassword.value, this.confirmNewPassword.value );
                 console.log('sucesso');
 
                 // Espera 1 seg. antes de fazer refresh à pagina
@@ -85,27 +104,42 @@ export default class adminView {
         })
     }
 
-    changeUserType(username, type) {
+    changeBtnUserType() {
+        const type = this.userController.isUserType();
+
+        if (type == 'admin') {
+            this.btnAdmin.innerHTML = `<button id="btnAdmin" style="background-color: #38E169" type="button">Tornar user</button>`;
+            this.btnBlock.innerHTML = `<img src="../Images/bloquear.png">`
+        } else if (type == 'user') {
+            this.btnAdmin.innerHTML = `<button id="btnAdmin" type="button">Tornar admin</button>`;
+            this.btnBlock.innerHTML = `<img src="../Images/bloquear.png">`
+        } else if (type == 'blocked') {
+            alert('This user is blocked');
+            this.btnBlock.innerHTML = `<img src="../Images/bloquearVermelho.png">`
+            this.btnAdmin.innerHTML = `<button id="btnAdmin" style="background-color: #38E169" type="button">Tornar user</button>`;
+        }
+    }
+
+    changeUserType() {
         this.btnAdmin.addEventListener('click', () => {
-            try {
+            const type = this.userController.isUserType();
+
                 if (type == 'admin') {
                     this.btnAdmin.innerHTML = `<button id="btnAdmin" style="background-color: #38E169" type="button">Tornar user</button>`;
-                    this.userController.makeUser(username);
+                    this.userController.makeUser();
                 } else if (type == 'user') {
                     this.btnAdmin.innerHTML = `<button id="btnAdmin" type="button">Tornar admin</button>`;
-                    this.userController.makeAdmin(username);
+                    this.userController.makeAdmin();
                 } else if (type == 'blocked') {
                     alert('This user is blocked');
                     this.btnAdmin.innerHTML = `<button id="btnAdmin" style="background-color: #38E169" type="button">Tornar user</button>`;
-                    this.userController.makeUser(username);
+                    this.userController.makeUser();
                 }
 
-                setTimeout(() => {
-                    location.reload()
-                }, 1000);
-            } catch (err) {
-                this.displayMessage(err);
-            }
+                this.changeBtnUserType()
+                // setTimeout(() => {
+                //     location.reload()
+                // }, 1000);
         })
     }
 
@@ -127,21 +161,39 @@ export default class adminView {
     generateList(users) {
         let html = ""
         for (let pos = 0; pos < users.length; pos++) {
-            html += `
-            <tr>
-                <td class="col-lg-9 col-md-9 col-sm-6 col-xs-6">${users[pos].username}</td>
-                <td class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
-                    <a type="button" id="btnEdit">
-                        <img src="../Images/editar.png">
-                    </a>
-                </td>
-                <td class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
-                    <a type="button" id="btnBlock">
-                        <img src="../Images/bloquear.png">
-                    </a>
-                </td>
-            </tr>
-            `
+            if (users[pos].type == 'blocked') {
+                html += `
+                    <tr>
+                        <td class="col-lg-9 col-md-9 col-sm-6 col-xs-6">${users[pos].username}</td>
+                        <td class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                            <a type="button" id="btnEdit">
+                                <img src="../Images/editar.png">
+                            </a>
+                        </td>
+                        <td class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                            <a type="button" id="btnBlock" class="${users[pos].username}">
+                                <img src="../Images/bloquearVermelho.png">
+                            </a>
+                        </td>
+                    </tr>
+                `
+            } else {
+                html += `
+                    <tr>
+                        <td class="col-lg-9 col-md-9 col-sm-6 col-xs-6">${users[pos].username}</td>
+                        <td class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                            <a type="button" id="btnEdit">
+                                <img src="../Images/editar.png">
+                            </a>
+                        </td>
+                        <td class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                            <a type="button" id="btnBlock" class="${users[pos].username}">
+                                <img src="../Images/bloquear.png">
+                            </a>
+                        </td>
+                    </tr>
+                `
+            }
         }
 
         this.usersList.innerHTML = html
