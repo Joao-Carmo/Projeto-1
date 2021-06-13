@@ -2,7 +2,8 @@ import favoritesView from './views/favoritesView.js'
 import userAuthenticationView from './views/userAuthenticationView.js'
 import profileView from './views/profileView.js'
 import adminView from './views/adminView.js'
-import rankingView from './views/rankingView.js';
+import rankingView from './views/rankingView.js'
+import quizzesView from './views/quizzesView.js'
 // import commentsView from '../views/commentsView.js'
 
 class App {
@@ -26,6 +27,9 @@ class App {
             ],
             'ranking': [
                 rankingView
+            ],
+            'quizzes':[
+                quizzesView
             ]
             // 'comments': [
             //     commentsView
@@ -60,7 +64,7 @@ class App {
         const quizDetails = [
             {
                 id: 1,
-                name: 'Como ser Herói',
+                name: 'Como ser Herói!',
                 image: '../Images/Como ser Herói!.png',
                 description: 'Neste quiz, serão apresentadas situações similares à vida real. Apartir daí, precisarás fazer algumas escolhas de acordo com estas. Quantas mais respostas certas, mais pontos recebes!',
                 questions: [
