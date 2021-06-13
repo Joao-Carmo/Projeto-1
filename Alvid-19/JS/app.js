@@ -4,7 +4,6 @@ import profileView from './views/profileView.js'
 import adminView from './views/adminView.js'
 import rankingView from './views/rankingView.js'
 import quizzesView from './views/quizzesView.js'
-import GameMemoryView from './views/GameMemoryView.js'
 // import commentsView from '../views/commentsView.js'
 
 class App {
@@ -31,9 +30,6 @@ class App {
             ],
             'quizzes':[
                 quizzesView
-            ],
-            'gameMemory':[
-                GameMemoryView
             ]
             // 'comments': [
             //     commentsView
