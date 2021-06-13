@@ -4,7 +4,7 @@ import profileView from './views/profileView.js'
 import adminView from './views/adminView.js'
 import rankingView from './views/rankingView.js'
 import quizzesView from './views/quizzesView.js'
-// import commentsView from '../views/commentsView.js'
+import commentView from './views/commentView.js'
 
 class App {
     constructor() {
@@ -30,10 +30,10 @@ class App {
             ],
             'quizzes':[
                 quizzesView
-            ]
-            // 'comments': [
-            //     commentsView
-            // ]
+            ],
+            'comments': [
+                 commentView
+             ]
         };
 
         // importa dados dummy para testes
@@ -166,7 +166,7 @@ class App {
                 username: 'Viviana',
                 date: '26/05/2021',
                 photo: '/avatars/3.png',
-                message: 'Alvid é o meu melhor amigo de todos os tempos!'
+                comment: 'Alvid é o meu melhor amigo de todos os tempos!'
             }
         ];
 

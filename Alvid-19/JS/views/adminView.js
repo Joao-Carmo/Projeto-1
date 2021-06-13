@@ -64,8 +64,6 @@ export default class adminView {
                     <p>${username}</p>`
                 this.bindEditUser(username);
                 this.changeUserType(username, type);
-                
-                
             })
         }
     }
