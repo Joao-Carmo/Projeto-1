@@ -4,6 +4,7 @@ import profileView from './views/profileView.js'
 import adminView from './views/adminView.js'
 import rankingView from './views/rankingView.js'
 import quizzesView from './views/quizzesView.js'
+import GameMemoryView from './views/GameMemoryView.js'
 // import commentsView from '../views/commentsView.js'
 
 class App {
@@ -30,6 +31,9 @@ class App {
             ],
             'quizzes':[
                 quizzesView
+            ],
+            'gameMemory':[
+                GameMemoryView
             ]
             // 'comments': [
             //     commentsView
@@ -226,7 +230,22 @@ class App {
                 photo: '/avatars/11.png',
                 points: '1500'
             }
-        ]
+        ];
+
+        const memoryCards = [
+            'meninadepé.png',
+            'meninaSentada.png',
+            'molecula.png',
+            'poteQuimico.png',
+            'termometro.png',
+            'vacina.png',
+            'virus1.png',
+            'virus2.png',
+            'virus3.png',
+            'mascara.png'
+        ];
+
+        const memoryCardsPairs = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10];
 
         // Load the fixtures in case there is no data in the local storage
         if (!localStorage.users) {
@@ -240,6 +259,12 @@ class App {
         }
         if (!localStorage.avatars) {
             localStorage.setItem('avatars', JSON.stringify(avatars));
+        }
+        if (!localStorage.memoryCards) {
+            localStorage.setItem('memoryCards', JSON.stringify(memoryCards));
+        }
+        if (!localStorage.memoryCardsPairs) {
+            localStorage.setItem('memoryCardsPairs', JSON.stringify(memoryCardsPairs));
         }
     }
 }
