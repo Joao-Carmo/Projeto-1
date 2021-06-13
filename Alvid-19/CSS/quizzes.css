@@ -164,3 +164,11 @@ html, body {
     font-size: 45px;
     color: rgb(0, 0, 0);
 }
+
+#answer1,#answer2,#answer3,#answer4{
+    font-family: 'FonteSite';
+    src: url("../Fonts/MouseMemoirs-Regular.ttf");
+    font-size: 150%;
+    background-color: #08a4ff;
+    border: none;
+}

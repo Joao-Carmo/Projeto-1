@@ -41,4 +41,7 @@ export default class favoritesView {
           </div>
         </div>`
     }
+
+    
 }
+
