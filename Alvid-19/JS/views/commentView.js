@@ -9,8 +9,9 @@ export default class commentView {
 
         this.btnSendComment = document.querySelector('#btnSendComment');
         this.userComment = document.querySelector('#floatingTextarea2');
-
+        this.btnDiv = document.querySelector('#btnDiv');
         this.commentsBox = document.querySelector('#commentsBox');
+        this.isLogged()
         this.bindCommentsList()
         this.addComment()
     }
@@ -18,13 +19,13 @@ export default class commentView {
     addComment() {
         this.btnSendComment.addEventListener('click', event => {
             const username = this.userController.loggedUser();
-            const comments = this.commentController.commentsArray();
-            alert(JSON.stringify(comments))
-            const photo = comments.find(comment => comment.username === username).photo;
-
+            const users = this.userController.usersArray();
+            const photo = users.find(user => user.username === username).photo;
             const comment = this.userComment.value;
+            const date = this.commentController.getDate();
+
             this.commentController.addComment(comment);
-            // setTimeout(() => { location.reload() }, 1000);   
+               
             this.commentsBox.innerHTML += `
                 <div class="col-md-3 ml-5 mt-3 mb-5" id="cards">
                     <div class="card" id="backgroundCommentCard">
@@ -35,7 +36,7 @@ export default class commentView {
                             <p class="card-title text-center">${username}</p>
                             <p class="card-text" style="color: #5e5e5e;">${comment}</p>
                             <hr>
-                            <h6 class="card-subtitle mb-2 text-mutedv text-center" style="color: #6064649c;">26/05/2021</h6>
+                            <h6 class="card-subtitle mb-2 text-mutedv text-center" style="color: #6064649c;">${date}</h6>
                         </div>
                     </div>
                 </div>
@@ -61,12 +62,22 @@ export default class commentView {
                             <p class="card-title text-center">${comments[pos].username}</p>
                             <p class="card-text" style="color: #5e5e5e;">${comments[pos].comment}</p>
                             <hr>
-                            <h6 class="card-subtitle mb-2 text-mutedv text-center" style="color: #6064649c;">26/05/2021</h6>
+                            <h6 class="card-subtitle mb-2 text-mutedv text-center" style="color: #6064649c;">${comments[pos].date}</h6>
                         </div>
                     </div>
                 </div>
             `
         }
         this.commentsBox.innerHTML = html
+    }
+
+    isLogged() {
+        if (this.userController.isLogged()) {
+            // this.btnSendComment.disabled = true
+            this.btnDiv.innerHTML = ' <button type="button" class="efeito efeito-1" id="btnSendComment">Enviar Cometário</button>'
+            
+        } else {
+            this.btnDiv.innerHTML = ' <button type="button" id="btnSendComment" disabled>Enviar Cometário</button>'
+        }
     }
 }

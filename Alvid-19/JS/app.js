@@ -164,9 +164,17 @@ class App {
                 id: '1',
                 idUser: '3',
                 username: 'Viviana',
-                date: '26/05/2021',
+                date: '26/5/2021',
                 photo: '/avatars/3.png',
-                comment: 'Alvid é o meu melhor amigo de todos os tempos!'
+                comment: 'Estou a adorar a experiência do Alvid-19.'
+            },
+            {
+                id: '2',
+                idUser: '2',
+                username: 'JoãoCarmo',
+                date: '1/6/2021',
+                photo: '/avatars/5.png',
+                comment: 'Achei esta aplicação muito original :)'
             }
         ];
 
