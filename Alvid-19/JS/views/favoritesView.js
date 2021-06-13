@@ -9,8 +9,6 @@ export default class favoritesView {
 
         this.profileIcon = document.querySelector('#profileIcon');
         this.updateStatusUI();
-
-        
     }
 
     updateStatusUI() {
@@ -32,13 +30,12 @@ export default class favoritesView {
     }
 
     quizzesImages() {
-
       this.thumbnailQuizzes.innerHTML += `
         <div class="mt-5 row">
           <div class="col-lg-4 col-6">
             <div class="hero">
               <a href="HTML/quizzes.html">
-                <img src="Images${}" id="quizCarrossel" class="mt-5 col-sm-7 ml-4 mb-5" alt="Responsive image">
+                <img src="Images" id="quizCarrossel" class="mt-5 col-sm-7 ml-4 mb-5" alt="Responsive image">
               </a>
             </div>
           </div>
