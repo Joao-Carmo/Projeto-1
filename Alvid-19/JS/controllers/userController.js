@@ -115,10 +115,15 @@ export default class userController {
         return filteredUsers
     }
 
+    userFromTable(username) {
+        sessionStorage.setItem('userFromAdminTable', username)
+    }
+
     /**
      * Função utilizada apenas por um admin: edita um utilizador. 
      */
-    adminUserEdit(username, newUsername, newPassword, confirmNewPassword) {
+    adminUserEdit(newUsername, newPassword, confirmNewPassword) {
+        const username = sessionStorage.getItem('userFromAdminTable')
         const id = this.users.find(user => user.username === username).id
 
         if (newUsername == '' && newPassword == '') {
@@ -162,7 +167,8 @@ export default class userController {
     /**
      * Função utilizada apenas por um admin: bloqueia um utilizador. 
      */
-    makeAdmin(username) {
+    makeAdmin() {
+        const username = sessionStorage.getItem('userFromAdminTable')
         const id = this.users.find(user => user.username === username).id
         this.users[id-1].type = 'admin'
         localStorage.setItem('users', JSON.stringify(this.users))
@@ -171,13 +177,16 @@ export default class userController {
     /**
      * Função utilizada apenas por um admin: bloqueia um utilizador. 
      */
-    makeUser(username) {
+    makeUser() {
+        const username = sessionStorage.getItem('userFromAdminTable')
         const id = this.users.find(user => user.username === username).id
         this.users[id-1].type = 'user'
         localStorage.setItem('users', JSON.stringify(this.users))
     }
 
-    isUserType(username) {
+    isUserType() {
+        const username = sessionStorage.getItem('userFromAdminTable')
+
         if (this.users.find(user => user.username === username).type == 'user') {
             return 'user'
         } else if (this.users.find(user => user.username === username).type == 'admin') {
@@ -185,6 +194,20 @@ export default class userController {
         } else {
             return 'blocked'
         }
+    }
+
+    isUserBlocked(username) {
+        if (this.users.find(user => user.username === username).type == 'user') {
+            return 'user'
+        } else if (this.users.find(user => user.username === username).type == 'admin') {
+            return 'admin'
+        } else {
+            return 'blocked'
+        }
+    }
+
+    getUserFromTable() {
+        return sessionStorage.getItem('userFromAdminTable')
     }
 
     /**
