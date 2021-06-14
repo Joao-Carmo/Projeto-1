@@ -4,11 +4,9 @@ let word = words[Math.floor(Math.random() * words.length)];
 
 let chances = 6;
 let right = 1;
-
 let image = 0;
-
-
 let position;
+let points = 0;
 
 
 
@@ -108,6 +106,9 @@ function chooseletter(letter) {
     // Vencer
 
     if (right === word.length) {
+        points+=35
+        alert(points)
+
         let message = document.createElement("p");
         let textLose = document.createTextNode("Você venceu!");
         message.appendChild(textLose);

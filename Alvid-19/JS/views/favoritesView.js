@@ -18,6 +18,13 @@ export default class favoritesView {
         this.profileIcon = document.querySelector('#profileIcon');
         this.updateStatusUI();
 
+
+        this.modalFavorites = document.querySelector('#modalFavorites')
+        this.btnFavorites = document.querySelector('#btnFavorites')
+        this.btnModalFavoritesClose = document.querySelector('#btnModalFavoritesClose')
+        this.favoritesModal();
+        
+
     }
 
     updateStatusUI() {
@@ -86,6 +93,15 @@ export default class favoritesView {
       }
     }
 
-    
+    favoritesModal() {
+      this.btnFavorites.addEventListener('click', () => {
+        // btnFavorites.focus()
+        this.modalFavorites.style.display = "block";
+      })
+
+      this.btnModalFavoritesClose.addEventListener('click', () => {
+        this.modalFavorites.style.display = ""
+      })
+    }
 }
 
