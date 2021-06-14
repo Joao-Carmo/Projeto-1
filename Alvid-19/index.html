@@ -25,48 +25,54 @@
     <!-- linha do menu -->
     <div id="header">
       <nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="height: 135px;">
-          <a class="navbar-brand" href="../index.html">
+          <a class="navbar-brand" href="index.html" id="btnLogo" style="position: relative;">
             <img class="ml-4" src="Images/logo_alvid.png" width="250px" id="logoAlvid" alt="LOGO Alvid-19">
           </a>
-          <a class="navbar-toggler" id="btnMenuMobile" type="button" data-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><!-- data-target="#widget-menu" -->
-              <img class="mr-4" src="Images/popup_menu_mobile.png" width="15%" alt="Menu Hamburger Mobile" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+          <a class="navbar-toggler col-6" id="btnMenuMobile" type="button" data-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="position: absolute; visibility: visible;"><!-- data-target="#widget-menu" -->
+              <img class="mr-4" src="Images/popup_menu_mobile.png" width="35%" alt="Menu Hamburger Mobile" style="filter: drop-shadow(0px 9px 3px #00000031);">
+          </a>
+          <a class="navbar-toggler col-6" id="btnMenuMobileMinus" type="button" data-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="position: absolute; visibility: hidden;"><!-- data-target="#widget-menu" -->
+            <img class="mr-4" src="Images/popup_menu_mobile_menos.png" width="35%" alt="Menu Hamburger Mobile" style="filter: drop-shadow(0px 9px 3px #00000031);">
           </a>
       
           <div class="collapse navbar-collapse" id="widget-menu">
               <ul class="navbar-nav mr-auto mt-5" style="height: 135px;">
                   <li class="nav-item active mx-4 mt-1"> <!-- Jogos -->
                       <a class="nav-link" href="#jogos">
-                          <img src="Images/jogos.png" width="60px" alt="Ícone Jogos" id="iconJogos" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                          <img src="Images/jogos.png" width="60px" alt="Ícone Jogos" id="iconJogos" style="filter: drop-shadow(0px 9px 3px #00000031);">
                           <p class="text-center mt-2" id="#pMenu">Jogos</p>
                       </a>
                   </li>
                   <li class="nav-item mx-4"> <!-- Quizzes -->
                       <a class="nav-link" href="#quizzes">
-                          <img src="Images/quizz.png" width="70px" alt="Ícone Quizzes" id="iconQuizzes" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                          <img src="Images/quizz.png" width="70px" alt="Ícone Quizzes" id="iconQuizzes" style="filter: drop-shadow(0px 9px 3px #00000031);">
                           <p class="text-center mt-2" id="#pMenu">Quizzes</p>
                       </a>
                   </li>
                   <li class="nav-item mx-4 my-1"> <!-- Ranking -->
                       <a class="nav-link" href="HTML/ranking.html">
-                          <img src="Images/ranking.png" width="45px" alt="Ícone Ranking" id="iconRanking" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                          <img src="Images/ranking.png" width="45px" alt="Ícone Ranking" id="iconRanking" style="filter: drop-shadow(0px 9px 3px #00000031);">
                           <p class="text-center mt-2" id="#pMenu">Ranking</p>
                       </a>
                   </li>
                   <li class="nav-item mx-4 my-1"> <!-- Favoritos -->
                       <a type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#modalFavorites" id="btnFavorites">
-                          <img src="Images/favoritos.png" width="55px" alt="Ícone Favoritos" id="iconFavoritos" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                          <img src="Images/favoritos.png" width="55px" alt="Ícone Favoritos" id="iconFavoritos" style="filter: drop-shadow(0px 9px 3px #00000031);">
                           <p class="text-center mt-2" id="#pMenu">Favoritos</p>
                       </a>
                   </li>
                   <li class="nav-item ml-5 mr-5" id="profileIcon"> <!-- Perfil -->
                       <a class="nav-link" href="HTML/userAuthentication.html">
-                          <img src="Images/perfil.png" width="84px" alt="Ícone Perfil" id="iconPerfil" id="iconPerfil" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                          <img src="Images/perfil.png" width="84px" alt="Ícone Perfil" id="iconPerfil" id="iconPerfil" style="filter: drop-shadow(0px 9px 3px #00000031);">
                       </a>
                   </li>
               </ul>
           </div>
       </nav>
     </div>
+
+    <!-- é index? -->
+    <div id="index" style="visibility: hidden;">index</div>
 
     <!-- Menu Widget "Mobile" -->
     <div id="divMenuMobile" style="visibility: hidden;">
@@ -76,46 +82,42 @@
         </div>
         <div class="row mt-5" id="gamesQuizzesMobile">
           
-          <div class="col-sm-2"></div>
-          <li class="col-sm-2 d-flex justify-content-center">
+          <div class="col-sm-2 col-2"></div>
+          <li class="col-sm-2 col-2 d-flex justify-content-center">
             <a href="index.html">
-                <img src="Images/jogos.png" id="iconJogosMobile" width="100%" alt="Ícone Jogos" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                <img src="Images/jogos.png" id="iconJogosMobile" width="100%" alt="Ícone Jogos" style="filter: drop-shadow(0px 9px 3px #00000031);">
                 <p class="text-center mt-2">Jogos</p>
             </a>
           </li>
 
-          <div class="col-sm-4"></div>
-          <li class="col-sm-2 d-flex justify-content-center">
+          <div class="col-sm-4 col-4"></div>
+          <li class="col-sm-2 col-2 d-flex justify-content-center">
             <a href="index.html">
-                <img src="Images/quizz.png" id="iconQuizzesMobile" width="100%" alt="Ícone Jogos" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                <img src="Images/quizz.png" id="iconQuizzesMobile" width="100%" alt="Ícone Jogos" style="filter: drop-shadow(0px 9px 3px #00000031);">
                 <p class="text-center mt-2">Quizzes</p>
             </a>
           </li>
         </div>
         <div class="row mt-4" id="rankingFavoritesMobile">
 
-          <div class="col-sm-2"></div>
-          <li class="col-sm-2 d-flex justify-content-center">
+          <div class="col-sm-2 col-2"></div>
+          <li class="col-sm-2 col-2 d-flex justify-content-center">
             <a href="index.html">
-                <img src="Images/ranking.png" id="iconRankingMobile" width="85%" alt="Ícone Jogos" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                <img src="Images/ranking.png" id="iconRankingMobile" width="85%" alt="Ícone Jogos" style="filter: drop-shadow(0px 9px 3px #00000031);">
                 <p class="text-center mt-2">Ranking</p>
             </a>
           </li>
 
-          <div class="col-sm-4"></div>
-          <li class="col-sm-2 d-flex justify-content-center">
+          <div class="col-sm-4 col-4"></div>
+          <li class="col-sm-2 col-2 d-flex justify-content-center">
             <a href="index.html">
-                <img src="Images/favoritos.png" id="iconFavoritosMobile" width="80%" alt="Ícone Jogos" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
-                <p class="text-center mt-2">Favoritos</p>
+                <img src="Images/favoritos.png" id="iconFavoritosMobile" class="ml-2" width="80%" alt="Ícone Jogos" style="filter: drop-shadow(0px 9px 3px #00000031);">
+                <p class="text-center mt-2 ml-1">Favoritos</p>
             </a>
           </li>
         </div>
       </div>
     </div>
-
-
-
-
 
     <!-- Modal Favoritos -->
     <div class="modal" id="modalFavorites">
@@ -306,8 +308,8 @@
       </section>
 
       <!--Botão de ajuda-->
-        <a id="helpButton" class="helpButton">
-          <!-- <img src="Images/helpButton.png" id="imgHelpButton" class="button-image " alt="Responsive image"> -->
+        <a id="helpButton" href="HTML/admin.html" class="helpButton" style="visibility: hidden;">
+          <img src="Images/admButton.png" id="imgHelpButton" class="button-image " alt="Responsive image">
         </a>
 
       <div class="row justify-content-around" style="background-color: #38E169;">
@@ -319,21 +321,6 @@
         </div> 
       </div>
 </div>
-
-<!-- <script>
-  const modalFavorites = document.getElementById('modalFavorites')
-  const btnFavorites = document.getElementById('btnFavorites')
-  const btnModalFavoritesClose = document.getElementById('btnModalFavoritesClose')
-
-  btnFavorites.addEventListener('click', function(){
-    // btnFavorites.focus()
-    modalFavorites.style.display = "block";
-  })
-
-  btnModalFavoritesClose.addEventListener('click', function(){
-    modalFavorites.style.display = ""
-  })
-</script> -->
 
 <script src="./JS/app.js" type="module"></script>
 

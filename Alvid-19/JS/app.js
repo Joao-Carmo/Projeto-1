@@ -23,16 +23,20 @@ class App {
                 profileView
             ],
             'admin': [
-                adminView
+                adminView,
+                favoritesView
             ],
             'ranking': [
-                rankingView
+                rankingView,
+                favoritesView
             ],
             'quizzes':[
-                quizzesView
+                quizzesView,
+                favoritesView
             ],
             'comments': [
-                 commentView
+                commentView,
+                favoritesView
              ]
         };
 
