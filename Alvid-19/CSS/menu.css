@@ -92,7 +92,7 @@ a:link , a:visited {
 
 #btnMenuMobile{
     position: absolute;
-    top: 10px;
+    top: 30px;
     right: 0px;
     text-align: right;
     border: none;
@@ -130,4 +130,126 @@ a:link , a:visited {
     font-size: 140%;
     filter: drop-shadow(0px 7px 3px #0a9cb6);
 }
-    /* ---FIM DO MENU--- */
+
+/* Responsividade conforme ecrãs e seus tamanhos */
+/* XS / telemóvel */
+@media screen and (max-width: 540px) {
+    #carouselCovidContentParagraph {
+        font-size: 100%;
+    } #carouselCovidContentBackground {
+        height: 35vh;
+    } #carouselCovidRight {
+        width: 70%;
+    } #carouselCovidLeft {
+        width: 70%;
+    }
+    
+    #titleSection {
+        font-size: 45px;
+    } #comentarios {
+        font-size: 40px;
+    } #btnLer {
+        font-size: 20px;
+    } #pFooter {
+        font-size: 15px;
+        /* position: relative;
+        right: 50px; */
+    }
+
+    #quizCarrossel {
+        position: relative;
+        right: 15px;
+    }
+
+    #divAlvid {
+        height: 35vh;
+    }
+
+    #imgHelpButton {
+        width: 20%;
+    }
+
+    #carouselGames, #carouselGamesContent {
+        height: 17vh;
+    } #carouselGamesRight, #carouselGamesLeft {
+        width: 80%;
+    } #gameCarousel {
+        width: 100%;
+    }
+
+    /* NUVENS animadas do divAlvid */
+    #backgroundCloud1 {
+        background-image: url('../Images/nuvem01.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        animation: animatedBackground 25s linear infinite alternate;
+    } #backgroundCloud2 {
+        background-image: url('../Images/nuvem02.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        animation: animatedBackground2 20s linear infinite alternate;
+    } #backgroundCloud3 {
+        position: relative;
+        left: 24.3px;
+        background-image: url('../Images/nuvem03.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        animation: animatedBackground2 35s linear infinite alternate;
+    } @keyframes animatedBackground {
+      from {
+        background-position: -300px 0;
+      }
+      to {
+        background-position: 370px 0;
+      }
+    } @keyframes animatedBackground2 {
+      from {
+        background-position: 370px 0;
+      }
+      to {
+        background-position: -300px 0;
+      }
+    }
+}
+
+/* XS / iphone 5 */
+@media screen and (min-width: 200px) and (max-width: 290px) {
+    #logoAlvid {
+        width: 150px;
+    }
+}
+@media screen and (min-width: 315px) and (max-width: 380px) {
+    #logoAlvid {
+        width: 180px;
+    }
+}
+/* SM / tablets */
+@media screen and (min-width: 535px) and (max-width: 780px) {
+    #logoAlvid {
+        width: 340px;
+        position: relative;
+        top: 10px;
+    }
+
+    #btnLoginRegister {
+        font-size: 25px;
+    }
+
+    #gamesQuizzesMobile {
+        position: relative;
+        top: 30px;
+    } #gamesQuizzesMobile p {
+        font-size: 35px;
+    }
+    #rankingFavoritesMobile {
+        position: relative;
+        top: 90px;
+    } #rankingFavoritesMobile p {
+        font-size: 35px;
+    }
+    
+}
+/* ipad pro */
+@media only screen and (min-width: 1020px) and (max-width: 1030px) and (max-height: 1400px) {
+
+}
