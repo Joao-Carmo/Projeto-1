@@ -5,6 +5,7 @@ import adminView from './views/adminView.js'
 import rankingView from './views/rankingView.js'
 import quizzesView from './views/quizzesView.js'
 import commentView from './views/commentView.js'
+import gameMemoryView from './views/gameMemoryView.js'
 
 class App {
     constructor() {
@@ -37,7 +38,10 @@ class App {
             'comments': [
                 commentView,
                 favoritesView
-             ]
+            ],
+            'gameMemory': [
+                gameMemoryView
+            ]
         };
 
         // importa dados dummy para testes
