@@ -54,9 +54,9 @@ export default class adminView {
 
 
         if (type == 'blocked') {
-            btnBlock.innerHTML = `<img src="../Images/bloquearVermelho.png">`
+            btnBlock.innerHTML = `<img class="${username}" src="../Images/bloquearVermelho.png">`
         } else {
-            btnBlock.innerHTML = `<img src="../Images/bloquear.png">`
+            btnBlock.innerHTML = `<img class="${username}" src="../Images/bloquear.png">`
         }
     }
 
@@ -73,16 +73,13 @@ export default class adminView {
                 const photo = users.find(users => users.username === username).photo
 
                 this.userController.userFromTable(username);
-                this.changeBtnUserType();
+                this.changeBtnUserType(username);
 
                 this.adminEditUser.innerHTML = `
                     <img src="../Images${photo}" class="col-lg-2 col-2" style="border-radius: 50px">
                     <p>${username}</p>`
                 
                 this.bindEditUser();
-                // this.changeUserType();
-                
-                
             })
         }
     }
@@ -104,25 +101,26 @@ export default class adminView {
         })
     }
 
-    changeBtnUserType() {
+    changeBtnUserType(username) {
         const type = this.userController.isUserType();
+        const btnUserBlock = document.querySelector(`.${username}`)
 
         if (type == 'admin') {
             this.btnAdmin.innerHTML = `<button id="btnAdmin" style="background-color: #38E169" type="button">Tornar user</button>`;
-            this.btnBlock.innerHTML = `<img src="../Images/bloquear.png">`
+            btnUserBlock.innerHTML = `<img src="../Images/bloquear.png">`
         } else if (type == 'user') {
             this.btnAdmin.innerHTML = `<button id="btnAdmin" type="button">Tornar admin</button>`;
-            this.btnBlock.innerHTML = `<img src="../Images/bloquear.png">`
+            btnUserBlock.innerHTML = `<img src="../Images/bloquear.png">`
         } else if (type == 'blocked') {
-            alert('This user is blocked');
-            this.btnBlock.innerHTML = `<img src="../Images/bloquearVermelho.png">`
-            this.btnAdmin.innerHTML = `<button id="btnAdmin" style="background-color: #38E169" type="button">Tornar user</button>`;
+            btnUserBlock.innerHTML = `<img src="../Images/bloquearVermelho.png">`
+            this.btnAdmin.innerHTML = `<button id="btnAdmin" style="background-color: #38E169" type="button">Desbloquear</button>`;
         }
     }
 
     changeUserType() {
         this.btnAdmin.addEventListener('click', () => {
             const type = this.userController.isUserType();
+            const username = this.userController.getUserFromTable();
 
                 if (type == 'admin') {
                     this.btnAdmin.innerHTML = `<button id="btnAdmin" style="background-color: #38E169" type="button">Tornar user</button>`;
@@ -131,24 +129,17 @@ export default class adminView {
                     this.btnAdmin.innerHTML = `<button id="btnAdmin" type="button">Tornar admin</button>`;
                     this.userController.makeAdmin();
                 } else if (type == 'blocked') {
-                    alert('This user is blocked');
-                    this.btnAdmin.innerHTML = `<button id="btnAdmin" style="background-color: #38E169" type="button">Tornar user</button>`;
+                    this.btnAdmin.innerHTML = `<button id="btnAdmin" style="background-color: #38E169" type="button">Desbloquear</button>`;
                     this.userController.makeUser();
                 }
 
-                this.changeBtnUserType()
-                // setTimeout(() => {
-                //     location.reload()
-                // }, 1000);
+                this.changeBtnUserType(username)
         })
     }
 
     bindSearch() {
-        //const users = this.userController.usersArray()
         this.searchForm.addEventListener('submit', event => {
             event.preventDefault();
-            //alert(this.usernameSearch.value)
-            //alert(this.usertypeSearch.options[this.usertypeSearch.selectedIndex].value)
             this.generateList(this.userController.usersList(this.usernameSearch.value, this.usertypeSearch.options[this.usertypeSearch.selectedIndex].value));
             this.bindEditButton();
         })
