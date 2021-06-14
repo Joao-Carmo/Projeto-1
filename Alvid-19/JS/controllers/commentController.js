@@ -9,13 +9,20 @@ export default class commentController {
         return this.comments
     }
 
+    getDate() {
+        const dateObj = new Date();
+        const month = dateObj.getUTCMonth() + 1; //meses de 1-12
+        const day = dateObj.getUTCDate();
+        const year = dateObj.getUTCFullYear();
+
+        return day + "/" + month + "/" + year;
+    }
+
     addComment(comment) {
         const username = sessionStorage.getItem('loggedUser')
-        alert(username)
-        alert(this.users);
         const idUser = this.users.find(user => user.username === username).id
         const photo = this.users.find(user => user.username === username).photo
-        const date = new Date().getFullYear()
+        const date = this.getDate();
         const id = +this.comments.length + 1
     
         this.comments.push(new commentModel(id,idUser,username,date,photo,comment));

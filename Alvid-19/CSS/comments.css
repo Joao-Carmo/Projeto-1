@@ -183,8 +183,16 @@ html, body {
     margin-top: 50px;
     
 }
-
-.efeito{
+#btnDiv button {
+    border-radius: 10px;
+    background-color: #006FDB;
+    font-family: 'FonteSite';
+    padding: 20px;
+    margin: 10px;
+    font-size: 24px;
+    line-height: 15px;
+}
+ .efeito{
     border: none;
     color:#f5f5f5;
     padding: 20px;
@@ -215,9 +223,9 @@ html, body {
     transition: all 1s ease;
 }
 
-.efeito-1:hover:before{
+ .efeito-1:hover:before{
     width: 100%;
-}
+}  
 
 #backgroundCommentCard {
     width: 18rem;
