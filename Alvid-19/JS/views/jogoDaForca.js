@@ -3,7 +3,7 @@ let words = ["covid", "alvid", "aprender", "jogar", "mascara", "vacina", "alcool
 let word = words[Math.floor(Math.random() * words.length)];
 
 let chances = 6;
-let right = 1;
+let right = 0;
 let image = 0;
 let position;
 let points = 0;
@@ -52,8 +52,12 @@ function chooseletter(letter) {
             span.appendChild(getLetter);
 
             let button = document.getElementById(letter);
+
+            if (button.getAttribute === 'id'){
+                button.setAttribute('id', 'correct');  //Troca id para correct
+            }
             
-            button.setAttribute('id', 'correct');  //Troca id para correct
+            
             
             button.removeAttribute('onclick'); //Proibe image de ser clicada
 
