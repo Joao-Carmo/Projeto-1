@@ -12,6 +12,7 @@ html,
 body {
     max-width: 100%;
     overflow-x: hidden;
+    height: 100%;
 }
 
 #menuLinks,
@@ -117,6 +118,24 @@ p {
 
 /* ---FIM DO MENU--- */
 
+@media (max-width: 700px) {
+    .form {
+        transform: scaleX(0.9) scaleY(0.9);
+    }
+}
+
+@media (max-width: 400px) {
+    .form {
+        transform: scaleX(0.8) scaleY(0.8);
+    }
+}
+
+@media (max-width: 320px) {
+    .form {
+        transform: scaleX(0.65) scaleY(0.65);
+    }
+}
+
 .form {
     position: absolute;
     border-radius: 62px;
@@ -125,6 +144,7 @@ p {
     width: 400px;
     height: 445px;
     overflow: hidden;
+    margin-block-end: 50px;
 }
 
 #profile {

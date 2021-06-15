@@ -140,7 +140,7 @@ p {
 /* border branca dos formulários */
 .form {
     position: absolute;
-    margin-top: 16px;
+    /* margin-top: 16px; */
     border-radius: 62px;
     border: 3px solid white;
     padding: 20px;
