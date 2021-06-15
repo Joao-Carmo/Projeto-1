@@ -13,6 +13,10 @@ export default class quizzesControler {
         return this.quizzes;
     }
 
+    getId(id) {
+        sessionStorage.setItem('idQuiz', id);
+    }
+
     createQuestions(title, photo, answer1, answer2, answer3, answer4, correctAnswer) {
         const id = this.questions.length + 1;
         const answers = [answer1, answer2, answer3, answer4];

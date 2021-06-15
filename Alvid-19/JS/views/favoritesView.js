@@ -36,6 +36,8 @@ export default class favoritesView {
         this.btnFavorites = document.querySelectorAll('#btnFavorites')
         this.btnModalFavoritesClose = document.querySelectorAll('#btnModalFavoritesClose')
         this.favoritesModal();
+
+        this.getID()
     }
 
     /**
@@ -197,6 +199,7 @@ export default class favoritesView {
 
     displayQuizzesImages() {
       this.quizzesImages(this.quizzesControler.quizzesArray());
+      
       const btnThumbnailQuiz = document.querySelectorAll('#btnThumbnailQuiz');
       if (!this.userController.isLogged() || this.userController.isBlocked()) {
         for (const btn of btnThumbnailQuiz) {
@@ -204,6 +207,19 @@ export default class favoritesView {
         }
       }
     }
+
+
+    getID() {
+      const btnThumbnailQuiz = document.querySelectorAll('#btnThumbnailQuiz');
+      for (const btn of btnThumbnailQuiz) {
+        btn.addEventListener('click', () => {
+          const id = btn.children[0].id
+          alert(id);
+          this.quizzesControler.getId(id);
+        })
+      }
+    }
+    
 
 
     /**
@@ -215,12 +231,11 @@ export default class favoritesView {
         for (let pos = 0; pos < quizzes.length; pos++) {
           html += `
             <a class="mt-2 ml-3 col-lg-4 col-6" href="HTML/quizzes.html" id="btnThumbnailQuiz">
-              <img src="${quizzes[pos].image}" id="${pos+1}"class="mt-5 col-sm-7 ml-4 mb-5" alt="Responsive image">
+              <img src="${quizzes[pos].image}" id="${pos+1}" class="mt-5 col-sm-7 ml-4 mb-5" alt="Responsive image">
             </a>`
-          alert(quizzes[1]);
+          
         }
         this.thumbnailQuizzes.innerHTML = html;
-        
       }
     }
         
