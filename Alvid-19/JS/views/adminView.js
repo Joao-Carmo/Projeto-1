@@ -1,8 +1,10 @@
 import userController from '../controllers/userController.js'
+import quizzesControler from '../controllers/quizzesController.js'
 
 export default class adminView {
     constructor() {
         this.userController = new userController();
+        this.quizzesControler = new quizzesControler();
 
         //Gerar lista de utilizadores na tabela
         this.usersList = document.querySelector('#usersTable');
@@ -34,6 +36,21 @@ export default class adminView {
         this.btnAdmin = document.querySelector('#changeUserType');
         this.changeUserType();
 
+
+        //Criar novo quiz
+        this.txtQuizName = document.querySelector('#txtQuizName');
+        this.imgQuiz = document.querySelector('#imgQuiz');
+        this.txtQuizDescription = document.querySelector('#txtQuizDescription');
+        this.imgQuestion = document.querySelector('#imgQuestion');
+        this.question1 = document.querySelector('#question1');
+        this.question1A = document.querySelector('#question1A');
+        this.question1B = document.querySelector('#question1B');
+        this.question1C = document.querySelector('#question1C');
+        this.question1D = document.querySelector('#question1D');
+        this.radAnswer = document.querySelector('input[name="rightAnswer"]:checked');
+        this.formQuiz = document.querySelector('#formQuiz');
+        this.btnCreateNewQuiz = document.querySelector('#btnCreateNewQuiz');
+        this.createQuiz();
     }
 
     bindBlock() {
@@ -190,10 +207,29 @@ export default class adminView {
         this.usersList.innerHTML = html
     }
 
+
+
+    /**
+     * Função de criar um quiz novo
+     */
+    createQuestions() {
+        this.formQuiz.addEventListener('submit', event => {
+            event.preventDefault();
+
+            this.quizzesControler.createQuestions(this.question1.value, this.imgQuestion.value, this.question1A.value, this.question1B.value, this.question1C.value, this.question1D.value)
+        })
+    }
+
+
+
+
+
+
     /**
      * Função que define uma mensagem de erro
      */
     displayMessage(text) {
         this.errorMessage.innerHTML = text;
+
     }
 }

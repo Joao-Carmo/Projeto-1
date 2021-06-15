@@ -12,6 +12,4 @@ export default class userModel {
         this.games = games
         this.quizzes = quizzes
     }
-    
-    
 }

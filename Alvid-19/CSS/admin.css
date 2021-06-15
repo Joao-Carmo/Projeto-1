@@ -84,6 +84,16 @@ p {
     top: 20px; */
 } #imgQuiz {
     border-radius: 20px;
+    font-family: 'FonteSite';
+    src: url("../Fonts/MouseMemoirs-Regular.ttf");
+    font-size: 105%;
+    width: 100%;
+    height: 100%;
+    border-radius: 13px;
+    filter: drop-shadow(3px 6px 3px #5bb2c2);
+    border: none;
+    outline: none;
+    color: #757575;
 }
 
 #users, #quizzes {

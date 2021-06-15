@@ -15,7 +15,6 @@ export default class quizzesView {
     }
 
     bindQuiz(){
-
         let id = 1
         const quizzes = this.quizzesControler.quizzesArray()
         const name = quizzes.find (quizzes=> quizzes.id === id).name
