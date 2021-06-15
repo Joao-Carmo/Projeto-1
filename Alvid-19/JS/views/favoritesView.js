@@ -8,6 +8,10 @@ export default class favoritesView {
 
         this.index = document.querySelector('#index')
 
+        this.alvidTalk = document.querySelector('#alvidTalk')
+        this.alvidAnimated = document.querySelector('#alvidAnimated')
+        this.alvidTalking();
+
         this.helpButton = document.querySelector('#helpButton')
         this.btnAdminManagement();
 
@@ -35,9 +39,36 @@ export default class favoritesView {
         this.modalFavorites = document.querySelector('#modalFavorites')
         this.btnFavorites = document.querySelectorAll('#btnFavorites')
         this.btnModalFavoritesClose = document.querySelectorAll('#btnModalFavoritesClose')
+        this.btnAddFavorites = document.querySelector('#btnAddFavorites')
+        this.modalBodyFavorites = document.querySelector('#modalBodyFavorites')
+        this.favoritesModalContent();
         this.favoritesModal();
 
-        this.getID()
+        this.getID();
+    }
+
+    alvidTalking() {
+      if (this.isIndex()) {
+        this.alvidTalk.addEventListener('click', () => {
+          const id = +(this.alvidTalk.children[0].id)
+          if (id <= 4) {
+            this.alvidAnimated.innerHTML = `
+              <img src="Images/alvid_talking.gif" alt="Personagem Alvid-19" id="caracterAlvid">
+            `
+            this.alvidTalk.innerHTML = `
+              <img src="Images/balao${id+1}.png" id="${id+1}" height="50%">
+            `
+          } else {
+            const id = 0
+            this.alvidAnimated.innerHTML = `
+              <img src="Images/alvid_blinking_gif.gif" alt="Personagem Alvid-19" id="caracterAlvid">
+            `
+            this.alvidTalk.innerHTML = `
+              <img src="Images/balao${id+1}.png" id="${id+1}" height="50%">
+            `
+          }
+        })
+      }
     }
 
     /**
@@ -53,12 +84,19 @@ export default class favoritesView {
       }
     }
 
+    isGameQuiz() {
+      if (this.index.innerHTML == 'gamificação') {
+        return true
+      } else {
+        return false
+      }
+    }
+
     /**
      * Função que abre/fecha o menu mobile. 
      */
     menuMobile() {
         this.btnMenuMobile.addEventListener('click', () => {
-          console.log('oi')
 
           this.divMenuMobile.style.visibility = 'visible' 
 
@@ -214,7 +252,6 @@ export default class favoritesView {
       for (const btn of btnThumbnailQuiz) {
         btn.addEventListener('click', () => {
           const id = btn.children[0].id
-          alert(id);
           this.quizzesControler.getId(id);
         })
       }
@@ -260,6 +297,7 @@ export default class favoritesView {
       for (const btnFavorite of this.btnFavorites) {
         btnFavorite.addEventListener('click', () => {
           this.modalFavorites.style.display = "block";
+          this.favoritesModalPutContent()
         })
       }
 
@@ -270,13 +308,38 @@ export default class favoritesView {
       }
     }
 
-    /* favoritesModalContent() {
-      for (const btnFavorite of this.btnFavorites) {
-        btnFavorite.addEventListener('click', () => {
-          // <img src="../Images/Como ser Herói!.png" id="1" width="100%" style="border-radius: 40px">
-          
+    favoritesModalContent() {
+      if (this.isGameQuiz()) {
+        this.btnAddFavorites.addEventListener('click', () => {
+          this.userController.userFavorites(this.btnAddFavorites.parentNode.parentNode.children[0].id)
         })
       }
-    } */
+    }
+
+    favoritesModalPutContent() {
+      const favorites = this.userController.getFavorites()
+
+      let HTML = ''
+        for (const favorite of favorites) {
+          const quizzes = this.quizzesControler.quizzesArray()
+
+          if (this.isIndex()) {
+            HTML = `
+              <div class="col">
+                  <img src="${quizzes[+favorite-1].image}" width="100%" style="border-radius: 15px">
+              </div>
+            `
+          } else {
+            HTML = `
+              <div class="col">
+                  <img src="../${quizzes[+favorite-1].image}" width="100%" style="border-radius: 15px">
+              </div>
+            `
+          }
+
+        }
+
+        this.modalBodyFavorites.innerHTML = HTML
+    }
 }
 

@@ -26,7 +26,14 @@ export default class quizzesView {
         const description = quizzes.find(quizzes => quizzes.id == id).description;
     
         this.quizTitle.innerHTML = `<p id="titleSection">${name}</p>`;
-        this.quizCarousel.src = `../${image}`;
+
+        if (id == '1') {
+            this.quizCarousel.src = `../${image}`
+        } else {
+            this.quizCarousel.src = image
+        }
+
+        this.quizCarousel.id = id
         this.descricaoJogo.innerHTML = `${description}`;
 
 

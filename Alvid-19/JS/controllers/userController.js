@@ -228,10 +228,13 @@ export default class userController {
      */
     userFavorites(favorited) {
         const id = sessionStorage.getItem('loggedUserId')
-        let favorites = this.users[id-1].favorites
-        favorites = favorites.push(favorited)
-        this.users[id-1].favorites = favorites
+        this.users[id-1].favorites.push(favorited)
         localStorage.setItem('users', JSON.stringify(this.users))
+    }
+
+    getFavorites() {
+        const id = sessionStorage.getItem('loggedUserId')
+        return this.users[id-1].favorites
     }
 }
 
