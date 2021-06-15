@@ -1,8 +1,10 @@
 import userController from '../controllers/userController.js'
+import commentController from '../controllers/commentController.js'
 
 export default class profileView {
     constructor() {
         this.userController = new userController();
+        this.commentController = new commentController();
 
         this.profileIcon = document.querySelector('#profileIcon');
         this.editProfileImage = document.querySelector('#editProfileImage');
@@ -35,7 +37,7 @@ export default class profileView {
         this.pEmail = document.querySelector('#pEmail')
         this.pPoints = document.querySelector('#pPoints')
         this.pComments = document.querySelector('#pComments')
-        // this.profileInformation();
+        this.profileInformation();
     }
 
     /**
@@ -88,10 +90,18 @@ export default class profileView {
     profileInformation() {
         const username = this.userController.loggedUser();
         const users = this.userController.usersArray();
+        const comments = this.commentController.commentsArray();
+
         const date = users.find(users => users.username === username).date
         const points = users.find(users => users.username === username).points
         const email = users.find(users => users.username === username).email
+        const comment = comments.filter(comment => comment.username === username).length
 
+        this.pUsername.innerHTML = `Nome de utilizador: ${username}`
+        this.pBirthDate.innerHTML = `Data de nascimento: ${date}`
+        this.pEmail.innerHTML = `E-mail: ${email}`
+        this.pPoints.innerHTML = `Pontuação total: ${points}`
+        this.pComments.innerHTML = `Nº de comentários: ${comment}`
     }
 
 
