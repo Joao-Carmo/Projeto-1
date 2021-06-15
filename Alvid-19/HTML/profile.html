@@ -28,62 +28,115 @@
         <!-- linha do menu -->
         <div id="header">
             <nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="height: 135px;">
-                <a class="navbar-brand" href="../index.html">
+                <a class="navbar-brand" href="../index.html" id="btnLogo" style="position: relative;">
                     <img class="ml-4" src="../Images/logo_alvid.png" width="250px" id="logoAlvid" alt="LOGO Alvid-19">
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#widget-menu"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                    style="border: 0px;">
-                    <img src="../Images/popup_menu_mobile.png" width="78px" alt="Menu Hamburger Mobile"
-                        style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
-                </button>
-
+                <a class="navbar-toggler col-6" id="btnMenuMobile" type="button" data-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="position: absolute; visibility: visible;"><!-- data-target="#widget-menu" -->
+                    <img class="mr-4" src="../Images/popup_menu_mobile.png" width="35%" alt="Menu Hamburger Mobile" style="filter: drop-shadow(0px 9px 3px #00000031);">
+                </a>
+                <a class="navbar-toggler col-6" id="btnMenuMobileMinus" type="button" data-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="position: fixed; visibility: hidden;"><!-- data-target="#widget-menu" -->
+                  <img class="mr-4" src="../Images/popup_menu_mobile_menos.png" width="35%" alt="Menu Hamburger Mobile" style="filter: drop-shadow(0px 9px 3px #00000031);">
+                </a>
+              
                 <div class="collapse navbar-collapse" id="widget-menu">
                     <ul class="navbar-nav mr-auto mt-5" style="height: 135px;">
-                        <li class="nav-item active mx-4 mt-1">
-                            <!-- Jogos -->
+                        <li class="nav-item active mx-4 mt-1"> <!-- Jogos -->
                             <a class="nav-link" href="../index.html">
-                                <img src="../Images/jogos.png" width="60px" alt="Ícone Jogos" id="iconJogos"
-                                    style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
-                                <!-- <span class="sr-only">(current)</span> -->
+                                <img src="../Images/jogos.png" width="60px" alt="Ícone Jogos" id="iconJogos" style="filter: drop-shadow(0px 9px 3px #00000031);">
                                 <p class="text-center mt-2" id="#pMenu">Jogos</p>
                             </a>
                         </li>
-                        <li class="nav-item mx-4">
-                            <!-- Quizzes -->
+                        <li class="nav-item mx-4"> <!-- Quizzes -->
                             <a class="nav-link" href="../index.html">
-                                <img src="../Images/quizz.png" width="70px" alt="Ícone Quizzes" id="iconQuizzes"
-                                    style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                                <img src="../Images/quizz.png" width="70px" alt="Ícone Quizzes" id="iconQuizzes" style="filter: drop-shadow(0px 9px 3px #00000031);">
                                 <p class="text-center mt-2" id="#pMenu">Quizzes</p>
                             </a>
                         </li>
-                        <li class="nav-item mx-4 my-1">
-                            <!-- Ranking -->
-                            <a class="nav-link" href="HTML/ranking.html">
-                                <img src="../Images/ranking.png" width="45px" alt="Ícone Ranking" id="iconRanking"
-                                    style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                        <li class="nav-item mx-4 my-1"> <!-- Ranking -->
+                            <a class="nav-link" href="../HTML/ranking.html">
+                                <img src="../Images/ranking.png" width="45px" alt="Ícone Ranking" id="iconRanking" style="filter: drop-shadow(0px 9px 3px #00000031);">
                                 <p class="text-center mt-2" id="#pMenu">Ranking</p>
                             </a>
                         </li>
-                        <li class="nav-item mx-4 my-1">
-                            <!-- Favoritos -->
-                            <a class="nav-link" href="index.html">
-                                <img src="../Images/favoritos.png" width="55px" alt="Ícone Favoritos" id="iconFavoritos"
-                                    style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                        <li class="nav-item mx-4 my-1"> <!-- Favoritos -->
+                            <a type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#modalFavorites" id="btnFavorites">
+                                <img src="../Images/favoritos.png" width="55px" alt="Ícone Favoritos" id="iconFavoritos" style="filter: drop-shadow(0px 9px 3px #00000031);">
                                 <p class="text-center mt-2" id="#pMenu">Favoritos</p>
                             </a>
                         </li>
-                        <li class="nav-item ml-5 mr-5" id="profileIcon">
-                            <!-- Perfil -->
-                            <a class="nav-link" href="editProfile.html">
-                                <img src="../Images/perfil.png" width="84px" alt="Ícone Perfil" id="iconPerfil"
-                                    id="iconPerfil" style="filter: drop-shadow(0px 9px 3px #0a9cb6);">
+                        <li class="nav-item ml-5 mr-5" id="profileIcon"> <!-- Perfil -->
+                            <a class="nav-link" href="../HTML/userAuthentication.html">
+                                <img src="../Images/perfil.png" width="84px" alt="Ícone Perfil" id="iconPerfil" id="iconPerfil" style="filter: drop-shadow(0px 9px 3px #00000031);">
                             </a>
                         </li>
                     </ul>
                 </div>
             </nav>
         </div>
+
+        <!-- é index? -->
+        <div id="index" style="visibility: hidden;"></div>
+
+        <!-- Menu Widget "Mobile" -->
+        <div id="divMenuMobile" style="visibility: hidden;">
+        <div id="divMenuMobileContent">
+            <div class="d-flex justify-content-center" id="divLoginProfile">
+                <a href="userAuthentication.html" class="col-sm-5 col-6 text-center" id="btnLoginRegister" style="background-color: #ffffff; background-size: contain; border-radius: 10px;">Fazer login/registar</a>
+            </div>
+            <div class="row mt-5" id="gamesQuizzesMobile">
+            
+            <div class="col-sm-2 col-2"></div>
+            <li class="col-sm-2 col-2 d-flex justify-content-center">
+                <a href="../index.html">
+                    <img src="../Images/jogos.png" id="iconJogosMobile" width="100%" alt="Ícone Jogos" style="filter: drop-shadow(0px 9px 3px #00000031);">
+                    <p class="text-center mt-2">Jogos</p>
+                </a>
+            </li>
+  
+            <div class="col-sm-4 col-4"></div>
+            <li class="col-sm-2 col-2 d-flex justify-content-center">
+                <a href="../index.html">
+                    <img src="../Images/quizz.png" id="iconQuizzesMobile" width="100%" alt="Ícone Jogos" style="filter: drop-shadow(0px 9px 3px #00000031);">
+                    <p class="text-center mt-2">Quizzes</p>
+                </a>
+            </li>
+        </div>
+        <div class="row mt-4" id="rankingFavoritesMobile">
+            <div class="col-sm-2 col-2"></div>
+            <li class="col-sm-2 col-2 d-flex justify-content-center">
+                <a href="ranking.html">
+                    <img src="../Images/ranking.png" id="iconRankingMobile" width="85%" alt="Ícone Jogos" style="filter: drop-shadow(0px 9px 3px #00000031);">
+                    <p class="text-center mt-2">Ranking</p>
+                </a>
+            </li>
+  
+            <div class="col-sm-4 col-4"></div>
+            <li class="col-sm-2 col-2 d-flex justify-content-center">
+                <a type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#modalFavorites" id="btnFavorites">
+                    <img src="../Images/favoritos.png" id="iconFavoritosMobile" class="ml-2" width="80%" alt="Ícone Jogos" style="filter: drop-shadow(0px 9px 3px #00000031);">
+                    <p class="text-center mt-2 ml-1">Favoritos</p>
+                </a>
+            </li>
+            </div>
+        </div>
+    </div>
+  
+    <!-- Modal Favoritos -->
+    <div class="modal" id="modalFavorites">
+        <div class="modal-dialog">
+            <div class="modal-content" id="modalContent" style="background-color: #ffffffb6;">
+            <!-- Cabeçalho da Modal -->
+                <div class="modal-header">
+                    <!-- <h4 class="modal-title">Login</h4> -->
+                    <button type="button" class="close" data-dismiss="modal" id="btnModalFavoritesClose">&times;</button>
+                </div>
+                <!-- Corpo da Modal -->
+                <div class="modal-body" id="modalBodyFavorites">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 
 
         <!-- formulário -->
@@ -190,37 +243,6 @@
             </div>
         </div>
     </div>
-    <!-- <script>
-        const switchEdit = document.querySelector('#switchEdit');
-        const switchProfile = document.querySelector('#switchProfile');
-        const formProfile = document.querySelector('#profile');
-        const formEdit = document.querySelector('#edit');
-
-
-        switchEdit.addEventListener('click', () => {
-            formProfile.style.transform = "translateX(-375px)"
-            formEdit.style.transform = "translateX(-410px)"
-        })
-
-        switchProfile.addEventListener('click', () => {
-            formProfile.style.transform = "translateX(0px)"
-            formEdit.style.transform = "translateX(0px)"
-        })
-
-
-        const modalAvatars = document.getElementById('modalAvatars')
-        const btnAvatars = document.getElementById('btnAvatars')
-        const btnModalAvatarsClose = document.getElementById('btnModalAvatarsClose')
-
-        btnAvatars.addEventListener('click', function(){
-            modalAvatars.style.display = "block";
-        })
-
-        btnModalAvatarsClose.addEventListener('click', function(){
-            modalAvatars.style.display = ""
-        })
-    </script> -->
-
     <script src="../JS/app.js" type="module"></script>
 </body>
 

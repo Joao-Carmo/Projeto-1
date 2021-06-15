@@ -18,10 +18,12 @@ class App {
                 favoritesView
             ],
             'userAuthentication': [
-                userAuthenticationView
+                userAuthenticationView,
+                favoritesView
             ],
             'profile': [
-                profileView
+                profileView,
+                favoritesView
             ],
             'admin': [
                 adminView,
@@ -40,7 +42,8 @@ class App {
                 favoritesView
             ],
             'gameMemory': [
-                gameMemoryView
+                gameMemoryView,
+                favoritesView
             ]
         };
 

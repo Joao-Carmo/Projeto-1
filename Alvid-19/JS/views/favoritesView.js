@@ -135,12 +135,13 @@ export default class favoritesView {
                   <img src="Images/perfil.png" width="84px" alt="Ícone Perfil" id="iconPerfil" id="iconPerfil" style="filter: drop-shadow(0px 9px 3px #0a9cb6);border-radius: 50px">
               </a>            
             `
-          }
+          } else {
             this.profileIcon.innerHTML = `
               <a class="nav-link" href="HTML/userAuthentication.html">
                 <img src="../Images/perfil.png" width="84px" alt="Ícone Perfil" id="iconPerfil" id="iconPerfil" style="filter: drop-shadow(0px 9px 3px #0a9cb6);border-radius: 50px">
               </a>
             ` 
+          }
         }
     }
 
@@ -166,17 +167,26 @@ export default class favoritesView {
 
         } else {
           this.memoryGame.innerHTML = `
-            <a href="HTML/jogoDaMemoria.html">
+            <a href="HTML/gameMemory.html">
               <img src="Images/Jogo da Memoria.png" alt="Responsive image" class="img-fluid" id="gameCarousel">
             </a>`
 
           this.hangmanGame.innerHTML = `
-            <a href="HTML/jogoDaForca.html">
+            <a href="HTML/gameMemory.html">
               <img src="Images/Jogo da f rca.png" alt="Responsive image" class="img-fluid" id="gameCarousel">
             </a>`
 
           this.iconRanking.parentNode.href = 'HTML/ranking.html'
           this.iconRankingMobile.parentNode.href = 'HTML/ranking.html'
+        }  
+      } else {
+        if (!this.userController.isLogged() || this.userController.isBlocked()) {
+          this.iconRanking.parentNode.href = 'userAuthentication.html'
+          this.iconRankingMobile.parentNode.href = 'userAuthentication.html'
+
+        } else {
+          this.iconRanking.parentNode.href = 'ranking.html'
+          this.iconRankingMobile.parentNode.href = 'ranking.html'
         }  
       }
     }
