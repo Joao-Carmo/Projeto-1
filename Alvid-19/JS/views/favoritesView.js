@@ -25,13 +25,10 @@ export default class favoritesView {
         this.profileIcon = document.querySelector('#profileIcon');
         this.updateStatusUI();
 
-
         this.modalFavorites = document.querySelector('#modalFavorites')
         this.btnFavorites = document.querySelector('#btnFavorites')
         this.btnModalFavoritesClose = document.querySelector('#btnModalFavoritesClose')
         this.favoritesModal();
-        
-
     }
 
     /**
@@ -47,6 +44,9 @@ export default class favoritesView {
       }
     }
 
+    /**
+     * Função que abre/fecha o menu mobile. 
+     */
     menuMobile() {
         this.btnMenuMobile.addEventListener('click', () => {
           console.log('oi')
@@ -67,6 +67,9 @@ export default class favoritesView {
         })
     }
 
+    /**
+     * Função que faz aparecer a imagem de perfil do utilizador no lugar de ícone de perfil. 
+     */
     updateStatusUI() {
         if (this.userController.isLogged()) {
             const username = this.userController.loggedUser();
@@ -128,6 +131,9 @@ export default class favoritesView {
       }
     }
 
+    /**
+     * Função que acrescenta, através do array de quizDetails, os quizzes no index.html. 
+     */
     quizzesImages() {
       if (this.isIndex()) {
         this.thumbnailQuizzes.innerHTML += `
@@ -137,18 +143,20 @@ export default class favoritesView {
       }
     }
 
+    /**
+     * Função que torna o botão de admin visível quando o utilizador é administrador. 
+     */
     btnAdminManagement() {
       if (this.isIndex()) {
         if (this.userController.isAdmin()) {
           this.helpButton.style.visibility = 'visible'
-          // this.helpButton.innerHTML = `
-          //   <a href="HTML/admin.html">
-          //     <img src="Images/admButton.png" id="imgHelpButton" class="button-image " alt="Responsive image">
-          //   </a>`
         }
       }
     }
 
+    /**
+     * Função que abre/fecha a modal dos favoritos. 
+     */
     favoritesModal() {
       this.btnFavorites.addEventListener('click', () => {
         this.modalFavorites.style.display = "block";
