@@ -13,11 +13,13 @@ export default class favoritesView {
         this.btnMenuMobileMinus = document.querySelector('#btnMenuMobileMinus')
         this.divMenuMobile = document.querySelector('#divMenuMobile')
         this.btnLogo = document.querySelector('#btnLogo')
+        this.divLoginProfile = document.querySelector('#divLoginProfile')
         this.menuMobile()
 
         this.hangmanGame = document.querySelector('#hangmanGame')
         this.memoryGame = document.querySelector('#memoryGame')
         this.iconRanking = document.querySelector('#iconRanking')
+        this.iconRankingMobile = document.querySelector('#iconRankingMobile')
         this.updatePermissions();
 
         this.thumbnailQuizzes = document.querySelector('#thumbnailQuizzes')
@@ -53,7 +55,42 @@ export default class favoritesView {
           console.log('oi')
 
           this.divMenuMobile.style.visibility = 'visible' 
-          if (this.isIndex()) { this.helpButton.style.visibility = 'hidden' }
+
+          if (this.isIndex()) {
+            this.helpButton.style.visibility = 'hidden'
+
+            if (!this.userController.isLogged()) {
+              this.divLoginProfile.innerHTML = `
+                <a href="HTML/userAuthentication.html" class="col-sm-5 col-6 text-center" id="btnLoginRegister" style="background-color: #ffffff; background-size: contain; border-radius: 10px;">Fazer login/registar</a>
+              `
+            } else {
+              const username = this.userController.loggedUser();
+              const users = this.userController.usersArray();
+              const photo = users.find(users => users.username === username).photo
+
+              this.divLoginProfile.innerHTML = `
+                <a class="col-sm-5 col-6 text-center" href="HTML/profile.html">
+                  <img src="Images${photo}" width="100%" alt="Ícone Perfil" id="iconPerfil" id="iconPerfil" style="filter: drop-shadow(0px 9px 3px #00000031); border-radius: 50px;">
+                </a>
+              `
+            }
+          } else {
+            if (!this.userController.isLogged()) {
+              this.divLoginProfile.innerHTML = `
+                <a href="userAuthentication.html" class="col-sm-5 col-6 text-center" id="btnLoginRegister" style="background-color: #ffffff; background-size: contain; border-radius: 10px;">Fazer login/registar</a>
+              `
+            } else {
+              const username = this.userController.loggedUser();
+              const users = this.userController.usersArray();
+              const photo = users.find(users => users.username === username).photo
+
+              this.divLoginProfile.innerHTML = `
+                <a class="col-sm-5 col-6 text-center" href="profile.html">
+                  <img src="../Images${photo}" width="100%" alt="Ícone Perfil" id="iconPerfil" id="iconPerfil" style="filter: drop-shadow(0px 9px 3px #00000031); border-radius: 50px;">
+                </a>
+              `
+            }
+          }
 
           this.btnMenuMobile.style.visibility = 'hidden'
           this.btnMenuMobileMinus.style.visibility = 'visible'
@@ -125,6 +162,7 @@ export default class favoritesView {
             </a>`
 
           this.iconRanking.parentNode.href = 'HTML/userAuthentication.html'
+          this.iconRankingMobile.parentNode.href = 'HTML/userAuthentication.html'
 
         } else {
           this.memoryGame.innerHTML = `
@@ -138,6 +176,7 @@ export default class favoritesView {
             </a>`
 
           this.iconRanking.parentNode.href = 'HTML/ranking.html'
+          this.iconRankingMobile.parentNode.href = 'HTML/ranking.html'
         }  
       }
     }
