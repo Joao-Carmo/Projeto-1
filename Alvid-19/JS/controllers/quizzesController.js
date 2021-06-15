@@ -6,21 +6,29 @@ export default class quizzesControler {
     constructor () {
         this.quizzes = localStorage.quizDetails ? JSON.parse(localStorage.getItem("quizDetails")) : [];
         this.users = localStorage.users ? JSON.parse(localStorage.getItem("users")) : [];
+        this.questions = [];
     }
 
     quizzesArray() {
-        return this.quizzes
+        return this.quizzes;
     }
 
-    createQuestions(title, photo, answers, correctAnswer) {
-        const questions = []
-        const id = questions.length + 1
-        questions.push(new questionsModel(id, title, photo, answers, correctAnswer));
+    createQuestions(title, photo, answer1, answer2, answer3, answer4, correctAnswer) {
+        const id = this.questions.length + 1;
+        const answers = [answer1, answer2, answer3, answer4];
+        this.questions.push(new questionsModel(id, title, photo, answers, correctAnswer));
+        // return this.questions;
+
     }
 
-    createQuiz(name, image, description, questions) {
-        const id = this.quizzes.length + 1
-        this.quizzes.push(new quizModel(id, name, image, description, questions))
-        localStorage.setItem('quizDetails', JSON.stringify(this.quizzes))
+    createQuiz(name, image, description) {
+        if (this.questions.length == 0) {
+            alert('Não existem perguntas')
+        } else {
+            const id = this.quizzes.length + 1;
+            this.quizzes.push(new quizModel(id, name, image, description, this.questions));
+            localStorage.setItem('quizDetails', JSON.stringify(this.quizzes));
+        }
+        
     }
 }

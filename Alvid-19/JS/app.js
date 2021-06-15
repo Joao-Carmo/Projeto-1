@@ -25,7 +25,7 @@ class App {
             ],
             'admin': [
                 adminView,
-                favoritesView
+                // favoritesView
             ],
             'ranking': [
                 rankingView,

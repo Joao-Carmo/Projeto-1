@@ -47,9 +47,10 @@ export default class adminView {
         this.question1B = document.querySelector('#question1B');
         this.question1C = document.querySelector('#question1C');
         this.question1D = document.querySelector('#question1D');
-        this.radAnswer = document.querySelector('input[name="rightAnswer"]:checked');
+        
         this.formQuiz = document.querySelector('#formQuiz');
         this.btnCreateNewQuiz = document.querySelector('#btnCreateNewQuiz');
+        this.createQuestions()
         this.createQuiz();
     }
 
@@ -215,15 +216,21 @@ export default class adminView {
     createQuestions() {
         this.formQuiz.addEventListener('submit', event => {
             event.preventDefault();
-
-            this.quizzesControler.createQuestions(this.question1.value, this.imgQuestion.value, this.question1A.value, this.question1B.value, this.question1C.value, this.question1D.value)
+            const radAnswer = document.querySelector('input[name="rightAnswer"]:checked');
+            this.quizzesControler.createQuestions(this.question1.value, this.imgQuestion.value, this.question1A.value, this.question1B.value, this.question1C.value, this.question1D.value, radAnswer.value);
+            // alert(questions)
+            // return questions;
         })
+
     }
 
-
-
-
-
+    createQuiz() {
+        this.btnCreateNewQuiz.addEventListener('click', () => {
+            // const questions = this.quizzesControler.createQuestions();
+            // alert(questions)
+            this.quizzesControler.createQuiz(this.txtQuizName.value, this.imgQuiz.value, this.txtQuizDescription.value);
+        })
+    }
 
     /**
      * Função que define uma mensagem de erro
