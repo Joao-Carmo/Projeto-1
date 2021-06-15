@@ -29,6 +29,13 @@ export default class profileView {
         this.confirmNewPassword = document.querySelector('#txtConfirmNewPassword');
         this.editMessage = document.querySelector('#editMessage');
         this.bindEdit();
+
+        this.pUsername = document.querySelector('#pUsername')
+        this.pBirthDate = document.querySelector('#pBirthDate')
+        this.pEmail = document.querySelector('#pEmail')
+        this.pPoints = document.querySelector('#pPoints')
+        this.pComments = document.querySelector('#pComments')
+        // this.profileInformation();
     }
 
     /**
@@ -76,6 +83,15 @@ export default class profileView {
         this.editProfileImage.style = `
             background-image: url('../Images${photo}'); background-size: contain; opacity: 100%; position: relative; left: -8px; border-radius: 50px
         `
+    }
+
+    profileInformation() {
+        const username = this.userController.loggedUser();
+        const users = this.userController.usersArray();
+        const date = users.find(users => users.username === username).date
+        const points = users.find(users => users.username === username).points
+        const email = users.find(users => users.username === username).email
+
     }
 
 
