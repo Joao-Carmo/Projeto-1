@@ -229,6 +229,7 @@ export default class adminView {
             // const questions = this.quizzesControler.createQuestions();
             // alert(questions)
             this.quizzesControler.createQuiz(this.txtQuizName.value, this.imgQuiz.value, this.txtQuizDescription.value);
+            
         })
     }
 
