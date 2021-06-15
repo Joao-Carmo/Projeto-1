@@ -70,12 +70,17 @@ export default class gameMemoryController {
     }
 
     givePoints(givenPoints) {
-        // const username = sessionStorage.getItem('loggedUser')
-        const username = 'Viviana'
+        const username = sessionStorage.getItem('loggedUser')
+        const id = sessionStorage.getItem('loggedUserId')
+
         let points = +(this.users.find(user => user.username === username).points)
         points += +givenPoints
-        this.users.find(user => user.username === username).points == points
-        alert(points)
+
+        let games = +(this.users.find(user => user.username === username).games)
+        games += 1
+
+        this.users[id-1].points = points
+        this.users[id-1].games = games
         localStorage.setItem('users', JSON.stringify(this.users))
     }
 
