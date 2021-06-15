@@ -119,7 +119,7 @@ export default class profileView {
         this.modalBody = `
             <button id="btnAvatarsImg" type="button" class="col">
                 <img src="../Images/avatars/1.png" id="1" width="100%">
-                <p>Desbloqueado!</p>
+                <p style="color: rgb(38, 189, 38);">Desbloqueado!</p>
             </button>
         `
 
@@ -128,7 +128,7 @@ export default class profileView {
                 this.modalBody += `
                     <button id="btnAvatarsImg" type="button" class="col">
                         <img src="../Images/avatars/${pos+1}.png" id="${pos+1}" width="100%">
-                        <p>Desbloqueado!</p>
+                        <p style="color: rgb(38, 189, 38);">Desbloqueado!</p>
                     </button>
                 `   
             } else {

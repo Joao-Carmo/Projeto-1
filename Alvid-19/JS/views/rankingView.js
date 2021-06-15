@@ -10,6 +10,11 @@ export default class rankingView {
 
         this.usersPointsTable = document.querySelector('#usersPointsTable')
         this.generateTable();
+
+        this.balance = document.querySelector('#balance')
+        this.winnerLoserGames = document.querySelector('#winnerLoserGames')
+        this.winnerLoserQuizzes = document.querySelector('#winnerLoserQuizzes')
+        this.generateStatistics();
     }
 
     congralutator() {
@@ -30,8 +35,8 @@ export default class rankingView {
                 <tr>
                     <td class="col">${users[pos].username}</td>
                     <td class="col">${users[pos].points}</td>
-                    <td class="col">Jogos</td>
-                    <td class="col">Quiz</td>
+                    <td class="col">${users[pos].games}</td>
+                    <td class="col">${users[pos].quizzes}</td>
                 </tr>
             `
         }
@@ -45,5 +50,30 @@ export default class rankingView {
         ` + html
 
         this.usersPointsTable.innerHTML = html
+    }
+
+    generateStatistics() {
+        const username = this.userController.loggedUser();
+        const users = this.userController.usersArray();
+        const games = users.find(users => users.username === username).games
+        const quizzes = users.find(users => users.username === username).quizzes
+        let more = ''
+
+        if (games == quizzes) {
+            more = 'balanceadoQuizzesJogos'
+        } else if (games > quizzes) {
+            more = 'balancaJogos'
+        } else {
+            more = 'balancaQuizzes'
+        }
+
+        this.balance.innerHTML = `
+            <img src="../Images/${more}.png" width="100%">
+            <p class="text-center mt-5">Wow tu gostas muito de jogos!</p>
+            <div class="row">
+                <p class="col-6">Quizzes jogados: ${quizzes}</p>
+                <p class="col-6">Jogos jogados: ${games}</p>
+            </div>
+        `
     }
 }
