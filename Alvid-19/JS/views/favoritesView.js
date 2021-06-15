@@ -202,7 +202,7 @@ export default class favoritesView {
             </a>`
 
           this.hangmanGame.innerHTML = `
-            <a href="HTML/userAuthentication.html">
+            <a href="HTML/gameHangman.html">
               <img src="Images/Jogo da f rca.png" alt="Responsive image" class="img-fluid" id="gameCarousel">
             </a>`
 
@@ -216,7 +216,7 @@ export default class favoritesView {
             </a>`
 
           this.hangmanGame.innerHTML = `
-            <a href="HTML/gameMemory.html">
+            <a href="HTML/gameHangman.html">
               <img src="Images/Jogo da f rca.png" alt="Responsive image" class="img-fluid" id="gameCarousel">
             </a>`
 
