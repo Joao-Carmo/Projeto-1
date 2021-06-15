@@ -12,6 +12,7 @@ export default class favoritesView {
         this.btnMenuMobile = document.querySelector('#btnMenuMobile')
         this.btnMenuMobileMinus = document.querySelector('#btnMenuMobileMinus')
         this.divMenuMobile = document.querySelector('#divMenuMobile')
+        this.btnLogo = document.querySelector('#btnLogo')
         this.menuMobile()
 
         this.hangmanGame = document.querySelector('#hangmanGame')
@@ -26,8 +27,8 @@ export default class favoritesView {
         this.updateStatusUI();
 
         this.modalFavorites = document.querySelector('#modalFavorites')
-        this.btnFavorites = document.querySelector('#btnFavorites')
-        this.btnModalFavoritesClose = document.querySelector('#btnModalFavoritesClose')
+        this.btnFavorites = document.querySelectorAll('#btnFavorites')
+        this.btnModalFavoritesClose = document.querySelectorAll('#btnModalFavoritesClose')
         this.favoritesModal();
     }
 
@@ -56,6 +57,7 @@ export default class favoritesView {
 
           this.btnMenuMobile.style.visibility = 'hidden'
           this.btnMenuMobileMinus.style.visibility = 'visible'
+          this.btnLogo.style.position = 'fixed'
         })
 
         this.btnMenuMobileMinus.addEventListener('click', () => {
@@ -64,6 +66,7 @@ export default class favoritesView {
 
           this.btnMenuMobile.style.visibility = 'visible'
           this.btnMenuMobileMinus.style.visibility = 'hidden'
+          this.btnLogo.style.position = 'absolute'
         })
     }
 
@@ -89,10 +92,18 @@ export default class favoritesView {
             }
 
         } else {
+          if (this.isIndex()) {
             this.profileIcon.innerHTML = `
-                <a class="nav-link" href="HTML/userAuthentication.html">
-                    <img src="Images/perfil.png" width="84px" alt="Ícone Perfil" id="iconPerfil" id="iconPerfil" style="filter: drop-shadow(0px 9px 3px #0a9cb6);border-radius: 50px">
-                </a>` 
+              <a class="nav-link" href="HTML/userAuthentication.html">
+                  <img src="Images/perfil.png" width="84px" alt="Ícone Perfil" id="iconPerfil" id="iconPerfil" style="filter: drop-shadow(0px 9px 3px #0a9cb6);border-radius: 50px">
+              </a>            
+            `
+          }
+            this.profileIcon.innerHTML = `
+              <a class="nav-link" href="HTML/userAuthentication.html">
+                <img src="../Images/perfil.png" width="84px" alt="Ícone Perfil" id="iconPerfil" id="iconPerfil" style="filter: drop-shadow(0px 9px 3px #0a9cb6);border-radius: 50px">
+              </a>
+            ` 
         }
     }
 
@@ -158,13 +169,17 @@ export default class favoritesView {
      * Função que abre/fecha a modal dos favoritos. 
      */
     favoritesModal() {
-      this.btnFavorites.addEventListener('click', () => {
-        this.modalFavorites.style.display = "block";
-      })
+      for (const btnFavorite of this.btnFavorites) {
+        btnFavorite.addEventListener('click', () => {
+          this.modalFavorites.style.display = "block";
+        })
+      }
 
-      this.btnModalFavoritesClose.addEventListener('click', () => {
-        this.modalFavorites.style.display = ""
-      })
+      for (const btnModalClose of this.btnModalFavoritesClose) {
+        btnModalClose.addEventListener('click', () => {
+          this.modalFavorites.style.display = ""
+        })
+      }
     }
 }
 

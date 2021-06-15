@@ -31,7 +31,7 @@
           <a class="navbar-toggler col-6" id="btnMenuMobile" type="button" data-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="position: absolute; visibility: visible;"><!-- data-target="#widget-menu" -->
               <img class="mr-4" src="Images/popup_menu_mobile.png" width="35%" alt="Menu Hamburger Mobile" style="filter: drop-shadow(0px 9px 3px #00000031);">
           </a>
-          <a class="navbar-toggler col-6" id="btnMenuMobileMinus" type="button" data-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="position: absolute; visibility: hidden;"><!-- data-target="#widget-menu" -->
+          <a class="navbar-toggler col-6" id="btnMenuMobileMinus" type="button" data-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="position: fixed; visibility: hidden;"><!-- data-target="#widget-menu" -->
             <img class="mr-4" src="Images/popup_menu_mobile_menos.png" width="35%" alt="Menu Hamburger Mobile" style="filter: drop-shadow(0px 9px 3px #00000031);">
           </a>
       
@@ -110,7 +110,7 @@
 
           <div class="col-sm-4 col-4"></div>
           <li class="col-sm-2 col-2 d-flex justify-content-center">
-            <a href="index.html">
+            <a type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#modalFavorites" id="btnFavorites">
                 <img src="Images/favoritos.png" id="iconFavoritosMobile" class="ml-2" width="80%" alt="Ícone Jogos" style="filter: drop-shadow(0px 9px 3px #00000031);">
                 <p class="text-center mt-2 ml-1">Favoritos</p>
             </a>

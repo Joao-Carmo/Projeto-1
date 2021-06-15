@@ -135,7 +135,7 @@ html, body {
     border-top-right-radius: 15% 20%;
     border-bottom-right-radius: 15% 20%;
     border-bottom-left-radius: 15% 20%;
-} #btnFavorites {
+} #btnAddFavorites {
     font-family: 'FonteSite';
     src: url("../Fonts/MouseMemoirs-Regular.ttf");
     font-size: 40px;
