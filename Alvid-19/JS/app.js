@@ -76,7 +76,7 @@ class App {
             {
                 id: 1,
                 name: 'Como ser Herói!',
-                image: '../Images/Como ser Herói!.png',
+                image: 'Images/Como ser Herói!.png',
                 description: 'Neste quiz, serão apresentadas situações similares à vida real. Apartir daí, precisarás fazer algumas escolhas de acordo com estas. Quantas mais respostas certas, mais pontos recebes!',
                 questions: [
                     {
