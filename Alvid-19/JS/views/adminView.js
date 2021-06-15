@@ -220,6 +220,7 @@ export default class adminView {
             this.quizzesControler.createQuestions(this.question1.value, this.imgQuestion.value, this.question1A.value, this.question1B.value, this.question1C.value, this.question1D.value, radAnswer.value);
             // alert(questions)
             // return questions;
+            alert('Pergunta adicionada!')
         })
 
     }
