@@ -24,8 +24,10 @@ export default class favoritesView {
         this.iconRankingMobile = document.querySelector('#iconRankingMobile')
         this.updatePermissions();
 
-        this.thumbnailQuizzes = document.querySelector('#thumbnailQuizzes')
+        
+        this.thumbnailQuizzes = document.querySelector('#thumbnailQuizzes');
         this.displayQuizzesImages();
+        
 
         this.profileIcon = document.querySelector('#profileIcon');
         this.updateStatusUI();
@@ -34,13 +36,15 @@ export default class favoritesView {
         this.btnFavorites = document.querySelectorAll('#btnFavorites')
         this.btnModalFavoritesClose = document.querySelectorAll('#btnModalFavoritesClose')
         this.favoritesModal();
+
+        this.getID()
     }
 
     /**
      * Função que verifica se a página atualmente aberta é a index.html ou não. 
      */
     isIndex() {
-      if (index.innerHTML == 'index') {
+      if (this.index.innerHTML == 'index') {
         console.log('index')
         return true
       } else {
@@ -194,9 +198,28 @@ export default class favoritesView {
     }
 
     displayQuizzesImages() {
-      alert(this.quizzesControler.quizzesArray());
       this.quizzesImages(this.quizzesControler.quizzesArray());
+      
+      const btnThumbnailQuiz = document.querySelectorAll('#btnThumbnailQuiz');
+      if (!this.userController.isLogged() || this.userController.isBlocked()) {
+        for (const btn of btnThumbnailQuiz) {
+          btn.href = `HTML/userAuthentication.html`
+        }
+      }
     }
+
+
+    getID() {
+      const btnThumbnailQuiz = document.querySelectorAll('#btnThumbnailQuiz');
+      for (const btn of btnThumbnailQuiz) {
+        btn.addEventListener('click', () => {
+          const id = btn.children[0].id
+          alert(id);
+          this.quizzesControler.getId(id);
+        })
+      }
+    }
+    
 
 
     /**
@@ -207,13 +230,17 @@ export default class favoritesView {
         let html = "";
         for (let pos = 0; pos < quizzes.length; pos++) {
           html += `
-            <a class="mt-2 col-lg-4 col-6" href="HTML/quizzes.html">
-              <img src="${quizzes[pos].image}" id="quizCarrossel" class="mt-5 col-sm-7 ml-4 mb-5" alt="Responsive image">
+            <a class="mt-2 ml-3 col-lg-4 col-6" href="HTML/quizzes.html" id="btnThumbnailQuiz">
+              <img src="${quizzes[pos].image}" id="${pos+1}" class="mt-5 col-sm-7 ml-4 mb-5" alt="Responsive image">
             </a>`
+          
         }
         this.thumbnailQuizzes.innerHTML = html;
       }
     }
+        
+
+    
 
     /**
      * Função que torna o botão de admin visível quando o utilizador é administrador. 

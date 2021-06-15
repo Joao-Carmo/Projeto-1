@@ -81,7 +81,7 @@ class App {
                 id: 1,
                 name: 'Como ser Herói!',
                 image: 'Images/Como ser Herói!.png',
-                description: 'Neste quiz, serão apresentadas situações similares à vida real. Apartir daí, precisarás fazer algumas escolhas de acordo com estas. Quantas mais respostas certas, mais pontos recebes!',
+                description: 'No jogo "Como ser Herói!" aparecerá perguntas sobre Covid-19 e como se deve comportar em determinadas situações. Presta bastante atenção em cada pergunta pois poderá ter ratoeiras! A cada resposta acertada, ganharás pontos.',
                 questions: [
                     {
                         id: 1,
@@ -149,7 +149,7 @@ class App {
             {
                 id: 2,
                 type: 'admin',
-                username: 'JoãoCarmo',
+                username: 'João',
                 password: '12345',
                 email: 'admin@gmail.com',
                 date: '14/07/2001',
