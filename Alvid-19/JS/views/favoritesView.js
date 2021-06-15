@@ -1,8 +1,10 @@
 import userController from '../controllers/userController.js'
+import quizzesControler from '../controllers/quizzesController.js';
 
 export default class favoritesView {
     constructor() {
         this.userController = new userController();
+        this.quizzesControler = new quizzesControler();
 
         this.index = document.querySelector('#index')
 
@@ -23,7 +25,7 @@ export default class favoritesView {
         this.updatePermissions();
 
         this.thumbnailQuizzes = document.querySelector('#thumbnailQuizzes')
-        this.quizzesImages();
+        this.displayQuizzesImages();
 
         this.profileIcon = document.querySelector('#profileIcon');
         this.updateStatusUI();
@@ -191,15 +193,25 @@ export default class favoritesView {
       }
     }
 
+    displayQuizzesImages() {
+      alert(this.quizzesControler.quizzesArray());
+      this.quizzesImages(this.quizzesControler.quizzesArray());
+    }
+
+
     /**
      * Função que acrescenta, através do array de quizDetails, os quizzes no index.html. 
      */
-    quizzesImages() {
+    quizzesImages(quizzes) {
       if (this.isIndex()) {
-        this.thumbnailQuizzes.innerHTML += `
-          <a class="mt-2 col-lg-4 col-6" href="HTML/quizzes.html">
-            <img src="Images" id="quizCarrossel" class="mt-5 col-sm-7 ml-4 mb-5" alt="Responsive image">
-          </a>`
+        let html = "";
+        for (let pos = 0; pos < quizzes.length; pos++) {
+          html += `
+            <a class="mt-2 col-lg-4 col-6" href="HTML/quizzes.html">
+              <img src="${quizzes[pos].image}" id="quizCarrossel" class="mt-5 col-sm-7 ml-4 mb-5" alt="Responsive image">
+            </a>`
+        }
+        this.thumbnailQuizzes.innerHTML = html;
       }
     }
 
