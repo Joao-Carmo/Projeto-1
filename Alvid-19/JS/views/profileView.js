@@ -10,26 +10,23 @@ export default class profileView {
         this.editProfileImage = document.querySelector('#editProfileImage');
         this.updateStatusUI();
 
-
         this.switchEdit = document.querySelector('#switchEdit');
         this.switchProfile = document.querySelector('#switchProfile');
         this.profileForm = document.querySelector('#profile');
         this.editForm = document.querySelector('#edit');
         this.bindSwitchForms();
-
         
         this.modalAvatars = document.querySelector('#modalAvatars')
         this.btnAvatars = document.querySelector('#btnAvatars')
         this.btnModalAvatarsClose = document.querySelector('#btnModalAvatarsClose')
-        this.bindModal();
 
-        this.logoutButton = document.querySelector('#btnLogOut');
+        this.logoutButton = document.querySelector('#btnLogOut')
         this.bindLogout();
 
-        this.newUsername = document.querySelector('#txtNewUsername');
-        this.newPassword = document.querySelector('#txtNewPassword');
-        this.confirmNewPassword = document.querySelector('#txtConfirmNewPassword');
-        this.editMessage = document.querySelector('#editMessage');
+        this.newUsername = document.querySelector('#txtNewUsername')
+        this.newPassword = document.querySelector('#txtNewPassword')
+        this.confirmNewPassword = document.querySelector('#txtConfirmNewPassword')
+        this.editMessage = document.querySelector('#editMessage')
         this.bindEdit();
 
         this.pUsername = document.querySelector('#pUsername')
@@ -38,6 +35,10 @@ export default class profileView {
         this.pPoints = document.querySelector('#pPoints')
         this.pComments = document.querySelector('#pComments')
         this.profileInformation();
+
+        this.modalBodyAvatars = document.querySelector('#modalBodyAvatars')
+        this.bindModal();
+        // this.modalEditAvatars();
     }
 
     /**
@@ -73,7 +74,6 @@ export default class profileView {
         })
     }
 
-
     updateStatusUI() {
         const username = this.userController.loggedUser();
         const users = this.userController.usersArray();
@@ -87,6 +87,9 @@ export default class profileView {
         `
     }
 
+    /**
+     * Função que dispõe a informação do utilizador no profile.html. 
+     */
     profileInformation() {
         const username = this.userController.loggedUser();
         const users = this.userController.usersArray();
@@ -104,7 +107,67 @@ export default class profileView {
         this.pComments.innerHTML = `Nº de comentários: ${comment}`
     }
 
+    /**
+     * Função que disponibiliza, conforme a pontuação do utilizador, as fotos de perfis disponíveis que o mesmo pode escolher. 
+     */
+    modalEditAvatars() {
+        const avatars = this.userController.usersAvatars();
+        const users = this.userController.usersArray();
+        const username = this.userController.loggedUser();
+        const points = users.find(user => user.username === username).points
 
+        this.modalBody = `
+            <button id="btnAvatarsImg" type="button" class="col">
+                <img src="../Images/avatars/1.png" id="1" width="100%">
+                <p>Desbloqueado!</p>
+            </button>
+        `
+
+        for (let pos = 1; pos < avatars.length; pos++) {
+            if (points >= avatars[pos].points) {
+                this.modalBody += `
+                    <button id="btnAvatarsImg" type="button" class="col">
+                        <img src="../Images/avatars/${pos+1}.png" id="${pos+1}" width="100%">
+                        <p>Desbloqueado!</p>
+                    </button>
+                `   
+            } else {
+                this.modalBody += `
+                    <button id="btnAvatarsImg" class="col" disabled>
+                        <div style="background-color: rgb(216, 216, 216); border-radius: 20px;">
+                            <img src="../Images/avatars/${pos+1}.png" id="${pos+1}" width="100%" style="opacity: 25%;">
+                        </div>
+                        <p>${avatars[pos].points}XP</p>
+                    </button>
+                `
+            }
+        }
+
+        this.modalBodyAvatars.innerHTML = this.modalBody
+        this.modalChangeAvatars()
+    }
+
+    /**
+     * Função que escuta o clique da nova foto escolhida e altera no perfil do utilizador. 
+     */
+    modalChangeAvatars() {
+        const btnAvatarsImg = document.querySelectorAll('#btnAvatarsImg')
+
+        for (const btnAvatar of btnAvatarsImg) {
+            btnAvatar.addEventListener('click', () => {
+                const id = btnAvatar.children[0].id
+                this.userController.changeUserAvatars(id)
+
+                setTimeout(() => {
+                    location.reload()
+                }, 500);
+            })
+        }
+    }
+
+    /**
+     * Função que troca entre ver informações do perfil e editar perfil no profile.html. 
+     */
     bindSwitchForms() {
         this.switchEdit.addEventListener('click', () => {
             this.profileForm.style.transform = "translateX(-375px)"
@@ -116,9 +179,13 @@ export default class profileView {
         })
     }
 
+    /**
+     * Função da modal dos avatars. 
+     */
     bindModal() {
         this.btnAvatars.addEventListener('click', () => {
             modalAvatars.style.display = "block";
+            this.modalEditAvatars();
         })
     
         this.btnModalAvatarsClose.addEventListener('click', () => {

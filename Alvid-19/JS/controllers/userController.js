@@ -4,10 +4,15 @@ export default class userController {
     constructor() {
         this.users = localStorage.users ? JSON.parse(localStorage.getItem("users")) : [];
         this.comments = localStorage.comments ? JSON.parse(localStorage.getItem("comments")) : [];
+        this.avatars = localStorage.avatars ? JSON.parse(localStorage.getItem("avatars")) : [];
     }
 
     usersArray() {
         return this.users
+    }
+
+    usersAvatars() {
+        return this.avatars
     }
 
     register(username, password, passwordConfirm, email, date) {
@@ -74,6 +79,12 @@ export default class userController {
                 throw `As palavras-passe não coincidem!`
             }
         }
+    }
+
+    changeUserAvatars(idAvatar) {
+        const id = sessionStorage.getItem('loggedUserId')
+        this.users[id-1].photo = `/avatars/${idAvatar}.png`
+        localStorage.setItem('users', JSON.stringify(this.users))
     }
 
     loggedUser() {
