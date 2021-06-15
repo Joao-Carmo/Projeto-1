@@ -269,5 +269,14 @@ export default class favoritesView {
         })
       }
     }
+
+    /* favoritesModalContent() {
+      for (const btnFavorite of this.btnFavorites) {
+        btnFavorite.addEventListener('click', () => {
+          // <img src="../Images/Como ser Herói!.png" id="1" width="100%" style="border-radius: 40px">
+          
+        })
+      }
+    } */
 }
 

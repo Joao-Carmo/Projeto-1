@@ -12,7 +12,10 @@ export default class quizzesView {
         this.imgQuiz = document.querySelector('#imgQuiz');
         this.btnNext = document.querySelector('#btnNext');
         this.quizContainer = document.querySelector('#quizContainer');
+        this.divBtnNext = document.querySelector('#divBtnNext')
+        this.btnFinish = document.querySelector('#btnFinish')
         this.bindQuiz()
+        this.generateQuestions();
     }
 
     bindQuiz(){
@@ -28,18 +31,30 @@ export default class quizzesView {
 
 
         this.questions = quizzes.find(quizzes => quizzes.id == id).questions;
+        this.final = this.questions.length
         
         // let idQuestion = 1;
         
         this.idQuestion = 0;
-        this.pepe()
     }
 
-    pepe() {
+    generateQuestions() {
         this.btnNext.addEventListener('click', () => {
             this.idQuestion += 1;
+
+            if (this.idQuestion == this.questions.length) {
+                this.btnNext.innerHTML = 'Finalizar'
+            }
+            
+            if (this.idQuestion == this.questions.length+1) {
+
+                const points = this.quizzesControler.getPoints();
+                this.quizzesControler.updateUserPoints()
+                
+                alert('Fizeste '+points+' pontos!')
+            }
+
             const title = this.questions[this.idQuestion -1].title;
-            alert(title);
             const photo = this.questions[this.idQuestion -1].photo;
             const answers = this.questions[this.idQuestion -1].answers;
                 // const correctAnswer = question.correctAnswer;
@@ -57,35 +72,54 @@ export default class quizzesView {
                 </div>
     
                 <div class="row d-flex justify-content-center text-center mt-4">
-                    <div class="col-6">
-                        <button class="btn btn-primary mb-1 col-6" id="answer1">1) ${answers[0]}</button>
+                    <div class="col-6" id="1">
+                        <button class="btn btn-primary mb-1 col-6" id="answer" style="font-family: 'FonteSite'; src: url("../Fonts/MouseMemoirs-Regular.ttf"); font-size: 150%; background-color: #08a4ff;border: none;">
+                            ${answers[0]}
+                        </button>
                     </div>
-                    <div class="col-6">
-                        <button class="btn btn-primary mb-1 col-6" id="answer2">2) ${answers[1]}</button>
+                    <div class="col-6" id="2">
+                        <button class="btn btn-primary mb-1 col-6" id="answer" style="font-family: 'FonteSite'; src: url("../Fonts/MouseMemoirs-Regular.ttf"); font-size: 150%; background-color: #08a4ff;border: none;">
+                            ${answers[1]}
+                        </button>
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center text-center mt-4">
-                    <div class="col-6">
-                        <button class="btn btn-primary mb-1 col-6" id="answer3">3) ${answers[2]}</button>
+                    <div class="col-6" id="3">
+                        <button class="btn btn-primary mb-1 col-6" id="answer" style="font-family: 'FonteSite'; src: url("../Fonts/MouseMemoirs-Regular.ttf"); font-size: 150%; background-color: #08a4ff;border: none;">
+                            ${answers[2]}
+                        </button>
                     </div>
-                <div class="col-6">
-                    <button class="btn btn-primary mb-1 col-6" id="answer4">4) ${answers[3]}</button>                            </div>
+                <div class="col-6" id="4">
+                    <button class="btn btn-primary mb-1 col-6" id="answer" style="font-family: 'FonteSite'; src: url("../Fonts/MouseMemoirs-Regular.ttf"); font-size: 150%; background-color: #08a4ff;border: none;">
+                        ${answers[3]}
+                    </button>
                 </div>
                 `
+ 
             this.quizContainer.innerHTML = html;
-            // }
-            // const photo = question.find(question => question.id === idQuestion).photo;
-            // const answers = question.find(question => question.id === idQuestion).answers;
-            // alert(answers);
-            // idQuestion += 1;
 
+            const btnAnswers = document.querySelectorAll('#answer')
+            for (const answer of btnAnswers) {
+                answer.addEventListener('click', () => {
+
+                    if (answer.parentNode.id == this.questions[this.idQuestion-1].correctAnswer) {
+                        
+                        this.quizzesControler.updateRight();
+
+                        answer.style.backgroundColor = '#5bcf2c'    
+                        for (const btnAnswer of btnAnswers) {
+                            btnAnswer.disabled = true
+                        }
+                    } else {
+                        answer.style.backgroundColor = 'red'
+                        for (const btnAnswer of btnAnswers) {
+                            btnAnswer.disabled = true 
+                        }
+                    }
+                })
+            }
         })   
-        
-        if (idQuestion < questions.length) {
-            this.bindQuiz();
-            this.pepe()
-        }
-        
-    }
-             
+    }  
 }
+             
+

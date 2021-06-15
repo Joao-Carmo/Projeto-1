@@ -115,7 +115,7 @@ class App {
                         title: 'Ao entrar na sala de aula, Onde sentas?',
                         photo:'../Images/como_ser_heroi/Onde sentas na escola.gif',
                         answers: [
-                            '1 - Entre teus dois amigos.','2 - Ao lado de teus colegas.','3 - Um pouco mais afastado de teus colegas.','Nenhuma das anteriores.'
+                            'Entre teus dois amigos.','Ao lado de teus colegas.','Um pouco mais afastado de teus colegas.','Nenhuma das anteriores.'
                         ],
                         correctAnswer: 3
                     },

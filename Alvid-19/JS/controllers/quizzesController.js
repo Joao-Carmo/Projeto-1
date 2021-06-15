@@ -7,6 +7,9 @@ export default class quizzesControler {
         this.quizzes = localStorage.quizDetails ? JSON.parse(localStorage.getItem("quizDetails")) : [];
         this.users = localStorage.users ? JSON.parse(localStorage.getItem("users")) : [];
         this.questions = [];
+
+        this.right = 0
+        this.points = 0
     }
 
     quizzesArray() {
@@ -36,7 +39,31 @@ export default class quizzesControler {
             setTimeout(() => {
                 location.reload()
             }, 1000);
-        }
-        
+        }  
+    }
+
+    updateRight() {
+        this.right++
+    }
+
+    getPoints() {
+        this.points = this.right * 25
+        return this.points
+    }
+
+    updateUserPoints() {
+        // Atribui os pontos ganhos ao user e atualiza no localStorage
+        const username = sessionStorage.getItem('loggedUser')
+        const id = sessionStorage.getItem('loggedUserId')
+
+        let points = +(this.users.find(user => user.username === username).points)
+        points += +this.points
+
+        let quizzes = +(this.users.find(user => user.username === username).quizzes)
+        quizzes += 1
+
+        this.users[id-1].points = points
+        this.users[id-1].quizzes = quizzes
+        localStorage.setItem('users', JSON.stringify(this.users))
     }
 }
