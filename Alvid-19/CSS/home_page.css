@@ -377,6 +377,23 @@ html, body {
 
 /* XS / iphone 5 */
 @media screen and (min-width: 315px) and (max-width: 325px) {
+    #caracterAlvid {
+        height: 100%;
+    }
+
+    #carouselCovidContentBackground {
+        height: 45vh;
+    } 
+}
+
+/* XS / outros telemóveis */
+@media screen and (min-width: 340px) and (max-width: 440px) {
+    #caracterAlvid {
+        height: 90%;
+        position: relative;
+        left: 20px;
+    }
+
     #carouselCovidContentBackground {
         height: 45vh;
     } 
@@ -384,6 +401,10 @@ html, body {
 
 /* SM / tablets */
 @media screen and (min-width: 540px) and (max-width: 780px) {
+    #caracterAlvid {
+        height: 100%;
+    }
+
     #carouselCovidContentParagraph {
         font-size: 100%;
     } #carouselCovidContentBackground {

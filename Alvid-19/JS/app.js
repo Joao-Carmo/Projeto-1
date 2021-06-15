@@ -6,6 +6,7 @@ import rankingView from './views/rankingView.js'
 import quizzesView from './views/quizzesView.js'
 import commentView from './views/commentView.js'
 import gameMemoryView from './views/gameMemoryView.js'
+import gameHangmanView from './views/gameHangmanView.js'
 
 class App {
     constructor() {
@@ -44,6 +45,9 @@ class App {
             'gameMemory': [
                 gameMemoryView,
                 favoritesView
+            ],
+            'gameHangman': [
+                gameHangmanView
             ]
         };
 

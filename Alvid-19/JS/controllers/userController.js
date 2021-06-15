@@ -23,7 +23,9 @@ export default class userController {
                 const points = 0
                 const photo = '/avatars/1.png'
                 const favorites = []
-                this.users.push(new userModel(id,type,username,password,email,date,points,photo,favorites));
+                const games = 0
+                const quizzes = 0
+                this.users.push(new userModel(id,type,username,password,email,date,points,photo,favorites,games,quizzes));
                 localStorage.setItem('users', JSON.stringify(this.users))
             } else {
                 throw `As palavras-passe não coincidem!`

@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../CSS/gameMemory.css">
+    <link rel="stylesheet" href="../CSS/gameHangman.css">
 
-    <!-- Icone Alvid -->
-    <link rel="shortcut icon" href="../Images/alvid_icone.ico" type="image/x-icon">
+   <!-- Icone Alvid -->
+   <link rel="shortcut icon" href="../Images/alvid_icone.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 
-    <title>Alvid-19 | Jogo da Memória</title> 
+    <title>Alvid-19 | Jogo da Forca</title> 
 </head>
 <body>
 
@@ -130,11 +130,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>     
 
         <div class="text-center" id="quizz">
             <!-- COLOCAR AQUI ATRAVÉS DO HTML A LINHA SEGUINTE -->
-            <p id="titleSection">Jogo da Memória</p>
+            <p id="titleSection">Jogo da Forca</p>
         </div>
 
         <!-- Detalhes do quiz -->
@@ -149,9 +149,9 @@
 
             <div class="col-1"></div>
             <div class="col-4">
-                <img src="../Images/Jogo da Memoria.png" id="quizCarousel" width="100%">
+                <img src="../Images/Jogo da f rca.png" id="quizCarousel" width="100%">
                 <div class="my-4 text-center">
-                    <button class="btn btn-primary" id="btnAddFavorites">
+                    <button class="btn btn-primary" id="btnFavorites">
                         <img src="../Images/favoritos.png" style="width: 10%;">
                         Adicionar aos favoritos
                     </button>
@@ -160,33 +160,33 @@
             <div class="col-6 ml-5" style="background-image: url('../Images/formas_prontas.png');  background-size: contain;
             background-repeat: no-repeat;" >
                 <div class="row justify-content-around ml-5 mt-5">
-                    <p class=" mt-5 ml-5" id="descricaoJogo">No jogo da memória o objetivo é encontrar e formar pares.
-                    Além de trabalhar a memória, este jogo também exercita a concentração, visto que é necessário estar focado para memorizar a posição das cartas e assim formar os pares no menor tempo possível. Assim, a cada final de uma ronda, quanto menor o tempo, mais pontos ganhas!
+                    <p class=" mt-5 ml-5" id="descricaoJogo">O jogo da forca é um jogo em que terás que acertar qual é a palavra proposta. Na tela terás toda a informação que precisas, o número de letras e uma frase que servirá de dica. A cada letra errada, é desenhado uma parte do corpo, se todas as partes do corpo forem desenhadas, perdes! Acerta na palavra e ganha pontos!
                     </p>
-                </div>
-                
+                </div>   
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <p id="timer">00:00</p>
+
+        
+        <section class="flex-container-2">
+
+            
+            <img id="forca" class="mt-4" height="650px" src="../Images/jogo_da_forca/forca.png" alt="Forca">
+            
+            
+            <div id="word" class="flex-container-2-2">
+                <!-- introduzido por js -->
             </div>
-        </div>
-            <div id="memoria" class='my-5'>
-                
-                <div id="imagens">
-                    <div id="cardBoard" class="row row-cols-5">
-                    </div>
-                    <div class="row d-flex justify-content-center mt-4">
-                        <div class="col-sm-2  my-1">
-                            <button class="btn btn-primary mb-1 " type="start" id="btnStart">START</button>
-                        </div>
-                    </div>
-                    
-                </div>
-        </div>
+            
+            <div id="new"></div>
+        </section>
+        
+        <section id="letters" class="flex-container-3">   
+            <!-- introduzido por js -->
+        </section>
+        
     </div>
-    <!-- <script src="../js/views/jogoDaMemoria.js"></script> -->
+
+    <!-- <script src="../js/views/jogoDaForca.js"></script> -->
     <script src="../JS/app.js" type="module"></script>
 </body>
 </html>
