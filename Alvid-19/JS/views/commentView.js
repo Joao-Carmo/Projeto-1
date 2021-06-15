@@ -76,7 +76,6 @@ export default class commentView {
     isLogged() {
         if (this.userController.isLogged() && !this.userController.isBlocked()) {
             this.btnDiv.innerHTML = ' <button type="button" class="efeito efeito-1" id="btnSendComment">Enviar Cometário</button>'
-            
         } else {
             this.btnDiv.innerHTML = ' <button type="button" id="btnSendComment" disabled>Enviar Cometário</button>'
         }

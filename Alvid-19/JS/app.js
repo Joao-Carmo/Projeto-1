@@ -23,7 +23,8 @@ class App {
                 profileView
             ],
             'admin': [
-                adminView
+                adminView,
+                quizzesView
             ],
             'ranking': [
                 rankingView
